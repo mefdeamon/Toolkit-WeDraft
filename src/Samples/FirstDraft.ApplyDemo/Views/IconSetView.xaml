@@ -1,0 +1,148 @@
+<UserControl x:Class="FirstDraft.ApplyDemo.Views.IconSetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:fd="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             mc:Ignorable="d" 
+             DataContext="{Binding IconSetViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+
+        <!--<DockPanel  DataContext="{Binding SelectedIcon}" DockPanel.Dock="Right" LastChildFill="False" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+
+            <WrapPanel DockPanel.Dock="Top">
+
+                <Border Padding="10" Width="60" Height="60">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF290736"/>
+                            <GradientStop Color="#FF2C6976" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Path  Stretch="Uniform" Data="{Binding IconData}" Fill="White"/>
+                </Border>
+               
+            </WrapPanel>
+
+            <DockPanel  VerticalAlignment="Bottom">
+                <TextBox IsReadOnly="True" Text="{Binding IconName}" />
+            </DockPanel>
+
+        </DockPanel>-->
+
+        <DockPanel  >
+
+            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+               
+                <Border Margin="0" BorderThickness="1" BorderBrush="#33000000">
+                    <DockPanel>
+                        <Border DockPanel.Dock="Right" Padding="8" Width="30" Height="30" CornerRadius="30"
+                               >
+                            <Viewbox>
+                                    <Path Data="{Binding search, Source={StaticResource IconSet}}" 
+                                          Fill="Black"
+                                          Stretch="Uniform">
+                                </Path>
+                            </Viewbox>
+                        </Border>
+
+                        <TextBox VerticalAlignment="Center" DockPanel.Dock="Left" Padding="10 0 0 0"
+                                 Style="{DynamicResource HintTagTextBox}" Tag="请输入"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 Text="{Binding Path=SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+
+            <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                <ItemsControl  ItemsSource="{Binding SearchedIcons}" Margin="0 5 0 0">
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5" Margin="0 0 5 5" BorderThickness="1">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF290736"/>
+                                        <GradientStop Color="#FF2C6976" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <fd:CommandControl Command="{Binding DataContext.ChooseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1,AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}">
+                                    <DockPanel>
+
+                                        <Grid x:Name="grid" DockPanel.Dock="Top"
+                                          Background="Transparent"
+                                          MinHeight="36"
+                                          MinWidth="36">
+                                            <Path x:Name="icon"
+                                              Data="{Binding IconData}" 
+                                              Width="20"
+                                              Height="20"
+                                              Fill="Black"
+                                              Stretch="Uniform"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Opacity="0.8">
+                                                <Path.LayoutTransform>
+                                                    <ScaleTransform x:Name="IconScale"/>
+                                                </Path.LayoutTransform>
+                                            </Path>
+                                        </Grid>
+                                        <TextBlock Text="{Binding IconName}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </DockPanel>
+                                </fd:CommandControl>
+
+                            </Border>
+
+                            <DataTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" TargetName="icon" Value="1"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="IconScale"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="1.2"
+                                                             Duration="0:0:0.15" />
+                                                <DoubleAnimation Storyboard.TargetName="IconScale"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="1.2"
+                                                             Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="IconScale"
+                                                             Storyboard.TargetProperty="ScaleX"
+                                                             To="1"
+                                                             Duration="0:0:0.15" />
+                                                <DoubleAnimation Storyboard.TargetName="IconScale"
+                                                             Storyboard.TargetProperty="ScaleY"
+                                                             To="1"
+                                                             Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Top"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+
+        </DockPanel>
+
+
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,251 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:FirstDraft.Controls">
+
+    <SolidColorBrush x:Key="SerialPortStaticForeground" Color="#FFF0F0F0"/>
+
+    <Style x:Key="{x:Type controls:IconToggleButton}" TargetType="{x:Type controls:IconToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource IconButton.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0.7"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <Border Padding="{TemplateBinding Padding}">
+                            <Viewbox>
+                                <Path Data="{TemplateBinding IconData}"  
+                                      Stroke="{DynamicResource IconButton.Stroke}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                </Path>
+                            </Viewbox>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Foreground"  Value="{DynamicResource IconButton.Pressed.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SerialPortOpenToggleButton" TargetType="{x:Type controls:IconToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="0.7"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <Border Padding="{TemplateBinding Padding}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Viewbox Width="20"  Grid.Row="0" VerticalAlignment="Top">
+                                    <Path Data="M64 512m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z M960 512m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z M960 448c-12.128 0-23.36 3.584-32.992 9.44a96.128 96.128 0 0 0-19.2-68.864A92.8 92.8 0 0 0 833.984 352H190.016a92.8 92.8 0 0 0-73.824 36.576 96.128 96.128 0 0 0-19.2 68.864A63.36 63.36 0 0 0 64 448c-35.296 0-64 28.704-64 64s28.704 64 64 64c22.976 0 43.008-12.288 54.304-30.528l14.496 55.36C143.808 642.752 181.152 672 223.616 672h576.768c42.464 0 79.808-29.248 90.816-71.168l14.496-55.36c11.296 18.24 31.328 30.528 54.304 30.528 35.296 0 64-28.704 64-64s-28.704-64-64-64zM64 544a32.032 32.032 0 0 1 0-64 32.032 32.032 0 0 1 0 64z m798.848-87.392l-33.568 128c-3.616 13.76-15.488 23.392-28.896 23.392H223.616c-13.408 0-25.28-9.6-28.896-23.392l-33.6-128a33.248 33.248 0 0 1 5.76-28.96 29.056 29.056 0 0 1 23.136-11.648h643.968c12.288 0 19.776 7.328 23.136 11.648 6.304 8.192 8.416 18.752 5.76 28.96zM960 544a32.032 32.032 0 0 1 0-64 32.032 32.032 0 0 1 0 64z M256 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M320 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M448 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M576 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M704 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M384 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M512 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M640 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M768 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z"  
+                                      Stroke="Gray"
+                                          Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                    </Path>
+                                </Viewbox>
+
+                                <Viewbox  x:Name="serial" Grid.RowSpan="2" Margin="0 10 0 0">
+                                    <Path Data="M298.666667 128h426.666666v85.333333h85.333334v128h-128v256H341.333333V341.333333H213.333333V213.333333h85.333334V128m426.666666 256h85.333334v213.333333h-85.333334V384m-256 256h85.333334v298.666667h-85.333334v-298.666667M213.333333 384h85.333334v213.333333H213.333333V384z"  
+                                      Stroke="Gray"
+                                          x:Name="path" 
+                                          Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                    </Path>
+                                </Viewbox>
+                            </Grid>
+                           
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Foreground"  Value="{DynamicResource IconButton.Pressed.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <!--<Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>-->
+                            <Setter Property="Foreground"  Value="LimeGreen"/>
+                            <Setter Property="Margin" TargetName="serial" Value="0 0 0 0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SerialPortOperateToggleButton" TargetType="{x:Type controls:IconToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource SerialPortStaticForeground}"/>
+        <Setter Property="BorderThickness" Value="0.7"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <Border Padding="{TemplateBinding Padding}">
+                            <Grid>
+
+                                <Viewbox x:Name="serial" Margin="2 0 2 19" Grid.Row="0" VerticalAlignment="Top">
+                                    <Path Data="M64 512m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z M960 512m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z M960 448c-12.128 0-23.36 3.584-32.992 9.44a96.128 96.128 0 0 0-19.2-68.864A92.8 92.8 0 0 0 833.984 352H190.016a92.8 92.8 0 0 0-73.824 36.576 96.128 96.128 0 0 0-19.2 68.864A63.36 63.36 0 0 0 64 448c-35.296 0-64 28.704-64 64s28.704 64 64 64c22.976 0 43.008-12.288 54.304-30.528l14.496 55.36C143.808 642.752 181.152 672 223.616 672h576.768c42.464 0 79.808-29.248 90.816-71.168l14.496-55.36c11.296 18.24 31.328 30.528 54.304 30.528 35.296 0 64-28.704 64-64s-28.704-64-64-64zM64 544a32.032 32.032 0 0 1 0-64 32.032 32.032 0 0 1 0 64z m798.848-87.392l-33.568 128c-3.616 13.76-15.488 23.392-28.896 23.392H223.616c-13.408 0-25.28-9.6-28.896-23.392l-33.6-128a33.248 33.248 0 0 1 5.76-28.96 29.056 29.056 0 0 1 23.136-11.648h643.968c12.288 0 19.776 7.328 23.136 11.648 6.304 8.192 8.416 18.752 5.76 28.96zM960 544a32.032 32.032 0 0 1 0-64 32.032 32.032 0 0 1 0 64z M256 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M320 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M448 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M576 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M704 544m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M384 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M512 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M640 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z M768 480m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z"  
+                                      Stroke="{DynamicResource SerialPortStaticForeground}"
+                                          Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                    </Path>
+                                </Viewbox>
+
+                                <Viewbox x:Name="plug" Margin="0 7 0 0">
+                                    <Path Data="M298.666667 128h426.666666v85.333333h85.333334v128h-128v256H341.333333V341.333333H213.333333V213.333333h85.333334V128m426.666666 256h85.333334v213.333333h-85.333334V384m-256 256h85.333334v298.666667h-85.333334v-298.666667M213.333333 384h85.333334v213.333333H213.333333V384z"  
+                                      Stroke="{DynamicResource SerialPortStaticForeground}"
+                                          x:Name="path" 
+                                          Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                    </Path>
+                                </Viewbox>
+                            </Grid>
+
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Foreground"  Value="{DynamicResource IconButton.Pressed.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground"  Value="LimeGreen"/>
+                            <Setter Property="Margin" TargetName="plug" Value="0 0 0 0"/>
+                        </Trigger> 
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PopupToggleButton" TargetType="{x:Type controls:IconToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource IconButton.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0.7 0.7 0.7 0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                        <Border Padding="{TemplateBinding Padding}">
+                            <Viewbox>
+                                <Path Data="{TemplateBinding IconData}"  
+                                      Stroke="{DynamicResource IconButton.Stroke}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          Stretch="Uniform">
+                                </Path>
+                            </Viewbox>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Foreground"  Value="{DynamicResource IconButton.Pressed.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconButton.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource IconButton.BorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

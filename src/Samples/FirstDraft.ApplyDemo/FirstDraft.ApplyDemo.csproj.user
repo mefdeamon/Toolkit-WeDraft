@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Views\ApplyButtonView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ApplyComboBoxView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\IconSetView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WelcomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\ApplyButtonView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyComboBoxView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\IconSetView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WelcomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

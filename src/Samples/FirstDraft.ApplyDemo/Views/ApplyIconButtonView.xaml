@@ -1,0 +1,115 @@
+<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyIconButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel>
+                            <WrapPanel  Margin="5">
+                                <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}"/>
+                                <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" />
+                                <controls:IconButton Margin="5" IconData="{Binding record_on, Source={StaticResource IconSet}}" Content="录制"/>
+                                <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" />
+                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
+                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding cube_line, Source={StaticResource IconSet}}" Content="收藏" />
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                    </Border>
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="可以通过设置" />
+                        <Run Text="IconData" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="实现只显示图标，也可以给" />
+                        <Run Text="Content" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="附加内容同时显示文本。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}"/>
+                            <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" IsEnabled="False"/>
+                            <controls:IconButton Margin="5" IconData="{Binding settings_fill, Source={StaticResource IconSet}}" Content="使能"/>
+                            <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="可以通过设置" />
+                        <Run Text="FontSize IconSize" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="实现字体和图标大小变化，可以通过设置" />
+                        <Run Text="Foreground Background BorderThinese BorderBrush" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="让按钮变得绚丽多彩。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel>
+                            <WrapPanel  Margin="5">
+
+                                <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}" Foreground="Purple"/>
+                                <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" Foreground="blue" />
+                                <controls:IconButton Margin="5" IconData="{Binding settings_fill, Source={StaticResource IconSet}}" Foreground="Yellow" Background="Purple"/>
+                                <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Foreground="Orange" Background="Cyan"/>
+                                <controls:IconButton Margin="5" IconData="{Binding infomation_line, Source={StaticResource IconSet}}" Foreground="cyan" Background="Blue" BorderBrush="Purple" />
+                                <controls:IconButton Margin="5" IconData="{Binding infomation_fill, Source={StaticResource IconSet}}" Foreground="Green" Background="Orange" BorderBrush="Orange" BorderThickness="1"/>
+
+
+                            </WrapPanel>
+                            <WrapPanel  Margin="5">
+
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Purple"/>
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Blue"   IconSize="20"/>
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Green"  IconSize="25"/>
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Orange" IconSize="30"/>
+
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Purple" Background="Green"/>
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Blue"   IconSize="20" FontSize="18"/>
+                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Orange" IconSize="30" FontSize="26" Background="Cyan"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="VerticalTextIconButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="VerticalTextIconButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 图标在上，文本在下的垂直布局样式。默认高度是50px，仍然可以像普通图标按钮那样设置它的颜色和大小。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel MinHeight="50" Margin="5">
+
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

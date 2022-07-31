@@ -1,0 +1,105 @@
+<Window x:Class="FirstDraft.ApplyDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
+        xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="First Draft Apply 1.0" Height="600" Width="1100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Margin="5">
+            <Border Margin="10" DockPanel.Dock="Top">
+                <WrapPanel>
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Border Padding="16" Width="50" Height="50" CornerRadius="50"
+                                Background="#33000000">
+                            <Viewbox>
+                                <Path Data="{Binding user_fill, Source={StaticResource IconSet}}" 
+                                          Fill="Black"
+                                          Stretch="Uniform">
+                                </Path>
+                            </Viewbox>
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
+
+
+                            <TextBlock Text="一阵没来由的风"
+                                           TextAlignment="Left"  
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           />
+
+                            <TextBlock Text="mefdeamon@163.com"
+                                           TextAlignment="Left"  
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           Opacity="0.7" 
+                                           />
+
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+
+            <DockPanel DockPanel.Dock="Top"  Margin="0 5 0 10">
+                <fdcontrols:IconButton DockPanel.Dock="Right" IconData="{Binding search, Source={StaticResource IconSet}}" VerticalAlignment="Stretch" />
+                <TextBox Style="{DynamicResource HintTagTextBox}"  Padding="10 5" Tag="查找"/>
+            </DockPanel>
+
+
+            <StackPanel DockPanel.Dock="Bottom" MinWidth="200">
+                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Current}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type local:NaviItem}">
+
+                            <fdcontrols:IconRadioButton Content="{Binding Title}"
+                                                GroupName="Items"
+                                                Icon="{Binding Icon}">
+                                <fdcontrols:IconRadioButton.IsChecked>
+                                    <Binding Path="IsSelected"
+                                             RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
+                                             Mode="TwoWay" />
+                                </fdcontrols:IconRadioButton.IsChecked>
+                            </fdcontrols:IconRadioButton>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+        </DockPanel>
+
+        <DockPanel Grid.Column="1" Margin="5">
+
+            <fdcontrols:IconRadioButton DataContext="{Binding Current}" Content="{Binding Title}" DockPanel.Dock="Top"
+                                IsChecked="True" IsEnabled="False"
+                                                Icon="{Binding Icon}"/>
+
+            <Frame  NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
+        </DockPanel >
+
+    </Grid>
+</Window>

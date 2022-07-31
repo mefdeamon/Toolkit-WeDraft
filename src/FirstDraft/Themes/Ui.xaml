@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FirstDraft">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Defalut Colors -->
+        <ResourceDictionary Source="Ui.Light.xaml"/>
+
+        <!-- ValueConverter -->
+        <ResourceDictionary Source="ValueConverters.xaml"/>
+        
+        <!-- Styles -->
+        <ResourceDictionary Source="Buttons.xaml"/>
+        <ResourceDictionary Source="RadioButtons.xaml"/>
+        <ResourceDictionary Source="ToggleButtons.xaml"/>
+        <ResourceDictionary Source="CheckBoxs.xaml"/>
+        <ResourceDictionary Source="ComboBoxs.xaml"/>
+        <ResourceDictionary Source="ListBoxs.xaml"/>
+        <ResourceDictionary Source="TextBoxs.xaml"/>
+        <ResourceDictionary Source="HyperLinks.xaml"/>
+
+        <!-- Controls -->
+        <ResourceDictionary Source="IconButtons.xaml"/>
+        <ResourceDictionary Source="IconRadioButtons.xaml"/>
+        <ResourceDictionary Source="IconToggleButtons.xaml"/>
+        <ResourceDictionary Source="CommandControls.xaml"/>
+        
+    </ResourceDictionary.MergedDictionaries>
+
+    <local:IconSet x:Key="IconSet"/>
+
+
+</ResourceDictionary>
