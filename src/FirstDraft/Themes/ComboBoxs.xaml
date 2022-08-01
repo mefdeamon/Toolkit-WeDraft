@@ -71,13 +71,16 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ExAccent}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="Gray"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ExAccent}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource ExAccent}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="white"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="Gray"/>
-                            <Setter Property="Fill" TargetName="arrow" Value="#FF707070"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="#66838383"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="#66707070"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -117,7 +120,7 @@
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="BorderBrush" TargetName="dropDownBorder" Value="#FFADB2B5"/>
+                <Setter Property="BorderBrush" TargetName="dropDownBorder" Value="#FFF4F4F4"/>
                 <Setter Property="Background" TargetName="dropDownBorder" Value="#FFF4F4F4"/>
                 <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
             </Trigger>
