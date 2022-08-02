@@ -3,6 +3,27 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors>Meiliyong</Authors>
+    <Description>Build our own WPF Control Style Library</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>firstdraft-logo.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/mefdeamon/Toolkit-WeDraft</RepositoryUrl>
+    <PackageTags>WPF,Control,Style,Toolkit,WeDraft,FirstDraft</PackageTags>
+    <PackageId>WeDraft.Toolkit.FirstDraft</PackageId>
+    <PackageReleaseNotes>traget framework is net core 3.1</PackageReleaseNotes>
+    <NeutralLanguage>zh</NeutralLanguage>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\DIY\WeDraft\github\Toolkit-WeDraft\src\FirstDraft\FirstDraft.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\res\firstdraft-logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
