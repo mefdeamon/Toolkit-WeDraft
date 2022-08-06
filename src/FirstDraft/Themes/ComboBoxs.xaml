@@ -13,9 +13,6 @@
                                 Padding="2 1"
                                 SnapsToDevicePixels="true">
                         <ContentPresenter x:Name="contentPresenter" 
-                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                                              Content="{TemplateBinding Content}" 
-                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                               IsHitTestVisible="false" Margin="{TemplateBinding Padding}" 
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
