@@ -82,7 +82,7 @@ Build our own WPF Control Style Library
 
 ## 详细示例（Demo)
 
-- 示例的应用程序可以直接下载[MUI release](https://github.com/firstfloorsoftware/mui/releases)。
+- 示例的应用程序可以直接下载[FirstDraft release](https://github.com/mefdeamon/Toolkit-WeDraft)。
 
 - 完整的源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
 - 开发过程视频：[Bilibili视频](https://www.bilibili.com/video/BV1AA411J7vZ)。
