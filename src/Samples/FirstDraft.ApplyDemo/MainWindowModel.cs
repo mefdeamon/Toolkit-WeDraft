@@ -1,12 +1,17 @@
 using FirstDraft;
 using MeiMvvm;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows;
 
 namespace FirstDraft.ApplyDemo
 {
     internal class MainWindowModel : NotifyPropertyChanged
     {
+
+        public string WindowsTitle { get; set; }
+
         public List<NaviItem> Items { get; set; }
 
         private NaviItem current;
@@ -31,6 +36,10 @@ namespace FirstDraft.ApplyDemo
             Items.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = ServiceProvider.Get<IconSet>().tags_fill, Content = new Views.IconSetView() });
 
             Current = Items[0];
+
+            Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+            WindowsTitle = $"First Draft Apply {version.ToString()}";
         }
 
     }

@@ -8,7 +8,7 @@
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="First Draft Apply 1.0" Height="600" Width="1100">
+        Title="{Binding WindowsTitle}" Height="600" Width="1100">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

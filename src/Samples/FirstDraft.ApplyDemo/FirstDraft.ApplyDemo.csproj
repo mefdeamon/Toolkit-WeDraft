@@ -5,6 +5,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>firstdraft.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Authors>Meiliyong</Authors>
+    <Description>Build our own WPF Control Style Library</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/mefdeamon/Toolkit-WeDraft</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>WeDraft FirstDraft WPF Control Style</PackageTags>
+    <NeutralLanguage>zh-Hans</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
