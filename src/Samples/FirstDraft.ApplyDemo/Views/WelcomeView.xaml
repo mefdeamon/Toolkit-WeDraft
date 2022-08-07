@@ -11,15 +11,38 @@
     <Grid>
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="10 0 0 0">
+
+                <StackPanel Margin="10 40">
+                    <TextBlock FontSize="16"  VerticalAlignment="Center" FontWeight="Black" HorizontalAlignment="Center">
+                        <TextBlock.Text>构建属于我们自己的WPF控件样式库</TextBlock.Text>
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
+                                <GradientStop Color="{DynamicResource ExAccentColor}" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock FontSize="16" Margin="0 5 0 0" FontWeight="Black" HorizontalAlignment="Center">
+                        <TextBlock.Text>Build our own WPF Control Style Library</TextBlock.Text>
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
+                                <GradientStop Color="{DynamicResource ExAccentColor}" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+
+                </StackPanel>
+              
                 <TextBlock Margin="30 5 0 5" TextWrapping="Wrap" >
                           <Run     Text="First Draft 是面向 Windows Presentation Foundation (WPF)的一套自定义样式库。"/>
                 </TextBlock >
-                <WrapPanel Margin="0 0 0 5">
-                    <TextBlock Text="由mef自主设计开发完成，如需查看控件设计过程，请参考:" VerticalAlignment="Center"/>
+                <WrapPanel Margin="30 0 0 5">
+                    <TextBlock Text="由Meiliyong自主设计开发完成，如需查看控件设计过程，请参考:" VerticalAlignment="Center"/>
                     <Button Background="Transparent" Command="{Binding NavigateToBilibiliVedio}"  VerticalAlignment="Center"
                             Content="bilibili.com" ToolTip="https://www.bilibili.com/video/BV1AA411J7vZ"></Button>
                 </WrapPanel>
-                <WrapPanel VerticalAlignment="Center" Margin="0 0 0 5">
+                <WrapPanel VerticalAlignment="Center" Margin="30 0 0 5">
                     <TextBlock Text="如有疑问请发送到作者邮箱:" VerticalAlignment="Center"/>
                     <TextBox Text="mefdeamon@163.com" IsReadOnly="True" VerticalAlignment="Center" BorderThickness="0" Foreground="{DynamicResource Accent}"/>
                 </WrapPanel>
@@ -31,7 +54,7 @@
                 <StackPanel Margin="30 0 0 0" IsEnabled="False">
                     <CheckBox   IsChecked="True"  Content=".NET 6"/>
                     <CheckBox   IsChecked="{x:Null}" Content=".NET 5"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Core 3.1"/>
+                    <CheckBox   IsChecked="True" Content=".NET Core 3.1"/>
                     <CheckBox   IsChecked="{x:Null}" Content=".NET Core 3.0"/>
                     <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.5"/>
                     <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.5.2"/>
@@ -39,7 +62,8 @@
                     <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.7"/>
                     <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.7.2"/>
                 </StackPanel>
-
+              
+                
             </StackPanel>
 
         </ScrollViewer>

@@ -13,6 +13,10 @@
     <PackageId>WeDraft.Toolkit.FirstDraft</PackageId>
     <PackageReleaseNotes>traget framework is net core 3.1</PackageReleaseNotes>
     <NeutralLanguage>zh</NeutralLanguage>
+    <RepositoryType>github</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.1-alpha</Version>
+    <Copyright>Copyright (c) Meiliyong</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -20,6 +24,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\res\firstdraft-logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
