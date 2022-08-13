@@ -1,7 +1,7 @@
 # Toolkit-WeDraft
-Build our own WPF Control Style Library
-
 构建属于我们自己的WPF控件样式库
+
+Build our own WPF Control Style Library
 
 ## 概要（Summary）
 
@@ -16,27 +16,26 @@ Build our own WPF Control Style Library
                <ResourceDictionary.MergedDictionaries>
                    <ResourceDictionary Source="pack://application:,,,/FirstDraft;component/Themes/Ui.xaml"/>
                </ResourceDictionary.MergedDictionaries>
-               <data:ServiceLocator x:Key="Locator"/>
            </ResourceDictionary>
    ```
-
+   
    示例（WPF应用程序名FirstDraft.ApplyDemo）：
-
+   
    ```xaml
-   <Application x:Class="FirstDraft.ApplyDemo.App"
-                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
-                xmlns:data="clr-namespace:FirstDraft.ApplyDemo.Data"
-                StartupUri="MainWindow.xaml">
-       <Application.Resources>
-           <ResourceDictionary>
-               <ResourceDictionary.MergedDictionaries>
-                   <ResourceDictionary Source="pack://application:,,,/FirstDraft;component/Themes/Ui.xaml"/>
-               </ResourceDictionary.MergedDictionaries>
-           </ResourceDictionary>
-       </Application.Resources>
-   </Application>
+      <Application x:Class="FirstDraft.ApplyDemo.App"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
+                   xmlns:data="clr-namespace:FirstDraft.ApplyDemo.Data"
+                   StartupUri="MainWindow.xaml">
+          <Application.Resources>
+              <ResourceDictionary>
+                  <ResourceDictionary.MergedDictionaries>
+                      <ResourceDictionary Source="pack://application:,,,/FirstDraft;component/Themes/Ui.xaml"/>
+                  </ResourceDictionary.MergedDictionaries>
+              </ResourceDictionary>
+          </Application.Resources>
+      </Application>
    ```
 
 2. 使用自定义控件时命名空间引入
