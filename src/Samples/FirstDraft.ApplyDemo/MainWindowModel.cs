@@ -32,7 +32,7 @@ namespace FirstDraft.ApplyDemo
             Items.Add(new NaviItem() { Title = "单选按钮(RadioButton)", Icon = ServiceProvider.Get<IconSet>().radiobutton, Content = new Views.ApplyRadioButtonView() }); 
             Items.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = ServiceProvider.Get<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() }); 
             Items.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = ServiceProvider.Get<IconSet>().textbox, Content = new Views.ApplyTextBoxView() }); 
-            Items.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = ServiceProvider.Get<IconSet>().list, Content = new Views.ApplyComboBoxView() });
+            Items.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = ServiceProvider.Get<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
             Items.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = ServiceProvider.Get<IconSet>().tags_fill, Content = new Views.IconSetView() });
 
             Current = Items[0];

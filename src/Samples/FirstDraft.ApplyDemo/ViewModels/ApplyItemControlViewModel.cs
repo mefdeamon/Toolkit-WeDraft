@@ -1,4 +1,4 @@
-﻿using MeiMvvm;
+using MeiMvvm;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +7,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
 {
     public class ApplyComboBoxViewModel : NotifyPropertyChanged
     {
-        public Dictionary<GCCollectionMode,string> GCCollections { get; set; }
+        public Dictionary<GCCollectionMode, string> GCCollections { get; set; }
 
         private GCCollectionMode currentGCCM;
 
@@ -17,32 +17,67 @@ namespace FirstDraft.ApplyDemo.ViewModels
             set { Set(ref currentGCCM, value); }
         }
 
+        private ItemDataModel currentItem;
+
+        public ItemDataModel CurrentItem
+        {
+            get { return currentItem; }
+            set { Set(ref currentItem, value); }
+        }
+
+        public List<ItemDataModel> Areas { get; set; }
+
+        public Dictionary<int, ItemDataModel> AreaKVs { get; set; }
+
+        private int currentId = 1;
+
+        public int CurrentId
+        {
+            get { return currentId; }
+            set { Set(ref currentId, value); }
+        }
+
+        private string currentName = "北京";
+
+        public string CurrentName
+        {
+            get { return currentName; }
+            set { Set(ref currentName, value); }
+        }
+
         public ApplyComboBoxViewModel()
         {
             GCCollections = new Dictionary<GCCollectionMode, string>();
             foreach (var item in Enum.GetNames(typeof(GCCollectionMode)))
             {
-                GCCollectionMode mode =(GCCollectionMode) Enum.Parse(typeof(GCCollectionMode), item);
-                GCCollections.Add(mode,item);
+                GCCollectionMode mode = (GCCollectionMode)Enum.Parse(typeof(GCCollectionMode), item);
+                GCCollections.Add(mode, item + "模式");
             }
             CurrentGCCM = GCCollectionMode.Default;
 
-            Types = new List<Type>();
-            Types.Add(typeof(ApplyComboBoxViewModel));
-            Types.Add(typeof(ApplyIconButtonViewModel));
-            Types.Add(typeof(ApplyTextBoxViewModel));
-            CurrentType = Types[0];
+            Areas = new List<ItemDataModel>();
+            Areas.Add(new ItemDataModel() { Id = 1, Name = "北京" });
+            Areas.Add(new ItemDataModel() { Id = 2, Name = "重庆" });
+            Areas.Add(new ItemDataModel() { Id = 3, Name = "浙江" });
+            Areas.Add(new ItemDataModel() { Id = 4, Name = "福建" });
+            Areas.Add(new ItemDataModel() { Id = 5, Name = "贵州" });
+            CurrentItem = Areas[0];
+
+
+            AreaKVs = new Dictionary<int, ItemDataModel>();
+            for (int i = 0; i < Areas.Count; i++)
+            {
+                AreaKVs.Add(Areas[i].Id, Areas[i]);
+            }
         }
 
-        private Type currentType;
 
-        public Type CurrentType
-        {
-            get { return currentType; }
-            set { Set(ref currentType, value); }
-        }
-
-
-        public List<Type> Types { get; set; }
     }
+
+    public class ItemDataModel : NotifyPropertyChanged
+    {
+        public string Name { get; set; }
+        public int Id { get; set; }
+    }
+
 }
