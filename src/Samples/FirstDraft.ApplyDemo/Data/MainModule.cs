@@ -13,7 +13,8 @@ namespace FirstDraft.ApplyDemo.Data
             binder.BindSingleton<WelcomeViewModel>();
             binder.BindSingleton<IconSetViewModel>();
             binder.BindSingleton<ApplyComboBoxViewModel>();
-            
+            binder.BindSingleton<ApplyRadioButtonViewModel>();
+
         }
     }
 }

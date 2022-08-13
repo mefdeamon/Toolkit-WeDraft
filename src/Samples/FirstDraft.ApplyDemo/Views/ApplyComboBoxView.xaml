@@ -15,26 +15,43 @@
                         <WrapPanel  Margin="5">
                             <ComboBox SelectedIndex="0" Margin="5">
                                 <ComboBoxItem >ComboBox</ComboBoxItem>
-                                <ComboBoxItem >ListView</ComboBoxItem>
-                                <ComboBoxItem >ListBox</ComboBoxItem>
+                                <ComboBoxItem >ComboBoxItem</ComboBoxItem>
                                 <ComboBoxItem >ItemControl</ComboBoxItem>
                             </ComboBox>
 
-                            <ComboBox ItemsSource="{Binding GCCollections}" 
-                                      SelectedValue="{Binding CurrentGCCM}"  Margin="5"
-                                      SelectedValuePath="Key"
-                                      DisplayMemberPath="Value"/>
-
-                            <ComboBox ItemsSource="{Binding Areas}" IsEnabled="False"
-                                      SelectedItem="{Binding CurrentItem}"  Margin="5"
-                                      DisplayMemberPath="Name"/>
 
                         </WrapPanel>
                     </Border>
 
                     <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="绑定的" />
+                        <Run Text="下拉选择。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                             <ComboBox SelectedIndex="0" Margin="5">
+                                <ComboBoxItem >ComboBox</ComboBoxItem>
+                                <ComboBoxItem >ComboBoxItem</ComboBoxItem>
+                                <ComboBoxItem >ItemControl</ComboBoxItem>
+                            </ComboBox>
+
+                            <ComboBox SelectedIndex="0" Margin="5" IsEnabled="False">
+                                <ComboBoxItem >ComboBox</ComboBoxItem>
+                                <ComboBoxItem >ComboBoxItem</ComboBoxItem>
+                                <ComboBoxItem >ItemControl</ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox Margin="5" IsEnabled="False">
+                                <ComboBoxItem >ComboBox</ComboBoxItem>
+                                <ComboBoxItem >ComboBoxItem</ComboBoxItem>
+                                <ComboBoxItem >ItemControl</ComboBoxItem>
+                            </ComboBox>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                          <Run Text="绑定的" />
                         <Run Text="ItemsSource" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="可以使用" />
                         <Run Text="List" FontStyle="Oblique"/>
@@ -49,11 +66,6 @@
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel  Margin="5">
-                            <ComboBox ItemsSource="{Binding GCCollections}" 
-                                      SelectedValue="{Binding CurrentGCCM}" 
-                                      Margin="5"
-                                      SelectedValuePath="Key"
-                                      DisplayMemberPath="Value"/>
 
                             <ComboBox ItemsSource="{Binding Areas}" 
                                       Margin="5"
@@ -66,7 +78,8 @@
                                 <Run Text="{Binding CurrentItem.Name,Mode=OneWay}"/>
                             </TextBlock>
 
-                          
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
                             <ComboBox ItemsSource="{Binding Areas}" 
                                       Margin="5"
@@ -79,20 +92,24 @@
                                       SelectedValue="{Binding CurrentId,Mode=TwoWay}" 
                                       SelectedValuePath="Key"
                                       DisplayMemberPath="Value.Name"/>
-                            
+
                             <TextBlock VerticalAlignment="Center">
                                 <Run Text="{Binding CurrentId,Mode=OneWay}"/>
                             </TextBlock>
 
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+                            
                             <ComboBox ItemsSource="{Binding AreaKVs}" 
                                       Margin="5"
                                       SelectedValue="{Binding CurrentName,Mode=TwoWay}" 
                                       SelectedValuePath="Value.Name"
                                       DisplayMemberPath="Value.Name"/>
-                            
+
                             <TextBlock VerticalAlignment="Center">
                                 <Run Text="{Binding CurrentName,Mode=OneWay}"/>
                             </TextBlock>
+                            
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
                         </WrapPanel>
                     </Border>

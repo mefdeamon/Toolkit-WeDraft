@@ -10,6 +10,7 @@ namespace FirstDraft.ApplyDemo.Data
         public WelcomeViewModel WelcomeViewModel => ServiceProvider.Get<WelcomeViewModel>();
         public IconSetViewModel IconSetViewModel => ServiceProvider.Get<IconSetViewModel>();
         public ApplyComboBoxViewModel ApplyComboBoxViewModel => ServiceProvider.Get<ApplyComboBoxViewModel>();
+        public ApplyRadioButtonViewModel ApplyRadioButtonViewModel => ServiceProvider.Get<ApplyRadioButtonViewModel>();
         
         public IconSet IconSet => ServiceProvider.Get<IconSet>();
 

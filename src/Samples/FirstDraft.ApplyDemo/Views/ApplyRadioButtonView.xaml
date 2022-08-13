@@ -4,34 +4,97 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:vm="clr-namespace:FirstDraft.ApplyDemo.ViewModels"
              mc:Ignorable="d" 
+             DataContext="{Binding ApplyRadioButtonViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DockPanel>
             <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
                 <StackPanel>
-                    <Border BorderThickness="1" BorderBrush="#FF717171">
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel  Margin="5">
                             <StackPanel>
                                 <RadioButton Margin="5" Content="RadioButton"/>
                                 <RadioButton Margin="5" Content="单选按钮"/>
-                                <RadioButton Margin="5" IsChecked="True" Content="选中"/>
-                                <RadioButton Margin="5" Content="NULL" IsChecked="{x:Null}"/>
                             </StackPanel>
-
-                            <StackPanel Margin="30 0 0 0">
-                                <RadioButton Margin="5" Content="使能" />
-                                <RadioButton Margin="5" Content="不使能" IsEnabled="False"/>
-                                <RadioButton Margin="5" Content="选中并不使能" IsChecked="True" IsEnabled="False"/>
-                                <RadioButton Margin="5" Content="NULL" IsChecked="{x:Null}" IsEnabled="False"/>
-                            </StackPanel>
-
-
 
                         </WrapPanel>
                     </Border>
 
 
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="选中项高亮提示，一般分组使用。"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Margin="5" Content="使能"/>
+                                <RadioButton Margin="5" IsChecked="True" Content="选中"/>
+                                <RadioButton Margin="5" Content="NULL" IsChecked="{x:Null}"/>
+                            </StackPanel>
+
+                            <StackPanel  Orientation="Horizontal">
+                                <RadioButton Margin="5" Content="不使能" IsEnabled="False"/>
+                                <RadioButton Margin="5" Content="选中" IsChecked="True" IsEnabled="False"/>
+                                <RadioButton Margin="5" Content="NULL" IsChecked="{x:Null}" IsEnabled="False"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="数据绑定应用。"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+
+                            <StackPanel >
+                                <StackPanel.Resources>
+                                    <vm:PrivacyModeToBoolConverter x:Key="PMToBoolConverter"/>
+                                </StackPanel.Resources>
+                                <WrapPanel Margin="5 0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <RadioButton GroupName="ParvacyMode" Width="80" Margin="0 5 20 5" IsChecked="{Binding PrivacyMode,Mode=TwoWay,Converter={StaticResource PMToBoolConverter},ConverterParameter={x:Static vm:PrivacyMode.Public}}" Content="Public"/>
+                                        <RadioButton GroupName="ParvacyMode" Width="80" Margin="0 5 20 5" IsChecked="{Binding PrivacyMode,Mode=TwoWay,Converter={StaticResource PMToBoolConverter},ConverterParameter={x:Static vm:PrivacyMode.Partial} }" Content="Partial"/>
+                                        <RadioButton GroupName="ParvacyMode" Width="80" Margin="0 5 20 5" IsChecked="{Binding PrivacyMode,Mode=TwoWay,Converter={StaticResource PMToBoolConverter},ConverterParameter={x:Static vm:PrivacyMode.Protected} }" Content="Protected"/>
+                                        <RadioButton GroupName="ParvacyMode" Width="80" Margin="0 5 20 5" IsChecked="{Binding PrivacyMode,Mode=TwoWay,Converter={StaticResource PMToBoolConverter},ConverterParameter={x:Static vm:PrivacyMode.Private} }" Content="Private"/>
+                                    </StackPanel>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding PrivacyMode}"/>
+                                </WrapPanel>
+                                <Border HorizontalAlignment="Left" Height="6" Width="380" BorderBrush="{DynamicResource Button.MouseOver.Background}" BorderThickness="1 0 1 1" Margin="0 0 0 10"/>
+
+                                <WrapPanel>
+                                    <ItemsControl ItemsSource="{Binding Privacys}" Margin="5 0">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <RadioButton Margin="0 5 20 5" 
+                                                             GroupName="Parvacy" Width="80"
+                                                             Command="{Binding DataContext.ChooseCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}"
+                                                             IsChecked="{Binding IsChecked,Mode=TwoWay}" 
+                                                             Content="{Binding Name}"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    </ItemsControl>
+
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Privacy.Name}"/>
+                                </WrapPanel>
+                                <Border HorizontalAlignment="Left" Height="6" Width="380" BorderBrush="{DynamicResource Button.MouseOver.Background}" BorderThickness="1 0 1 1"/>
+
+                            </StackPanel>
+
+
+                        </WrapPanel>
+                    </Border>
 
                 </StackPanel>
 
