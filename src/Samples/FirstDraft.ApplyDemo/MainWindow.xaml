@@ -103,7 +103,7 @@
             <fdcontrols:IconRadioButton DataContext="{Binding Current}" 
                                         Style="{DynamicResource BottomNaviIconRaioButton}"
                                         Content="{Binding Title}" DockPanel.Dock="Top"
-                                IsChecked="True" IsEnabled="False"
+                                IsChecked="True" 
                                                 Icon="{Binding Icon}"/>
 
             <Frame  NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
