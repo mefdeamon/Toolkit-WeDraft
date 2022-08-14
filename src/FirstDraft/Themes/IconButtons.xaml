@@ -44,7 +44,7 @@
 
                             <Path x:Name="icon" DockPanel.Dock="Left"
                                     Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
-                                      Data="{TemplateBinding IconData}" 
+                                      Data="{TemplateBinding Icon}" 
                                       Fill="{TemplateBinding Foreground}"
                                       Stretch="Uniform"
                                       HorizontalAlignment="Center"
@@ -104,7 +104,7 @@
                             <Path x:Name="icon" DockPanel.Dock="Top"
                                     Width="{TemplateBinding IconSize}" 
                                     Height="{TemplateBinding IconSize}"
-                                      Data="{TemplateBinding IconData}" 
+                                      Data="{TemplateBinding Icon}" 
                                       Fill="{TemplateBinding Foreground}"
                                       Stretch="Uniform"  Margin="0 0 0 4"
                                       HorizontalAlignment="Center"

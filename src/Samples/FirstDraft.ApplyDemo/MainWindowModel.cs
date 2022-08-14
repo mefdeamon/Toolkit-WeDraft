@@ -27,6 +27,8 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = ServiceProvider.Get<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() });
             NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = ServiceProvider.Get<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = ServiceProvider.Get<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconToggleButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = ServiceProvider.Get<IconSet>().tags_fill, Content = new Views.IconSetView() });
 
             Current = NaviItems[0];

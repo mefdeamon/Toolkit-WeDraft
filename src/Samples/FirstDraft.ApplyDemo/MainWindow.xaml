@@ -55,7 +55,7 @@
 
             <DockPanel DockPanel.Dock="Top"  Margin="0 5 0 10">
                 <fdcontrols:IconButton DockPanel.Dock="Right" 
-                                       IconData="{Binding search, Source={StaticResource IconSet}}"
+                                       Icon="{Binding search, Source={StaticResource IconSet}}"
                                        Command="{Binding SearchCommand}"
                                        VerticalAlignment="Stretch" />
                 <TextBox Style="{DynamicResource HintTagTextBox}"
@@ -81,6 +81,7 @@
                         <DataTemplate DataType="{x:Type local:NaviItem}">
 
                             <fdcontrols:IconRadioButton Content="{Binding Title}"
+                                                        Style="{StaticResource LeftNaviIconRaioButton}"
                                                 GroupName="Items"
                                                 Icon="{Binding Icon}">
                                 <fdcontrols:IconRadioButton.IsChecked>
@@ -99,7 +100,9 @@
 
         <DockPanel Grid.Column="1" Margin="5">
 
-            <fdcontrols:IconRadioButton DataContext="{Binding Current}" Content="{Binding Title}" DockPanel.Dock="Top"
+            <fdcontrols:IconRadioButton DataContext="{Binding Current}" 
+                                        Style="{DynamicResource BottomNaviIconRaioButton}"
+                                        Content="{Binding Title}" DockPanel.Dock="Top"
                                 IsChecked="True" IsEnabled="False"
                                                 Icon="{Binding Icon}"/>
 

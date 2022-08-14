@@ -15,12 +15,12 @@
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel>
                             <WrapPanel  Margin="5">
-                                <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}"/>
-                                <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" />
-                                <controls:IconButton Margin="5" IconData="{Binding record_on, Source={StaticResource IconSet}}" Content="录制"/>
-                                <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" />
-                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
-                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding cube_line, Source={StaticResource IconSet}}" Content="收藏" />
+                                <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}"/>
+                                <controls:IconButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" />
+                                <controls:IconButton Margin="5" Icon="{Binding record_on, Source={StaticResource IconSet}}" Content="录制"/>
+                                <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" />
+                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
+                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding cube_line, Source={StaticResource IconSet}}" Content="收藏" />
                             </WrapPanel>
 
                         </StackPanel>
@@ -30,7 +30,7 @@
                     <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="可以通过设置" />
-                        <Run Text="IconData" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="Icon" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="实现只显示图标，也可以给" />
                         <Run Text="Content" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="附加内容同时显示文本。" />
@@ -38,10 +38,10 @@
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel  Margin="5">
-                            <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}"/>
-                            <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" IsEnabled="False"/>
-                            <controls:IconButton Margin="5" IconData="{Binding settings_fill, Source={StaticResource IconSet}}" Content="使能"/>
-                            <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
+                            <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}"/>
+                            <controls:IconButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" IsEnabled="False"/>
+                            <controls:IconButton Margin="5" Icon="{Binding settings_fill, Source={StaticResource IconSet}}" Content="使能"/>
+                            <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
                         </WrapPanel>
                     </Border>
 
@@ -57,25 +57,25 @@
                         <StackPanel>
                             <WrapPanel  Margin="5">
 
-                                <controls:IconButton Margin="5" IconData="{Binding home_line, Source={StaticResource IconSet}}" Foreground="Purple"/>
-                                <controls:IconButton Margin="5" IconData="{Binding home_fill, Source={StaticResource IconSet}}" Foreground="blue" />
-                                <controls:IconButton Margin="5" IconData="{Binding settings_fill, Source={StaticResource IconSet}}" Foreground="Yellow" Background="Purple"/>
-                                <controls:IconButton Margin="5" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Foreground="Orange" Background="Cyan"/>
-                                <controls:IconButton Margin="5" IconData="{Binding infomation_line, Source={StaticResource IconSet}}" Foreground="cyan" Background="Blue" BorderBrush="Purple" />
-                                <controls:IconButton Margin="5" IconData="{Binding infomation_fill, Source={StaticResource IconSet}}" Foreground="Green" Background="Orange" BorderBrush="Orange" BorderThickness="1"/>
+                                <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}" Foreground="Purple"/>
+                                <controls:IconButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" Foreground="blue" />
+                                <controls:IconButton Margin="5" Icon="{Binding settings_fill, Source={StaticResource IconSet}}" Foreground="Yellow" Background="Purple"/>
+                                <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Foreground="Orange" Background="Cyan"/>
+                                <controls:IconButton Margin="5" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Foreground="cyan" Background="Blue" BorderBrush="Purple" />
+                                <controls:IconButton Margin="5" Icon="{Binding infomation_fill, Source={StaticResource IconSet}}" Foreground="Green" Background="Orange" BorderBrush="Orange" BorderThickness="1"/>
 
 
                             </WrapPanel>
                             <WrapPanel  Margin="5">
 
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Purple"/>
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Blue"   IconSize="20"/>
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Green"  IconSize="25"/>
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Orange" IconSize="30"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Purple"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Blue"   IconSize="20"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Green"  IconSize="25"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Orange" IconSize="30"/>
 
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Purple" Background="Green"/>
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Blue"   IconSize="20" FontSize="18"/>
-                                <controls:IconButton Margin="5" IconData="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Orange" IconSize="30" FontSize="26" Background="Cyan"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Purple" Background="Green"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Blue"   IconSize="20" FontSize="18"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Orange" IconSize="30" FontSize="26" Background="Cyan"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -97,9 +97,9 @@
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel MinHeight="50" Margin="5">
 
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" IconData="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
 
                         </WrapPanel>
                     </Border>

@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
@@ -14,19 +14,31 @@ namespace FirstDraft.Controls
 
         }
 
+
         /// <summary>
-        /// 图标数据
+        /// 图标
         /// </summary>
-        public Geometry IconData
+        public Geometry Icon
         {
-            get { return (Geometry)GetValue(IconDataProperty); }
-            set { SetValue(IconDataProperty, value); }
+            get { return (Geometry)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
 
         /// <summary>
-        /// <see cref="IconData"/>
+        /// <see cref="Icon"/>
         /// </summary>
-        public static readonly DependencyProperty IconDataProperty =
-            DependencyProperty.Register(nameof(IconData), typeof(Geometry), typeof(IconToggleButton), new PropertyMetadata(default(Geometry), (s, e) => { }));
+        public static readonly DependencyProperty IconProperty =
+            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconToggleButton), new PropertyMetadata(default(Geometry)));
+
+
+        public double IconSize
+        {
+            get { return (double)GetValue(IconSizeProperty); }
+            set { SetValue(IconSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IconSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IconSizeProperty =
+            DependencyProperty.Register("IconSize", typeof(double), typeof(IconToggleButton), new PropertyMetadata(12D));
     }
 }

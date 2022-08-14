@@ -13,17 +13,17 @@ namespace FirstDraft.Controls
         /// <summary>
         /// 图标数据
         /// </summary>
-        public Geometry IconData
+        public Geometry Icon
         {
-            get { return (Geometry)GetValue(IconDataProperty); }
-            set { SetValue(IconDataProperty, value); }
+            get { return (Geometry)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
 
         /// <summary>
-        /// <see cref="IconData"/>
+        /// <see cref="Icon"/>
         /// </summary>
-        public static readonly DependencyProperty IconDataProperty =
-            DependencyProperty.Register(nameof(IconData), typeof(Geometry), typeof(IconButton), new PropertyMetadata(default(Geometry), (s, e) => { }));
+        public static readonly DependencyProperty IconProperty =
+            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconButton), new PropertyMetadata(default(Geometry), (s, e) => { }));
 
 
         public double IconSize
@@ -34,7 +34,7 @@ namespace FirstDraft.Controls
 
         // Using a DependencyProperty as the backing store for IconSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IconSizeProperty =
-            DependencyProperty.Register("IconSize", typeof(double), typeof(IconButton), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("IconSize", typeof(double), typeof(IconButton), new PropertyMetadata(12D));
 
 
 

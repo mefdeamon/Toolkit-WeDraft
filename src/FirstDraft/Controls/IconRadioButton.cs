@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -24,6 +24,17 @@ namespace FirstDraft.Controls
         /// </summary>
         public static readonly DependencyProperty IconProperty =
             DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconRadioButton), new PropertyMetadata(default(Geometry)));
+
+
+        public double IconSize
+        {
+            get { return (double)GetValue(IconSizeProperty); }
+            set { SetValue(IconSizeProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IconSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IconSizeProperty =
+            DependencyProperty.Register("IconSize", typeof(double), typeof(IconRadioButton), new PropertyMetadata(12D));
 
     }
 }
