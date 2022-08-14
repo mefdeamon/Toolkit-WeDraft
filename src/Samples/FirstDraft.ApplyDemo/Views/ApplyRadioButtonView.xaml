@@ -16,7 +16,7 @@
                         <WrapPanel  Margin="5">
                             <StackPanel>
                                 <RadioButton Margin="5" Content="RadioButton"/>
-                                <RadioButton Margin="5" Content="单选按钮"/>
+                                <RadioButton Margin="5" IsChecked="True" Content="单选按钮"/>
                             </StackPanel>
 
                         </WrapPanel>

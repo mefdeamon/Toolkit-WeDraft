@@ -15,8 +15,8 @@
                 <StackPanel>
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel  Margin="5">
-                            <ToggleButton Margin="5" Content="Toggle"/>
-                            <ToggleButton Margin="5" Content="Toggle" IsChecked="True"/>
+                            <ToggleButton Margin="5" Content="ToggleButton"/>
+                            <ToggleButton Margin="5" Content="切换按钮" IsChecked="True"/>
                             <ToggleButton Style="{DynamicResource RoundToggleButton}" Margin="5"/>
                             <ToggleButton Style="{DynamicResource RoundToggleButton}" Margin="5" IsChecked="True"/>
                             <ToggleButton Style="{DynamicResource OFFONToggleButton}" Margin="5"/>

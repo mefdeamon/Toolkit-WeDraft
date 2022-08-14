@@ -14,18 +14,31 @@
                         <WrapPanel  Margin="5">
                             <StackPanel>
                                 <CheckBox Margin="5" Content="CheckBox"/>
-                                <CheckBox Margin="5" Content="复选框"/>
-                                <CheckBox Margin="5" IsChecked="True" Content="选中"/>
-                                <CheckBox Margin="5" Content="不使能" IsEnabled="False"/>
-                                <CheckBox Margin="5" Content="NULL" IsChecked="{x:Null}"/>
-                                <CheckBox Margin="5" Content="选中并不使能" IsChecked="True" IsEnabled="False"/>
-                                <CheckBox Margin="5" Content="NULL" IsChecked="{x:Null}" IsEnabled="False"/>
+                                <CheckBox Margin="5" IsChecked="True" Content="复选框"/>
                             </StackPanel>
 
                         </WrapPanel>
                     </Border>
 
 
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="选中项高亮提示，一般单个状态控制或分组使用。"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Margin="5" Content="使能"/>
+                                <CheckBox Margin="5" IsChecked="True" Content="选中"/>
+                                <CheckBox Margin="5" Content="NULL" IsChecked="{x:Null}"/>
+                                <CheckBox Margin="5" Content="不使能" IsEnabled="False"/>
+                                <CheckBox Margin="5" Content="选中" IsChecked="True" IsEnabled="False"/>
+                                <CheckBox Margin="5" Content="NULL" IsChecked="{x:Null}" IsEnabled="False"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
 
                 </StackPanel>
 
