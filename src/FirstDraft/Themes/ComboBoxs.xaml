@@ -1,6 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  
+
+
+    <SolidColorBrush x:Key="ComboBox.Border.Selecting" Color="Black"/>
 
     <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
         <Setter Property="Foreground" Value="Black"/>
@@ -68,13 +70,14 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ExAccent}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Accent}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ExAccent}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ComboBox.Border.Selecting}"/>
                             <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource ExAccent}"/>
-                            <Setter Property="Fill" TargetName="arrow" Value="white"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ExAccent}"/>
                         </Trigger>
+                        
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="#66838383"/>
                             <Setter Property="Fill" TargetName="arrow" Value="#66707070"/>
@@ -97,7 +100,7 @@
                                                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
                                 Background="White" 
                             BorderThickness="1 0 1 1"
-                            BorderBrush="Black">
+                            BorderBrush="{DynamicResource ComboBox.Border.Selecting}">
                     <ScrollViewer x:Name="DropDownScrollViewer">
                         <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                             <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">

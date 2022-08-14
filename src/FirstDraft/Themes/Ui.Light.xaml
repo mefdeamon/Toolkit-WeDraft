@@ -8,7 +8,7 @@
 
     <!-- 多用于控件被按下时颜色变化 -->
     <!--<Color x:Key="ExAccentColor">#FF2C6976</Color>-->
-    <Color x:Key="ExAccentColor">#44000000</Color>
+    <Color x:Key="ExAccentColor">#11000000</Color>
     <SolidColorBrush x:Key="ExAccent" Color="{DynamicResource ExAccentColor}" />
     
     <Color x:Key="DefaultForegrounColor">#FF000000</Color>
