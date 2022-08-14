@@ -135,7 +135,7 @@
                     <Grid>
 
                         <Border x:Name="border" 
-                                Padding="0 5"
+                                Padding="0 8 0 3"
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}"
@@ -163,6 +163,7 @@
                         <Trigger Property="Text" Value="">
                             <Setter Property="Margin" TargetName="placeholder" Value="3 0 0 0"/>
                             <Setter Property="Padding" TargetName="placeholder" Value="5 0"/>
+                            <Setter Property="Padding" TargetName="border" Value="0 5"/>
                             <Setter Property="VerticalAlignment"  TargetName="placeholder" Value="Center" />
                             <Setter Property="Background"  TargetName="placeholder" Value="Transparent" />
                         </Trigger>

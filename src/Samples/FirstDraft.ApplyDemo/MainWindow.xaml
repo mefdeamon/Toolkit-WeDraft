@@ -54,8 +54,13 @@
             </Border>
 
             <DockPanel DockPanel.Dock="Top"  Margin="0 5 0 10">
-                <fdcontrols:IconButton DockPanel.Dock="Right" IconData="{Binding search, Source={StaticResource IconSet}}" VerticalAlignment="Stretch" />
-                <TextBox Style="{DynamicResource HintTagTextBox}"  Padding="10 5" Tag="查找"/>
+                <fdcontrols:IconButton DockPanel.Dock="Right" 
+                                       IconData="{Binding search, Source={StaticResource IconSet}}"
+                                       Command="{Binding SearchCommand}"
+                                       VerticalAlignment="Stretch" />
+                <TextBox Style="{DynamicResource HintTagTextBox}"
+                         Text="{Binding SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         Padding="10 5" Tag="查找"/>
             </DockPanel>
 
 
