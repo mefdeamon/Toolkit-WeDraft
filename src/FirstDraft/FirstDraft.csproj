@@ -11,12 +11,14 @@
     <RepositoryUrl>https://github.com/mefdeamon/Toolkit-WeDraft</RepositoryUrl>
     <PackageTags>WPF,Control,Style,Toolkit,WeDraft,FirstDraft</PackageTags>
     <PackageId>WeDraft.Toolkit.FirstDraft</PackageId>
-    <PackageReleaseNotes>traget framework is net core 3.1</PackageReleaseNotes>
+    <PackageReleaseNotes>Improve IcomRadioButton and IconToggleButton custom controls</PackageReleaseNotes>
     <NeutralLanguage>zh</NeutralLanguage>
     <RepositoryType>github</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>1.0.1-alpha</Version>
+    <Version>1.0.1-beta</Version>
     <Copyright>Copyright (c) Meiliyong</Copyright>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
