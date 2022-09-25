@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     
     <Grid>
-        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{x:Null}">
             <StackPanel Margin="10 0 0 0">
 
                 <StackPanel Margin="10 40">
@@ -18,7 +18,7 @@
                         <TextBlock.Foreground>
                             <LinearGradientBrush>
                                 <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
-                                <GradientStop Color="{DynamicResource ExAccentColor}" Offset="1"/>
+                                <GradientStop Color="CornflowerBlue" Offset="1"/>
                             </LinearGradientBrush>
                         </TextBlock.Foreground>
                     </TextBlock>
@@ -27,7 +27,7 @@
                         <TextBlock.Foreground>
                             <LinearGradientBrush>
                                 <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
-                                <GradientStop Color="{DynamicResource ExAccentColor}" Offset="1"/>
+                                <GradientStop Color="CornflowerBlue" Offset="1"/>
                             </LinearGradientBrush>
                         </TextBlock.Foreground>
                     </TextBlock>
@@ -47,20 +47,18 @@
                     <TextBox Text="mefdeamon@163.com" IsReadOnly="True" VerticalAlignment="Center" BorderThickness="0" Foreground="{DynamicResource Accent}"/>
                 </WrapPanel>
 
-                <TextBlock Margin="0 5" TextWrapping="Wrap">
-                          <Run     Text="        支持框架："/>
+                <TextBlock Margin="30 5" TextWrapping="Wrap">
+                          <Run     Text="支持框架："/>
 
                 </TextBlock>
-                <StackPanel Margin="30 0 0 0" IsEnabled="False">
-                    <CheckBox   IsChecked="True"  Content=".NET 6"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET 5"/>
-                    <CheckBox   IsChecked="True" Content=".NET Core 3.1"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Core 3.0"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.5"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.5.2"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.6"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.7"/>
-                    <CheckBox   IsChecked="{x:Null}" Content=".NET Framework 4.7.2"/>
+                <StackPanel Margin="42 0 0 0" >
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net6.0-windows"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".netcoreapp3.1"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.8"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.7.2"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.6"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.5.2"/>
+                    <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.5"/>
                 </StackPanel>
               
                 

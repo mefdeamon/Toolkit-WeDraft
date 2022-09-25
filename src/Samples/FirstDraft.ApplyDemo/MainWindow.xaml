@@ -106,7 +106,7 @@
                                 IsChecked="True" 
                                                 Icon="{Binding Icon}"/>
 
-            <Frame  NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
+            <Frame FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
         </DockPanel >
 
     </Grid>

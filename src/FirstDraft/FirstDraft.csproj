@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<TargetFrameworks>net6.0-windows;netcoreapp3.1;net48;net472;net46;net452;net45</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <Authors>Meiliyong</Authors>
     <Description>Build our own WPF Control Style Library</Description>
@@ -15,15 +15,20 @@
     <NeutralLanguage>zh</NeutralLanguage>
     <RepositoryType>github</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>1.0.1-beta</Version>
+    <Version>1.0.1</Version>
     <Copyright>Copyright (c) Meiliyong</Copyright>
-    <AssemblyVersion>1.0.1.1</AssemblyVersion>
-    <FileVersion>1.0.1.1</FileVersion>
+    <AssemblyVersion>1.0.1.2</AssemblyVersion>
+    <FileVersion>1.0.1.2</FileVersion>
+    <ApplicationIcon>windchart.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>D:\DIY\WeDraft\github\Toolkit-WeDraft\src\FirstDraft\FirstDraft.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="windchart.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\README.md">

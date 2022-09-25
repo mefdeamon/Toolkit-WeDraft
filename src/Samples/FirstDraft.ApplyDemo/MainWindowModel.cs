@@ -14,7 +14,7 @@ namespace FirstDraft.ApplyDemo
 
         public string WindowsTitle { get; set; }
 
-     
+
 
         public MainWindowModel()
         {
@@ -33,7 +33,7 @@ namespace FirstDraft.ApplyDemo
 
             Current = NaviItems[0];
             SearchText = "";
-            Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            Version version = System.Reflection.Assembly.GetAssembly(typeof(FirstDraft.Controls.IconButton)).GetName().Version;
 
             WindowsTitle = $"First Draft Apply {version.ToString()} 缓慢而坚定地前进";
         }

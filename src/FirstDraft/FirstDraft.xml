@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FirstDraft</name>
+    </assembly>
+    <members>
+        <member name="P:FirstDraft.Controls.IconButton.Icon">
+            <summary>
+            图标数据
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IconRadioButton">
+            <summary>
+            边矩形图标单选按钮
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconRadioButton.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconRadioButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconRadioButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IconToggleButton">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconToggleButton.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconToggleButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconToggleButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanConverter`1">
+            <summary>
+            <see cref="T:System.Boolean"/> 值转换器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:FirstDraft.Converters.InvertBooleanConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值 反向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanToVisibilityConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Windows.Visibility"/> 值 正向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.InvertBooleanToVisibilityConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Windows.Visibility"/> 值 反向向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.IconSet">
+            <summary>
+            图标资源集合
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.overview_fill">
+            <summary>
+            总览
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.overview_line">
+            <summary>
+            总览
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.home_fill">
+            <summary>
+            首页 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.home_line">
+            <summary>
+            首页 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tag_fill">
+            <summary>
+            标签 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tag_line">
+            <summary>
+            标签 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tags_fill">
+            <summary>
+            多标签 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tags_line">
+            <summary>
+            多标签 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.user_fill">
+            <summary>
+            用户 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.user_line">
+            <summary>
+            用户 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.settings_fill">
+            <summary>
+            设置 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.settings_line">
+            <summary>
+            设置 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.infomation_fill">
+            <summary>
+            i 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.infomation_line">
+            <summary>
+            i 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.all_line">
+            <summary>
+            总览 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.all_fill">
+            <summary>
+            总览 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.rect_fill">
+            <summary>
+            方形 实体
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.rect_line">
+            <summary>
+            方形 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.cube_fill">
+            <summary>
+            方块 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.cube_line">
+            <summary>
+            方块 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.passwrod_fill">
+            <summary>
+            密码 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.password_line">
+            <summary>
+            密码 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.file_fill">
+            <summary>
+            文件 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.file_line">
+            <summary>
+            文件 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.integral_fill">
+            <summary>
+            完整 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.integral_line">
+            <summary>
+            完整 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.volume">
+            <summary>
+            音量
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.scanload">
+            <summary>
+            扫描加载
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.search">
+            <summary>
+            搜索 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.textbox">
+            <summary>
+            文本框
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.combobox">
+            <summary>
+            下拉列表框
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.record_on">
+            <summary>
+            开始录制图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.record_off">
+            <summary>
+            停止录制图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.launch">
+            <summary>
+            发射
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.signal">
+            <summary>
+            信号
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.serialport">
+            <summary>
+            串口-
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.erase">
+            <summary>
+            清理 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.version">
+            <summary>
+            版本 v 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.edit">
+            <summary>
+            编辑 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.welcome">
+            <summary>
+            礼花 欢迎
+            </summary>
+        </member>
+    </members>
+</doc>
