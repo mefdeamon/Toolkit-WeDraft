@@ -30,6 +30,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconToggleButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = ServiceProvider.Get<IconSet>().tags_fill, Content = new Views.IconSetView() });
+            NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = ServiceProvider.Get<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
 
             Current = NaviItems[0];
             SearchText = "";

@@ -14,8 +14,11 @@
                         <StackPanel  HorizontalAlignment="Left" Margin="5">
 
                             <WrapPanel>
-                                <TextBox Width="200" Text="文本框" Margin="5 "/>
-                                <TextBox Width="200" Text="TextBox" Margin="5 "/>
+                                <TextBox Width="100" Text="文本框" Margin="5"/>
+                                <TextBox Width="100" Text="TextBox" Margin="5"/>
+                                <TextBox Width="100" BorderThickness="0 0 0 1" Text="文件名" Margin="5"/>
+                                <TextBox Width="100" Style="{DynamicResource HintTagTextBox}" Tag="搜索" Margin="5"/>
+                                <TextBox Width="100" Style="{DynamicResource UpFlyHintTagTextBox}" Tag="日期" Margin="5"/>
                             </WrapPanel>
 
                         </StackPanel>
@@ -31,6 +34,7 @@
                             <WrapPanel>
                                 <TextBox Width="200" Text="使能" Margin="5 "/>
                                 <TextBox Width="200" Text="只读" Margin="5 " IsReadOnly="True" />
+                                <TextBox Width="100" Text="单线" Margin="5" BorderThickness="0 0 0 1" IsReadOnly="True" />
                                 <TextBox Width="200" Text="不使能" Margin="5 " IsEnabled="False"/>
                             </WrapPanel>
 
