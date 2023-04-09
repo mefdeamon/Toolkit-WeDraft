@@ -19,7 +19,7 @@
     <Copyright>Copyright (c) Meiliyong</Copyright>
     <AssemblyVersion>1.0.1.2</AssemblyVersion>
     <FileVersion>1.0.1.2</FileVersion>
-    <ApplicationIcon>windchart.ico</ApplicationIcon>
+    <ApplicationIcon>firstdraft.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="windchart.ico" />
+    <Content Include="firstdraft.ico" />
   </ItemGroup>
 
   <ItemGroup>
