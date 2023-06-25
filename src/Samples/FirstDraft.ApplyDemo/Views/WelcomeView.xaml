@@ -6,8 +6,9 @@
              xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
              xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
              mc:Ignorable="d" 
+             DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <Grid>
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{x:Null}">
             <StackPanel Margin="10 0 0 0">
@@ -33,13 +34,13 @@
                     </TextBlock>
 
                 </StackPanel>
-              
+
                 <TextBlock Margin="30 5 0 5" TextWrapping="Wrap" >
                           <Run     Text="First Draft 是面向 Windows Presentation Foundation (WPF)的一套自定义样式库。"/>
                 </TextBlock >
                 <WrapPanel Margin="30 0 0 5">
                     <TextBlock Text="由Meiliyong自主设计开发完成，如需查看控件设计过程，请参考:" VerticalAlignment="Center"/>
-                    <Button Background="Transparent" Command="{Binding NavigateToBilibiliVedio}"  VerticalAlignment="Center"
+                    <Button Background="Transparent" Command="{Binding NavigateToBilibiliVedioCommand}"  VerticalAlignment="Center"
                             Content="bilibili.com" ToolTip="https://www.bilibili.com/video/BV1AA411J7vZ"></Button>
                 </WrapPanel>
                 <WrapPanel VerticalAlignment="Center" Margin="30 0 0 5">
@@ -60,8 +61,13 @@
                     <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.5.2"/>
                     <CheckBox Margin="0 2 0 0" IsHitTestVisible="False" IsChecked="True" Content=".net framework 4.5"/>
                 </StackPanel>
-              
-                
+
+                <WrapPanel Margin="30 30 0 5">
+                    <TextBlock Text="Demo 基于" VerticalAlignment="Center"/>
+                    <Button Background="Transparent" Command="{Binding NavigateToMvvmCommand}"  VerticalAlignment="Center"
+                            Content="CommunityToolkit.Mvvm" ToolTip="https://learn.microsoft.com/zh-cn/dotnet/communitytoolkit/mvvm/"></Button>
+                    <TextBlock Text="实现。" VerticalAlignment="Center"/>
+                </WrapPanel>
             </StackPanel>
 
         </ScrollViewer>

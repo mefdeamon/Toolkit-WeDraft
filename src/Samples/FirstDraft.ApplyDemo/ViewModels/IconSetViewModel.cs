@@ -1,4 +1,6 @@
-﻿using MeiMvvm;
+﻿using Microsoft.Extensions.DependencyInjection;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,9 +11,9 @@ using System.Windows;
 
 namespace FirstDraft.ApplyDemo.ViewModels
 {
-    public class IconSetViewModel : NotifyPropertyChanged
+    public class IconSetViewModel : ObservableObject
     {
-       
+
         /// <summary>
         /// 默认构造函数
         /// </summary>
@@ -30,7 +32,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
 
 
             // 初始化数据源
-            var list = FindDititsInfo(ServiceProvider.Get<IconSet>());
+            var list = FindDititsInfo(App.Current.Services.GetService<IconSet>());
             OriginalIcons = list;
 
             // 初始化界面
@@ -54,7 +56,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
             set
             {
                 searchText = value;
-                RaisePropertyChanged(nameof(SearchText));
+                OnPropertyChanged(nameof(SearchText));
                 OnSearchTextChanged();
             }
         }
@@ -86,7 +88,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
             get { return searchedIcons; }
             set
             {
-                Set(ref searchedIcons, value);
+                SetProperty(ref searchedIcons, value);
             }
         }
 

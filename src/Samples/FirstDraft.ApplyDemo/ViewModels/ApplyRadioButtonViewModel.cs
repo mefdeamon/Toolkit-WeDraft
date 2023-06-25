@@ -1,4 +1,5 @@
-using MeiMvvm;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,7 @@ using System.Windows.Data;
 
 namespace FirstDraft.ApplyDemo.ViewModels
 {
-    public class ApplyRadioButtonViewModel : NotifyPropertyChanged
+    public class ApplyRadioButtonViewModel : ObservableObject
     {
 
 
@@ -32,7 +33,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public PrivacyMode PrivacyMode
         {
             get { return privacyMode; }
-            set { Set(ref privacyMode, value); }
+            set { SetProperty(ref privacyMode, value); }
         }
 
 
@@ -43,13 +44,13 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public PrivacyDataModel Privacy
         {
             get { return privacy; }
-            set { Set(ref privacy, value); }
+            set { SetProperty(ref privacy, value); }
         }
 
         public RelayCommand ChooseCommand => new RelayCommand(() =>
-         {
-             Privacy = Privacys.Where(t => t.IsChecked).FirstOrDefault();
-         });
+        {
+            Privacy = Privacys.Where(t => t.IsChecked).FirstOrDefault();
+        });
 
     }
 
@@ -78,7 +79,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
             return value != null && value.Equals(true) ? parameter : Binding.DoNothing;
         }
     }
-    public class PrivacyDataModel : NotifyPropertyChanged
+    public class PrivacyDataModel : ObservableObject
     {
         static int id = 0;
         public PrivacyDataModel(PrivacyMode pcyMode)
@@ -97,7 +98,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public bool IsChecked
         {
             get { return isChecked; }
-            set { Set(ref isChecked, value); }
+            set { SetProperty(ref isChecked, value); }
         }
 
     }

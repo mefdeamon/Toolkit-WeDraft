@@ -1,11 +1,11 @@
-using MeiMvvm;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstDraft.ApplyDemo.ViewModels
 {
-    public class ApplyComboBoxViewModel : NotifyPropertyChanged
+    public class ApplyComboBoxViewModel : ObservableObject
     {
         public Dictionary<GCCollectionMode, string> GCCollections { get; set; }
 
@@ -14,7 +14,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public GCCollectionMode CurrentGCCM
         {
             get { return currentGCCM; }
-            set { Set(ref currentGCCM, value); }
+            set { SetProperty(ref currentGCCM, value); }
         }
 
         private ItemDataModel currentItem;
@@ -22,7 +22,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public ItemDataModel CurrentItem
         {
             get { return currentItem; }
-            set { Set(ref currentItem, value); }
+            set { SetProperty(ref currentItem, value); }
         }
 
         public List<ItemDataModel> Areas { get; set; }
@@ -34,7 +34,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public int CurrentId
         {
             get { return currentId; }
-            set { Set(ref currentId, value); }
+            set { SetProperty(ref currentId, value); }
         }
 
         private string currentName = "北京";
@@ -42,7 +42,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public string CurrentName
         {
             get { return currentName; }
-            set { Set(ref currentName, value); }
+            set { SetProperty(ref currentName, value); }
         }
 
         public ApplyComboBoxViewModel()
@@ -74,7 +74,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
 
     }
 
-    public class ItemDataModel : NotifyPropertyChanged
+    public class ItemDataModel : ObservableObject
     {
         public string Name { get; set; }
         public int Id { get; set; }

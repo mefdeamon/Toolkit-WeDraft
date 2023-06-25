@@ -1,15 +1,17 @@
 using FirstDraft;
-using MeiMvvm;
+using Microsoft.Extensions.DependencyInjection;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using CommunityToolkit.Mvvm.Input;
 
 namespace FirstDraft.ApplyDemo
 {
-    internal class MainWindowModel : NotifyPropertyChanged
+    internal class MainWindowModel : ObservableObject
     {
 
         public string WindowsTitle { get; set; }
@@ -19,18 +21,18 @@ namespace FirstDraft.ApplyDemo
         public MainWindowModel()
         {
             NaviItems = new List<NaviItem>();
-            NaviItems.Add(new NaviItem() { Title = "欢迎 FirstDraft(F D)", Icon = ServiceProvider.Get<IconSet>().welcome, Content = new Views.WelcomeView() });
-            NaviItems.Add(new NaviItem() { Title = "按钮(Button)", Icon = ServiceProvider.Get<IconSet>().rect_fill, Content = new Views.ApplyButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "切换按钮(ToggleButton)", Icon = ServiceProvider.Get<IconSet>().togglebutton, Content = new Views.ApplyToggleButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "单选按钮(RadioButton)", Icon = ServiceProvider.Get<IconSet>().radiobutton, Content = new Views.ApplyRadioButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = ServiceProvider.Get<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() });
-            NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = ServiceProvider.Get<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
-            NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = ServiceProvider.Get<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
-            NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconToggleButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = ServiceProvider.Get<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = ServiceProvider.Get<IconSet>().tags_fill, Content = new Views.IconSetView() });
-            NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = ServiceProvider.Get<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
+            NaviItems.Add(new NaviItem() { Title = "欢迎 FirstDraft(F D)", Icon = App.Current.Services.GetService<IconSet>().welcome, Content = new Views.WelcomeView() });
+            NaviItems.Add(new NaviItem() { Title = "按钮(Button)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "切换按钮(ToggleButton)", Icon = App.Current.Services.GetService<IconSet>().togglebutton, Content = new Views.ApplyToggleButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "单选按钮(RadioButton)", Icon = App.Current.Services.GetService<IconSet>().radiobutton, Content = new Views.ApplyRadioButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = App.Current.Services.GetService<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = App.Current.Services.GetService<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconToggleButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.IconSetView() });
+            NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
 
             Current = NaviItems[0];
             SearchText = "";
@@ -51,7 +53,7 @@ namespace FirstDraft.ApplyDemo
         public NaviItem Current
         {
             get { return current; }
-            set { Set(ref current, value); }
+            set { SetProperty(ref current, value); }
         }
 
         private string searchText;
@@ -65,15 +67,15 @@ namespace FirstDraft.ApplyDemo
             set
             {
                 searchText = value;
-                RaisePropertyChanged(nameof(SearchText));
+                OnPropertyChanged(nameof(SearchText));
                 OnSearchTextChanged();
             }
         }
 
         public RelayCommand SearchCommand => new RelayCommand(() =>
-         {
-             OnSearchTextChanged();
-         });
+        {
+            OnSearchTextChanged();
+        });
 
         /// <summary>
         /// 当搜索文本发生变化时，修改搜索匹配的导航页
@@ -102,13 +104,13 @@ namespace FirstDraft.ApplyDemo
             get { return items; }
             set
             {
-                Set(ref items, value);
+                SetProperty(ref items, value);
             }
         }
     }
 
 
-    public class NaviItem : NotifyPropertyChanged
+    public class NaviItem : ObservableObject
     {
 
         private bool isSelected;
@@ -118,7 +120,7 @@ namespace FirstDraft.ApplyDemo
             get { return isSelected; }
             set
             {
-                Set(ref isSelected, value);
+                SetProperty(ref isSelected, value);
             }
         }
 
