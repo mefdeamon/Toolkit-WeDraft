@@ -20,6 +20,12 @@
     <Page Update="Themes\Sliders.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\TextBlocks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Ui.Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\ValueConverters.xaml">
       <SubType>Designer</SubType>
     </Page>

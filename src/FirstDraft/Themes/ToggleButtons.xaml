@@ -1,40 +1,11 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="FocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Border" Color="{DynamicResource DefaultForegrounColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Glyph" Color="{DynamicResource DefaultForegrounColor}"/>
 
-    <SolidColorBrush x:Key="Button.Checked.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.Checked.Border" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.Checked.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
-
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource ExAccentColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="{DynamicResource ExAccentColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
-
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
-
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-    <SolidColorBrush x:Key="Button.Disabled.Glyph" Color="#FF838383"/>
 
     <Style x:Key="ToggleButtonBase" TargetType="{x:Type ToggleButton}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -43,7 +14,7 @@
 
     <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#FFE4E4E4"/>
+        <!--<Setter Property="Background" Value="#FFE4E4E4"/>-->
         <!--<Setter Property="Foreground" Value="#FF606060"/>-->
         <Setter Property="Padding" Value="5 2"/>
         <Setter Property="Template">
@@ -60,26 +31,26 @@
                             <Setter Property="Height" TargetName="border" Value="{DynamicResource DefalutIconSize}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Checked.Background}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Checked.Border}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Button.Checked.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Checked.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.Checked.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.Checked.Foreground}"/>
                         </Trigger>
                         <Trigger Property="Button.IsDefaulted" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.MouseOver.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.MouseOver.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.Pressed.Border}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -88,30 +59,38 @@
     </Style>
 
     <Style x:Key="RoundToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
-        <Setter Property="Width" Value="26"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <Border x:Name="border"
-                                    Width="{TemplateBinding Width}"
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="border"
+                                    Width="26"
                                     Height="16"
                                     CornerRadius="8"
                                     Background="Transparent"
                                     SnapsToDevicePixels="true">
-                        <Border x:Name="back" Margin="1" Background="Transparent" CornerRadius="7">
-                            <Grid x:Name="grid" Background="Transparent">
-                                <Path x:Name="ell" Width="12" Height="12" HorizontalAlignment="Left" Margin="1 0 0 0"  Fill="{TemplateBinding Foreground}">
-                                    <Path.Data>
-                                        <EllipseGeometry Center="6 6" RadiusX="6" RadiusY="6"/>
-                                    </Path.Data>
-                                    <Path.LayoutTransform>
-                                        <ScaleTransform x:Name="ellScale" />
-                                    </Path.LayoutTransform>
-                                </Path>
-                            </Grid>
+                            <Border x:Name="back" Margin="1" Background="Transparent" CornerRadius="7">
+                                <Grid x:Name="grid" Background="Transparent">
+                                    <Path x:Name="ell" Width="12" Height="12" HorizontalAlignment="Left" Margin="1 0 0 0"  Fill="{TemplateBinding Foreground}">
+                                        <Path.Data>
+                                            <EllipseGeometry Center="6 6" RadiusX="6" RadiusY="6"/>
+                                        </Path.Data>
+                                        <Path.LayoutTransform>
+                                            <ScaleTransform x:Name="ellScale" />
+                                        </Path.LayoutTransform>
+                                    </Path>
+                                </Grid>
+                            </Border>
                         </Border>
-                    </Border>
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                    </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
                             <Trigger.EnterActions>
@@ -132,39 +111,37 @@
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
 
-                            <Setter Property="Fill" Value="{StaticResource Button.Checked.Foreground}" TargetName="ell"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Background}" TargetName="border"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Border}" TargetName="back"/>
-
+                            <Setter Property="Fill" Value="{DynamicResource Button.Checked.Foreground}" TargetName="ell"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Background}" TargetName="border"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Border}" TargetName="back"/>
                         </Trigger>
 
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Fill" Value="{StaticResource Button.Static.Border}" TargetName="ell"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Static.Background}" TargetName="back"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Static.Border}" TargetName="border"/>
+                            <Setter Property="Fill" Value="{DynamicResource Button.Static.Border}" TargetName="ell"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Static.Background}" TargetName="back"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Static.Border}" TargetName="border"/>
                         </Trigger>
-                        
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Fill" Value="{DynamicResource Button.Pressed.Foreground}" TargetName="ell"/>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                            <Setter Property="Background" TargetName="back" Value="{StaticResource Button.Pressed.Border}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Pressed.Border}"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Background}" TargetName="border"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Background}" TargetName="border"/>
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="back" Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="Fill" TargetName="ell" Value="{StaticResource Button.Disabled.Border}"/>
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Fill" TargetName="ell" Value="{DynamicResource Button.Disabled.Border}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="OFFONToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
@@ -194,7 +171,7 @@
                                 </Grid>
                             </Border>
                         </Border>
-                        <TextBlock x:Name="text" Grid.Column="1" Text="{DynamicResource Opt_OFF}" Foreground="{TemplateBinding Foreground}" Padding="3 0 0 0" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="text" Grid.Column="1" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Padding="3 0 0 0" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
@@ -216,33 +193,33 @@
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
 
-                            <Setter Property="Fill" Value="{StaticResource Button.Checked.Foreground}" TargetName="ell"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Background}" TargetName="border"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Border}" TargetName="back"/>
+                            <Setter Property="Fill" Value="{DynamicResource Button.Checked.Foreground}" TargetName="ell"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Background}" TargetName="border"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Border}" TargetName="back"/>
                             <Setter Property="Text" Value="{DynamicResource Opt_ON}" TargetName="text"/>
                         </Trigger>
 
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Fill" Value="{StaticResource Button.Static.Border}" TargetName="ell"/>
+                            <Setter Property="Fill" Value="{DynamicResource Button.Static.Border}" TargetName="ell"/>
                             <Setter Property="Text" Value="{DynamicResource Opt_OFF}" TargetName="text"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Static.Background}" TargetName="back"/>
-                            <Setter Property="Background" Value="{StaticResource Button.Static.Border}" TargetName="border"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Static.Background}" TargetName="back"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Static.Border}" TargetName="border"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Fill" Value="{DynamicResource Button.Pressed.Foreground}" TargetName="ell"/>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                            <Setter Property="Background" TargetName="back" Value="{StaticResource Button.Pressed.Border}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Pressed.Border}"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{StaticResource Button.Checked.Background}" TargetName="border"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Background}" TargetName="border"/>
                         </Trigger>
-                        
+
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="back" Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="Fill" TargetName="ell" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="Foreground" TargetName="text" Value="{StaticResource Button.Disabled.Border}"/>
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Fill" TargetName="ell" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground" TargetName="text" Value="{DynamicResource Button.Disabled.Border}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -285,7 +262,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="StrokeDashArray" TargetName="rect" Value="{x:Null}"/>
                             <Setter Property="Visibility" TargetName="rectBack" Value="Visible"/>
-                            <Setter Property="Foreground" Value="{StaticResource Button.Checked.Foreground}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.Checked.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource Accent}"/>

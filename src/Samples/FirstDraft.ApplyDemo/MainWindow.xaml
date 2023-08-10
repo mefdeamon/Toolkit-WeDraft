@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
         xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Background="{DynamicResource DefaultBackground}"
         WindowStartupLocation="CenterScreen"
         Title="{Binding WindowsTitle}" Height="600" Width="1100">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -21,10 +24,10 @@
                     <StackPanel Orientation="Horizontal" >
 
                         <Border Padding="16" Width="50" Height="50" CornerRadius="50"
-                                Background="#33000000">
+                                Background="{DynamicResource Accent}">
                             <Viewbox>
                                 <Path Data="{Binding user_fill, Source={StaticResource IconSet}}" 
-                                          Fill="Black"
+                                          Fill="{DynamicResource DefaultForeground}"
                                           Stretch="Uniform">
                                 </Path>
                             </Viewbox>
@@ -64,7 +67,7 @@
             </DockPanel>
 
 
-            <StackPanel DockPanel.Dock="Bottom" MinWidth="200">
+            <DockPanel DockPanel.Dock="Bottom" MinWidth="200">
                 <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Current}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="{x:Type ListBoxItem}">
@@ -94,7 +97,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </StackPanel>
+            </DockPanel>
 
         </DockPanel>
 

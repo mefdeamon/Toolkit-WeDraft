@@ -2,16 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:FirstDraft.Controls">
 
-    <SolidColorBrush x:Key="Button.Checked.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.Checked.Border" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.Checked.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
-    
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource ExAccentColor}"/>
-
-
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
 
 
     <Style x:Key="{x:Type controls:IconToggleButton}" TargetType="{x:Type controls:IconToggleButton}" >
@@ -22,7 +12,7 @@
         <Setter Property="VerticalContentAlignment"  Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#FFE4E4E4"/>
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Padding" Value="5"/>

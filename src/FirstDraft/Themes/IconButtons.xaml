@@ -2,22 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:FirstDraft.Controls">
 
-    <SolidColorBrush x:Key="Button.Static.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="Button.Static.Border" Color="{DynamicResource DefaultBackgrounColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource ExAccentColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="{DynamicResource ExAccentColor}"/>
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+
 
     <Style x:Key="IconButtonBase" TargetType="{x:Type controls:IconButton}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="HorizontalContentAlignment"  Value="Center"/>
         <Setter Property="VerticalContentAlignment"  Value="Center"/>
@@ -62,23 +52,23 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Button.MouseOver.Foreground}"/>
-                            <Setter Property="Fill" TargetName="icon" Value="{StaticResource Button.MouseOver.Foreground}"/>
-                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.MouseOver.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.MouseOver.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.MouseOver.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Pressed.Border}"/>
                         </Trigger>
                         <Trigger Property="HasContent" Value="True">
                             <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background"  Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="Foreground"  Value="{StaticResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -119,23 +109,23 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Button.MouseOver.Foreground}"/>
-                            <Setter Property="Fill" TargetName="icon" Value="{StaticResource Button.MouseOver.Foreground}"/>
-                            <Setter Property="TextBlock.Foreground" TargetName="text" Value="{StaticResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.MouseOver.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.MouseOver.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="text" Value="{DynamicResource Button.MouseOver.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Pressed.Border}"/>
                         </Trigger>
                         <Trigger Property="HasContent" Value="True">
                             <Setter Property="Visibility" TargetName="text" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background"  Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                            <Setter Property="Foreground"  Value="{StaticResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

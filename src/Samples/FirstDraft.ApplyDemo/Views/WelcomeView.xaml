@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
-
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
     <Grid>
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{x:Null}">
             <StackPanel Margin="10 0 0 0">
@@ -68,6 +70,13 @@
                             Content="CommunityToolkit.Mvvm" ToolTip="https://learn.microsoft.com/zh-cn/dotnet/communitytoolkit/mvvm/"></Button>
                     <TextBlock Text="实现。" VerticalAlignment="Center"/>
                 </WrapPanel>
+
+                <WrapPanel  Margin="30 30 0 5">
+                    <TextBlock Text="主题：" Foreground="{DynamicResource DefaultForeground}" VerticalAlignment="Center"/>
+                    <ComboBox ItemsSource="{Binding Sources}" SelectedValuePath="Value" DisplayMemberPath="Key"
+                              SelectedValue="{Binding Theme}"/>
+                </WrapPanel>
+
             </StackPanel>
 
         </ScrollViewer>

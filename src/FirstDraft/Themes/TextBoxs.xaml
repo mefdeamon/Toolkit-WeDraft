@@ -1,21 +1,26 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="LightBackground" Color="White"/>
-    <SolidColorBrush x:Key="DarkForeground" Color="Black"/>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="{x:Type TextBox}">
+    <!--<SolidColorBrush x:Key="TextBox.Static.Background" Color="Black"/>
+    <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="White"/>-->
+
+
+    <Style TargetType="{x:Type TextBox}" x:Key="BaseTextBox">
 
         <Setter Property="Padding" Value="5 2" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="BorderBrush" Value="#55290736" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="TextBlock.FontWeight" Value="Regular" />
-        <Setter Property="Background" Value="{StaticResource LightBackground}" />
-        <Setter Property="Foreground" Value="{StaticResource DarkForeground}" />
+        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}" />
         <Setter Property="Focusable" Value="True"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="{x:Type TextBox}" BasedOn="{StaticResource BaseTextBox}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
@@ -46,20 +51,9 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="HintTagTextBox">
-        <Setter Property="Padding" Value="5 2" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="BorderBrush" Value="#55290736" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="TextBlock.FontWeight" Value="Regular" />
-        <Setter Property="Background" Value="{StaticResource LightBackground}" />
-        <Setter Property="Foreground" Value="{StaticResource DarkForeground}" />
-        <Setter Property="Focusable" Value="True"/>
+    <Style TargetType="{x:Type TextBox}" x:Key="HintTagTextBox" BasedOn="{StaticResource BaseTextBox}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
@@ -116,18 +110,7 @@
 
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="UpFlyHintTagTextBox">
-
-        <Setter Property="Padding" Value="5 2" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="BorderBrush" Value="#55290736" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="TextBlock.FontWeight" Value="Regular" />
-        <Setter Property="Background" Value="{StaticResource LightBackground}" />
-        <Setter Property="Foreground" Value="{StaticResource DarkForeground}" />
-        <Setter Property="Focusable" Value="True"/>
+    <Style TargetType="{x:Type TextBox}" x:Key="UpFlyHintTagTextBox" BasedOn="{StaticResource BaseTextBox}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">

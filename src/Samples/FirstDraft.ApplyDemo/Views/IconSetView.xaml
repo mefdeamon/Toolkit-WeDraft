@@ -8,6 +8,9 @@
              mc:Ignorable="d" 
              DataContext="{Binding IconSetViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
     <DockPanel>
 
         <!--<DockPanel  DataContext="{Binding SelectedIcon}" DockPanel.Dock="Right" LastChildFill="False" VerticalAlignment="Center" HorizontalAlignment="Center">

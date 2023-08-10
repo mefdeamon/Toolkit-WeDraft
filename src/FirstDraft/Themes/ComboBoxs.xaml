@@ -2,15 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <SolidColorBrush x:Key="ComboBox.Border.Selecting" Color="Black"/>
-
     <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                    <Border x:Name="templateRoot" Background="White"
+                    <Border x:Name="templateRoot" Background="{DynamicResource DefaultBackground}"
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 Padding="2 1"
                                 SnapsToDevicePixels="true">
@@ -23,7 +21,7 @@
                     <ControlTemplate.Triggers>
 
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" TargetName="templateRoot" Value="#111F80E0"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource ComboBox.Selected.InList.Background}"/>
                         </Trigger>
 
                         <Trigger Property="IsHighlighted" Value="True">
@@ -50,9 +48,9 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="templateRoot" 
-                                Background="White"
+                                Background="{DynamicResource DefaultBackground}"
                                 BorderThickness="{TemplateBinding BorderThickness}" 
-                                BorderBrush="Gray" SnapsToDevicePixels="true">
+                                BorderBrush="{DynamicResource Button.Static.Border}" SnapsToDevicePixels="true">
                         <Border x:Name="splitBorder" BorderThickness="1" 
                                     BorderBrush="Transparent" 
                                     HorizontalAlignment="Right" Margin="0"
@@ -61,7 +59,7 @@
                             <Viewbox>
                                 <Path x:Name="arrow" Data="M512 682.666667l298.666667-298.666667H213.333333z" 
                                           Stretch="Uniform"
-                                      Fill="Black"
+                                      Fill="{DynamicResource Button.Static.Glyph}"
                                       HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
                             </Viewbox>
 
@@ -73,14 +71,14 @@
                             <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Accent}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource ComboBox.Border.Selecting}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource ExAccent}"/>
-                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource ExAccent}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource DefaultForeground}"/>
+                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
                         </Trigger>
-                        
+
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="#66838383"/>
-                            <Setter Property="Fill" TargetName="arrow" Value="#66707070"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Button.Disabled.Glyph}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -98,9 +96,9 @@
                 <Border x:Name="dropDownBorder"
                                 MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
                                                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                Background="White" 
+                                Background="{DynamicResource DefaultBackground}" 
                             BorderThickness="1 0 1 1"
-                            BorderBrush="{DynamicResource ComboBox.Border.Selecting}">
+                            BorderBrush="{DynamicResource DefaultForeground}">
                     <ScrollViewer x:Name="DropDownScrollViewer">
                         <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
                             <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
@@ -139,7 +137,7 @@
     </ControlTemplate>
 
     <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
