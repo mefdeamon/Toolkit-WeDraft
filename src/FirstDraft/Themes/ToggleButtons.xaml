@@ -229,7 +229,7 @@
 
     <Style x:Key="TagCheckToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#FFE4E4E4"/>
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="Padding" Value="5 2"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -262,6 +262,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="StrokeDashArray" TargetName="rect" Value="{x:Null}"/>
                             <Setter Property="Visibility" TargetName="rectBack" Value="Visible"/>
+                            <Setter Property="Background" Value="{DynamicResource Button.Checked.Background}"/>
                             <Setter Property="Foreground" Value="{DynamicResource Button.Checked.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
