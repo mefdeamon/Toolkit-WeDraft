@@ -283,4 +283,94 @@
         </Setter>
     </Style>
 
+    <Style x:Key="LightDarkRoundToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="border"
+                                    Width="56"
+                                    Height="24"
+                                    CornerRadius="12"
+                                    Background="SkyBlue"
+                                    SnapsToDevicePixels="true">
+                            <Border x:Name="back" Margin="1" Background="SkyBlue" CornerRadius="12">
+                                <Grid x:Name="grid" Background="Transparent">
+                                    <Path x:Name="ell" Width="16" Height="16" Stretch="Uniform" HorizontalAlignment="Left" Margin="4 0 0 0"  Fill="Gold">
+                                        <Path.Data>
+                                            <StreamGeometry>
+                                                M512 831.508c16.264 0 29.792 11.72 32.597 27.176l0.534 5.955v62.23C545.13 945.167 530.298 960 512 960c-16.265 0-29.792-11.72-32.597-27.175l-0.534-5.956v-62.23c0-18.298 14.833-33.13 33.131-33.13z m267.584-97.826l5.197 4.245 44.002 44.002c12.938 12.938 12.938 33.916 0 46.854-11.321 11.321-28.797 12.736-41.656 4.245l-5.198-4.245-44.002-44.002c-12.938-12.938-12.938-33.915 0-46.854 11.321-11.32 28.797-12.736 41.657-4.245z m-493.511 4.246c11.32 11.32 12.736 28.796 4.245 41.656l-4.246 5.197-44.002 44.002c-12.939 12.938-33.916 12.938-46.854 0-11.32-11.321-12.736-28.797-4.245-41.657l4.245-5.197 44.003-44.002c12.938-12.938 33.916-12.938 46.854 0zM512 274.932c130.929 0 237.068 106.14 237.068 237.068 0 130.929-106.14 237.068-237.068 237.068-130.929 0-237.068-106.14-237.068-237.068 0-130.929 106.14-237.068 237.068-237.068z m414.87 203.937c18.297 0 33.13 14.833 33.13 33.131 0 16.264-11.72 29.792-27.175 32.597l-5.956 0.534h-62.23c-18.298 0-33.13-14.833-33.13-33.131 0-16.265 11.72-29.792 27.175-32.597l5.955-0.534h62.23z m-767.509 0c18.298 0 33.13 14.833 33.13 33.131 0 16.264-11.72 29.792-27.175 32.597l-5.955 0.534h-62.23C78.833 545.13 64 530.298 64 512c0-16.265 11.72-29.792 27.175-32.597l5.956-0.534h62.23z m669.422-283.653c11.321 11.32 12.736 28.797 4.246 41.656l-4.246 5.198-44.002 44.002c-12.938 12.939-33.915 12.94-46.853 0-11.322-11.32-12.737-28.796-4.246-41.656l4.245-5.197 44.002-44.003c12.938-12.938 33.915-12.938 46.854 0z m-591.91-4.245l5.197 4.245 44.003 44.003c12.938 12.938 12.938 33.915 0 46.854-11.321 11.32-28.797 12.736-41.657 4.245l-5.197-4.245-44.003-44.003c-12.938-12.938-12.938-33.915 0-46.854 11.321-11.32 28.797-12.736 41.657-4.245zM512 64c16.264 0 29.792 11.72 32.597 27.175l0.534 5.956v62.23c0 18.298-14.833 33.13-33.131 33.13-16.265 0-29.792-11.72-32.597-27.175l-0.534-5.955v-62.23C478.87 78.833 493.702 64 512 64z
+                                            </StreamGeometry>
+                                        </Path.Data>
+                                        <Path.LayoutTransform>
+                                            <ScaleTransform x:Name="ellScale" />
+                                        </Path.LayoutTransform>
+                                    </Path>
+                                </Grid>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.35" To="36 0 0 0" From="4 0 0 0"
+                                                                Storyboard.TargetProperty="Margin" Storyboard.TargetName="ell"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0:0:0.35" To="4 0 0 0" From="36 0 0 0"
+                                                                Storyboard.TargetProperty="Margin" Storyboard.TargetName="ell"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+
+                            <Setter Property="Data" TargetName="ell">
+                                <Setter.Value>
+                                    <StreamGeometry>
+                                        M376.41 138.15c-88.73 192.62-4.52 420.71 188.1 509.44 101.96 46.97 219.37 46.97 321.34 0-42.41 190.98-212.78 333.74-416.51 333.74-235.65 0-426.67-191.02-426.67-426.67 0-203.73 142.76-374.09 333.74-416.51z m355.92 2.27l35.67 8.92V192l-35.67 8.92A85.31 85.31 0 0 0 670.25 263l-8.92 35.67h-42.67L609.75 263a85.31 85.31 0 0 0-62.08-62.08L512 192v-42.67l35.67-8.92a85.34 85.34 0 0 0 62.04-62.08l8.96-35.67h42.67l8.92 35.67a85.327 85.327 0 0 0 62.07 62.09z m213.33 213.33l35.67 8.92v42.67l-35.67 8.92a85.31 85.31 0 0 0-62.08 62.08L874.67 512H832l-8.92-35.67A85.31 85.31 0 0 0 761 414.25l-35.67-8.92v-42.67l35.67-8.92a85.31 85.31 0 0 0 62.08-62.08L832 256h42.67l8.92 35.67c7.64 30.57 31.51 54.43 62.07 62.08z
+                                    </StreamGeometry>
+                                </Setter.Value>
+                            </Setter>
+
+                            <Setter Property="Fill" Value="Gold" TargetName="ell"/>
+                            <Setter Property="Background" Value="Blue" TargetName="border"/>
+                            <Setter Property="Background" Value="Blue" TargetName="back"/>
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Fill" Value="Red" TargetName="ell"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Fill" Value="{DynamicResource Button.Pressed.Foreground}" TargetName="ell"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Pressed.Border}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="CornflowerBlue" TargetName="border"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="back" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Fill" TargetName="ell" Value="{DynamicResource Button.Disabled.Border}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

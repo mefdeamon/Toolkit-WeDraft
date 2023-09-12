@@ -34,7 +34,24 @@ namespace FirstDraft.ApplyDemo.ViewModels
                 Application.Current.Resources.MergedDictionaries.Add(themeDict);
             }
         }
+        private Boolean isDarkTheme;
 
+        public Boolean IsDarkTheme
+        {
+            get { return isDarkTheme; }
+            set
+            {
+                SetProperty(ref isDarkTheme, value);
+                if (isDarkTheme)
+                {
+                    Theme = Sources["幽暗"];
+                }
+                else
+                {
+                    Theme = Sources["明亮"];
+                }
+            }
+        }
         public Dictionary<string, Uri> Sources { get; set; }
 
         public WelcomeViewModel()

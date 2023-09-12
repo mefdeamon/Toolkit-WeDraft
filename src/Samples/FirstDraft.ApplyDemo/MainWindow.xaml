@@ -103,11 +103,17 @@
 
         <DockPanel Grid.Column="1" Margin="5">
 
-            <fdcontrols:IconRadioButton DataContext="{Binding Current}" 
+            <Grid  DockPanel.Dock="Top">
+                <fdcontrols:IconRadioButton DataContext="{Binding Current}" 
                                         Style="{DynamicResource BottomNaviIconRaioButton}"
-                                        Content="{Binding Title}" DockPanel.Dock="Top"
+                                        Content="{Binding Title}"
                                 IsChecked="True" 
                                                 Icon="{Binding Icon}"/>
+
+
+                <ToggleButton HorizontalAlignment="Right" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
+
+            </Grid>
 
             <Frame FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
         </DockPanel >
