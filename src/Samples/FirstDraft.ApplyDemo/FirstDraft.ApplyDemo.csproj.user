@@ -14,6 +14,9 @@
     <Compile Update="Views\ApplyIconToggleButtonView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyPasswordBoxView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ApplySliderView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyIconToggleButtonView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyPasswordBoxView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplySliderView.xaml">

@@ -33,6 +33,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.IconSetView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
+            NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
 
             Current = NaviItems[0];
             SearchText = "";

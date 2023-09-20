@@ -20,6 +20,7 @@
         <ResourceDictionary Source="HyperLinks.xaml"/>
         <ResourceDictionary Source="Sliders.xaml"/>
         <ResourceDictionary Source="TextBlocks.xaml"/>
+        <ResourceDictionary Source="PasswordBoxs.xaml"/>
 
         <!-- Controls -->
         <ResourceDictionary Source="IconButtons.xaml"/>
