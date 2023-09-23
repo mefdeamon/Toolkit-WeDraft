@@ -5,7 +5,7 @@ Build our own WPF Control Style Library
 
 ## 概要（Summary）
 
-**First Draft **是面向 Windows Presentation Foundation (WPF)的一套自定义样式库。由 **Meiliyong** 自主设计开发完成，最初基于.NET Core 3.1开发，如需其他框架版本请下载源码重新编译，源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
+**First Draft**是面向 Windows Presentation Foundation (WPF)的一套自定义样式库。由 **Meiliyong** 自主设计开发完成，最初基于.NET Core 3.1开发，如需其他框架版本请下载源码重新编译，源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
 
 ## 快速使用（Quick Start）
 

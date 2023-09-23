@@ -1,17 +1,19 @@
-<Window x:Class="FirstDraft.ApplyDemo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
-        xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
-        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
-        mc:Ignorable="d" Background="{DynamicResource DefaultBackground}"
-        WindowStartupLocation="CenterScreen"
-        Title="{Binding WindowsTitle}" Height="600" Width="1100">
-    <Window.Resources>
+<fd:FdWindow x:Class="FirstDraft.ApplyDemo.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo"
+             xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:fd="clr-namespace:FirstDraft;assembly=FirstDraft"
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             WindowStartupLocation="CenterScreen"
+             Style="{DynamicResource NoTitleIconFdWindow}"
+             Title="{Binding WindowsTitle}" Height="600" Width="1100">
+    <fd:FdWindow.Resources>
         <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
-    </Window.Resources>
+    </fd:FdWindow.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -101,22 +103,17 @@
 
         </DockPanel>
 
-        <DockPanel Grid.Column="1" Margin="5">
+        <DockPanel Grid.Column="1" Margin="0">
 
-            <Grid  DockPanel.Dock="Top">
-                <fdcontrols:IconRadioButton DataContext="{Binding Current}" 
-                                        Style="{DynamicResource BottomNaviIconRaioButton}"
-                                        Content="{Binding Title}"
-                                IsChecked="True" 
-                                                Icon="{Binding Icon}"/>
+            <Grid  DockPanel.Dock="Top" Height="36">
 
-
-                <ToggleButton HorizontalAlignment="Right" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
+                <ToggleButton HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" Margin="0 0 110 0"  DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
 
             </Grid>
+
 
             <Frame FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
         </DockPanel >
 
     </Grid>
-</Window>
+</fd:FdWindow>

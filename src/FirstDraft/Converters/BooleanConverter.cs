@@ -58,4 +58,14 @@ namespace FirstDraft.Converters
             base(Visibility.Collapsed, Visibility.Visible)
         { }
     }
+
+    /// <summary>
+    /// <see cref="Boolean"/> 值与 <see cref="int"/> 值(0,1) 反向向转换
+    /// </summary>
+    public class BooleanToInt01Converter : BooleanConverter<int>
+    {
+        public BooleanToInt01Converter() : base(1, 0)
+        {
+        }
+    }
 }
