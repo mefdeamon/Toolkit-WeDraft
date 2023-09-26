@@ -11,9 +11,8 @@ namespace FirstDraft.Controls
     {
         public IconToggleButton()
         {
-
+            //DefaultStyleKeyProperty.OverrideMetadata(typeof(IconToggleButton), new FrameworkPropertyMetadata(typeof(IconToggleButton)));
         }
-
 
         /// <summary>
         /// 图标

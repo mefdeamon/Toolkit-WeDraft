@@ -194,6 +194,8 @@ namespace FirstDraft
         {
             mWindow = this;
 
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FdWindow), new FrameworkPropertyMetadata(typeof(FdWindow)));
+
             WindowStartupLocation = WindowStartupLocation.Manual;
             loadedWindowCornerRadius = WindowCornerRadius;
 

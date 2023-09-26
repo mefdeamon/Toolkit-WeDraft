@@ -21,13 +21,14 @@
         <ResourceDictionary Source="Sliders.xaml"/>
         <ResourceDictionary Source="TextBlocks.xaml"/>
         <ResourceDictionary Source="PasswordBoxs.xaml"/>
-        <ResourceDictionary Source="FdWindows.xaml"/>
 
         <!-- Controls -->
         <ResourceDictionary Source="IconButtons.xaml"/>
         <ResourceDictionary Source="IconRadioButtons.xaml"/>
         <ResourceDictionary Source="IconToggleButtons.xaml"/>
         <ResourceDictionary Source="CommandControls.xaml"/>
+        <ResourceDictionary Source="FdWindows.xaml"/>
+        <ResourceDictionary Source="IconTextBoxs.xaml"/>
         
     </ResourceDictionary.MergedDictionaries>
 

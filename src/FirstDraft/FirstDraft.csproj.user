@@ -8,10 +8,16 @@
     <Page Update="Themes\FdWindows.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Hyperlinks.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\IconRadioButtons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\IconTextBoxs.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\IconToggleButtons.xaml">

@@ -8,7 +8,7 @@ namespace FirstDraft.Controls
     {
         public IconButton()
         {
-            //((StreamGeometry)IconData).FillRule = FillRule.EvenOdd;
+            //DefaultStyleKeyProperty.OverrideMetadata(typeof(IconButton), new FrameworkPropertyMetadata(typeof(IconButton)));
         }
         /// <summary>
         /// 图标数据

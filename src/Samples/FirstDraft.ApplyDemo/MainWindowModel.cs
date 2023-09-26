@@ -23,17 +23,18 @@ namespace FirstDraft.ApplyDemo
             NaviItems = new List<NaviItem>();
             NaviItems.Add(new NaviItem() { Title = "欢迎 FirstDraft(F D)", Icon = App.Current.Services.GetService<IconSet>().welcome, Content = new Views.WelcomeView() });
             NaviItems.Add(new NaviItem() { Title = "按钮(Button)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconButtonView() });
             NaviItems.Add(new NaviItem() { Title = "切换按钮(ToggleButton)", Icon = App.Current.Services.GetService<IconSet>().togglebutton, Content = new Views.ApplyToggleButtonView() });
             NaviItems.Add(new NaviItem() { Title = "单选按钮(RadioButton)", Icon = App.Current.Services.GetService<IconSet>().radiobutton, Content = new Views.ApplyRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = App.Current.Services.GetService<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() });
             NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = App.Current.Services.GetService<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
-            NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconToggleButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().tag_fill, Content = new Views.ApplyIconRadioButtonView() });
-            NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.IconSetView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
             NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyIconButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = App.Current.Services.GetService<IconSet>().togglebutton, Content = new Views.ApplyIconToggleButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().radiobutton, Content = new Views.ApplyIconRadioButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标文本框(IconTextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyIconTextBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.IconSetView() });
 
             Current = NaviItems[0];
             SearchText = "";

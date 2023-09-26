@@ -11,6 +11,9 @@
     <Compile Update="Views\ApplyIconRadioButtonView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyIconTextBoxView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ApplyIconToggleButtonView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyIconRadioButtonView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyIconTextBoxView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyIconToggleButtonView.xaml">

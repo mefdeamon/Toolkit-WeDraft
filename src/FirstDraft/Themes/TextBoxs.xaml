@@ -7,7 +7,6 @@
 
 
     <Style TargetType="{x:Type TextBox}" x:Key="BaseTextBox">
-
         <Setter Property="Padding" Value="5 2" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

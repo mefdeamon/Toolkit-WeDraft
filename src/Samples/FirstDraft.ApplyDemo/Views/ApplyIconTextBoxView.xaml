@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyIconTextBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:fdcontrol="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+
+                            <WrapPanel>
+                                <fdcontrol:IconTextBox Icon="{Binding textbox, Source={StaticResource IconSet}}" Text="文本框" Margin="5"/>
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="" Tag="搜索" Width="200" Margin="5"/>
+                            </WrapPanel>
+
+
+                        </StackPanel>
+                    </Border>
+
+
+
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="图标文本框默认提供一个" />
+                        <Run Text="Icon" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="属性，可供用户设置文本框指代信息的图标" />
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+
+                            <WrapPanel>
+                                <fdcontrol:IconTextBox Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Text="IconTextBox" Width="200" Margin="5"/>
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="IconTextBox" Width="200" Margin="5" BorderThickness="0 0 0 1" />
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="IconTextBox" Width="200" Margin="5" IsEnabled="False"/>
+                            </WrapPanel>
+
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="可以设置" />
+                        <Run Text="Tag" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="属性，可供用户设置文本框输入数值前文本提示" />
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+                            <WrapPanel>
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="" Tag="搜索" Width="200" Margin="5"/>
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="" Tag="搜索" Width="200" Margin="5" BorderThickness="0 0 0 1" />
+                                <fdcontrol:IconTextBox Icon="{Binding search, Source={StaticResource IconSet}}" Text="" Tag="搜索" Width="200" Margin="5" IsEnabled="False"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="常应用在表单信息填写时信息录入" />
+                    </TextBlock>
+                    
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel>
+                            <fdcontrol:IconTextBox Icon="{Binding user_fill, Source={StaticResource IconSet}}" Text="" Tag="姓名" Width="200" Margin="5"/>
+                            <fdcontrol:IconTextBox Icon="{Binding phone_fill, Source={StaticResource IconSet}}" Text="" Tag="电话" Width="200" Margin="5"/>
+                            <fdcontrol:IconTextBox Icon="{Binding email_fill, Source={StaticResource IconSet}}" Text="" Tag="电子邮件" Width="200" Margin="5"/>
+                            <fdcontrol:IconTextBox Icon="{Binding user_line, Source={StaticResource IconSet}}" Text="" Tag="姓名" Width="200" Margin="5"/>
+                            <fdcontrol:IconTextBox Icon="{Binding phone_line, Source={StaticResource IconSet}}" Text="" Tag="电话" Width="200" Margin="5"/>
+                            <fdcontrol:IconTextBox Icon="{Binding email_line, Source={StaticResource IconSet}}" Text="" Tag="电子邮件" Width="200" Margin="5"/>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

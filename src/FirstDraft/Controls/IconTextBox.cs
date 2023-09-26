@@ -1,20 +1,18 @@
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace FirstDraft.Controls
 {
-    /// <summary>
-    /// 边矩形图标单选按钮
-    /// </summary>
-    public class IconRadioButton : RadioButton
+    public class IconTextBox : TextBox
     {
-        public IconRadioButton()
+        public IconTextBox()
         {
-            //DefaultStyleKeyProperty.OverrideMetadata(typeof(IconRadioButton), new FrameworkPropertyMetadata(typeof(IconRadioButton)));
+            //DefaultStyleKeyProperty.OverrideMetadata(typeof(IconTextBox), new FrameworkPropertyMetadata(typeof(IconTextBox)));
         }
+
         /// <summary>
-        /// 图标
+        /// 图标数据
         /// </summary>
         public Geometry Icon
         {
@@ -26,9 +24,11 @@ namespace FirstDraft.Controls
         /// <see cref="Icon"/>
         /// </summary>
         public static readonly DependencyProperty IconProperty =
-            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconRadioButton), new PropertyMetadata(default(Geometry)));
+            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconTextBox), new PropertyMetadata(default(Geometry), (s, e) => { }));
 
-
+        /// <summary>
+        /// 图标大小
+        /// </summary>
         public double IconSize
         {
             get { return (double)GetValue(IconSizeProperty); }
@@ -37,7 +37,6 @@ namespace FirstDraft.Controls
 
         // Using a DependencyProperty as the backing store for IconSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IconSizeProperty =
-            DependencyProperty.Register("IconSize", typeof(double), typeof(IconRadioButton), new PropertyMetadata(12D));
-
+            DependencyProperty.Register("IconSize", typeof(double), typeof(IconTextBox), new PropertyMetadata(12D));
     }
 }

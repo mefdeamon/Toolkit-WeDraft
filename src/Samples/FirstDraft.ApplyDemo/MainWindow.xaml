@@ -9,7 +9,6 @@
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              WindowStartupLocation="CenterScreen"
-             Style="{DynamicResource NoTitleIconFdWindow}"
              Title="{Binding WindowsTitle}" Height="600" Width="1100">
     <fd:FdWindow.Resources>
         <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
@@ -60,6 +59,8 @@
 
             <DockPanel DockPanel.Dock="Top"  Margin="0 5 0 10">
                 <fdcontrols:IconButton DockPanel.Dock="Right" 
+                                       Background="{DynamicResource ExAccent}"
+                                       BorderBrush="{DynamicResource ExAccent}"
                                        Icon="{Binding search, Source={StaticResource IconSet}}"
                                        Command="{Binding SearchCommand}"
                                        VerticalAlignment="Stretch" />
