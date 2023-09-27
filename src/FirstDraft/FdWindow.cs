@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Media.Media3D;
 
 namespace FirstDraft
 {
@@ -15,11 +16,6 @@ namespace FirstDraft
         #region Private Member
 
         /// <summary>
-        /// The window this view model controls
-        /// </summary>
-        private Window mWindow;
-
-        /// <summary>
         /// The window resizer helper that keeps the window size correct in various states
         /// </summary>
         private WindowResizer mWindowResizer;
@@ -29,22 +25,25 @@ namespace FirstDraft
         /// </summary>
         private WindowDockPosition mDockPosition = WindowDockPosition.Undocked;
 
+        /// <summary>
+        /// The default no corner value
+        /// </summary>
+        private static readonly CornerRadius zeroWindowCornerRadius = new CornerRadius(0);
+        private static readonly Thickness zeroThickness = new Thickness(0);
+
+        /// <summary>
+        /// The first setted window corner radius
+        /// </summary>
+        private readonly CornerRadius normalWindowCornerRadius = new CornerRadius(0);
+
+        /// <summary>
+        /// The margin size when window in normal state
+        /// </summary>
+        private readonly Thickness normalMarginSize = new Thickness(10);
+
         #endregion
 
         #region Dependency Properties
-
-        /// <summary>
-        /// The window state is Maximized
-        /// </summary>
-        public Boolean IsMaximized
-        {
-            get { return (Boolean)GetValue(IsMaximizedProperty); }
-            set { SetValue(IsMaximizedProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for IsMaximized.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty IsMaximizedProperty =
-            DependencyProperty.Register("IsMaximized", typeof(Boolean), typeof(FdWindow), new PropertyMetadata(false));
 
         /// <summary>
         /// True if the window is currently being moved/dragged
@@ -52,7 +51,7 @@ namespace FirstDraft
         public bool BeingMoved
         {
             get { return (bool)GetValue(BeingMovedProperty); }
-            set { SetValue(BeingMovedProperty, value); }
+            private set { SetValue(BeingMovedProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for BeingMoved.  This enables animation, styling, binding, etc...
@@ -66,7 +65,7 @@ namespace FirstDraft
         public Boolean Borderless
         {
             get { return (Boolean)GetValue(BorderlessProperty); }
-            set { SetValue(BorderlessProperty, value); }
+            private set { SetValue(BorderlessProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for Borderless.  This enables animation, styling, binding, etc...
@@ -79,7 +78,7 @@ namespace FirstDraft
         public int ResizeBorder
         {
             get { return (int)GetValue(ResizeBorderProperty); }
-            set { SetValue(ResizeBorderProperty, value); }
+            private set { SetValue(ResizeBorderProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for ResizeBorder.  This enables animation, styling, binding, etc...
@@ -92,7 +91,7 @@ namespace FirstDraft
         public Thickness ResizeBorderThickness
         {
             get { return (Thickness)GetValue(ResizeBorderThicknessProperty); }
-            set { SetValue(ResizeBorderThicknessProperty, value); }
+            private set { SetValue(ResizeBorderThicknessProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for ResizeBorderThickness.  This enables animation, styling, binding, etc...
@@ -105,14 +104,25 @@ namespace FirstDraft
         public Thickness InnerContentPadding
         {
             get { return (Thickness)GetValue(InnerContentPaddingProperty); }
-            set { SetValue(InnerContentPaddingProperty, value); }
+            private set { SetValue(InnerContentPaddingProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for InnerContentPadding.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty InnerContentPaddingProperty =
             DependencyProperty.Register("InnerContentPadding", typeof(Thickness), typeof(FdWindow), new PropertyMetadata(new Thickness(0)));
 
-        private readonly Thickness normalMarginSize = new Thickness(10);
+        /// <summary>
+        ///  The drop shadow BlurRadius
+        /// </summary>
+        public int OuterMarginBlurRadius
+        {
+            get { return (int)GetValue(OuterMarginBlurRadiusProperty); }
+            private set { SetValue(OuterMarginBlurRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for OuterMarginBlurRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty OuterMarginBlurRadiusProperty =
+            DependencyProperty.Register("OuterMarginBlurRadius", typeof(int), typeof(FdWindow), new PropertyMetadata(10));
 
         /// <summary>
         /// The margin around the window to allow for a drop shadow
@@ -120,12 +130,18 @@ namespace FirstDraft
         public Thickness OuterMarginSize
         {
             get => (Thickness)GetValue(OuterMarginSizeProperty);
-            set { SetValue(OuterMarginSizeProperty, value); }
+            private set { SetValue(OuterMarginSizeProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for OuterMarginSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OuterMarginSizeProperty =
-            DependencyProperty.Register("OuterMarginSize", typeof(Thickness), typeof(FdWindow), new PropertyMetadata(new Thickness(10)));
+            DependencyProperty.Register("OuterMarginSize", typeof(Thickness), typeof(FdWindow), new PropertyMetadata(new Thickness(10), (s, e) =>
+            {
+                if (s is FdWindow fdWindow && e.NewValue is Thickness thickness)
+                {
+                    fdWindow.OuterMarginBlurRadius = (int)thickness.Top;
+                }
+            }));
 
         /// <summary>
         /// The rectangle border around the window when docked
@@ -133,15 +149,12 @@ namespace FirstDraft
         public int FlatBorderThickness
         {
             get { return (int)GetValue(FlatBorderThicknessProperty); }
-            set { SetValue(FlatBorderThicknessProperty, value); }
+            private set { SetValue(FlatBorderThicknessProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for FlatBorderThickness.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty FlatBorderThicknessProperty =
             DependencyProperty.Register("FlatBorderThickness", typeof(int), typeof(FdWindow), new PropertyMetadata(0));
-
-
-        private CornerRadius loadedWindowCornerRadius = new CornerRadius(0);
 
         /// <summary>
         /// The radius of the edges of the window
@@ -149,12 +162,15 @@ namespace FirstDraft
         public CornerRadius WindowCornerRadius
         {
             get { return (CornerRadius)GetValue(WindowCornerRadiusProperty); }
-            set { SetValue(WindowCornerRadiusProperty, value); }
+            private set { SetValue(WindowCornerRadiusProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for WindowCornerRadius.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty WindowCornerRadiusProperty =
-            DependencyProperty.Register("WindowCornerRadius", typeof(CornerRadius), typeof(FdWindow), new PropertyMetadata(new CornerRadius(0)));
+            DependencyProperty.Register("WindowCornerRadius", typeof(CornerRadius), typeof(FdWindow), new PropertyMetadata(new CornerRadius(0), (s, e) =>
+            {
+
+            }));
 
         /// <summary>
         /// The height of the title bar / caption of the window
@@ -175,7 +191,7 @@ namespace FirstDraft
         public GridLength CaptionHeightGridLength
         {
             get { return (GridLength)GetValue(CaptionHeightGridLengthProperty); }
-            set { SetValue(CaptionHeightGridLengthProperty, value); }
+            private set { SetValue(CaptionHeightGridLengthProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for CaptionHeightGridLength.  This enables animation, styling, binding, etc...
@@ -192,33 +208,26 @@ namespace FirstDraft
         /// </summary>
         public FdWindow()
         {
-            mWindow = this;
-
             DefaultStyleKeyProperty.OverrideMetadata(typeof(FdWindow), new FrameworkPropertyMetadata(typeof(FdWindow)));
 
             WindowStartupLocation = WindowStartupLocation.Manual;
-            loadedWindowCornerRadius = WindowCornerRadius;
-
-            IsMaximized = mWindow.WindowState == WindowState.Maximized;
-            // Set properties default value
-            InnerContentPadding = new Thickness(0);
 
             // Listen out for the window resizing
-            mWindow.StateChanged += (sender, e) =>
+            this.StateChanged += (sender, e) =>
             {
                 // Fire off events for all properties that are affected by a resize
                 WindowResized();
             };
 
             // Create commands
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.CloseWindowCommand, (s, e) => mWindow.Close()));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.MaximizeWindowCommand, (s, e) => mWindow.WindowState = WindowState.Maximized, (s, e) => e.CanExecute = true));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, (s, e) => mWindow.WindowState = WindowState.Minimized, (s, e) => e.CanExecute = true));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, (s, e) => mWindow.WindowState = WindowState.Normal, (s, e) => e.CanExecute = true));
+            this.CommandBindings.Add(new CommandBinding(SystemCommands.CloseWindowCommand, (s, e) => this.Close()));
+            this.CommandBindings.Add(new CommandBinding(SystemCommands.MaximizeWindowCommand, (s, e) => this.WindowState = WindowState.Maximized, (s, e) => e.CanExecute = true));
+            this.CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, (s, e) => this.WindowState = WindowState.Minimized, (s, e) => e.CanExecute = true));
+            this.CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, (s, e) => this.WindowState = WindowState.Normal, (s, e) => e.CanExecute = true));
 
 
             // Fix window resize issue
-            mWindowResizer = new WindowResizer(mWindow);
+            mWindowResizer = new WindowResizer(this);
 
             // Listen out for dock changes
             mWindowResizer.WindowDockChanged += (dock) =>
@@ -245,9 +254,9 @@ namespace FirstDraft
                 BeingMoved = false;
 
                 // Check for moved to top of window and not at an edge
-                if (mDockPosition == WindowDockPosition.Undocked && mWindow.Top == mWindowResizer.CurrentScreenSize.Top)
+                if (mDockPosition == WindowDockPosition.Undocked && this.Top == mWindowResizer.CurrentScreenSize.Top)
                     // If so, move it to the true top (the border size)
-                    mWindow.Top = -OuterMarginSize.Top;
+                    this.Top = -OuterMarginSize.Top;
             };
 
             WindowResized();
@@ -263,34 +272,31 @@ namespace FirstDraft
         /// </summary>
         private void WindowResized()
         {
-            Borderless = (mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked);
+            Borderless = (this.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked);
 
-            WindowCornerRadius = Borderless ? new CornerRadius(0) : loadedWindowCornerRadius;
+            WindowCornerRadius = Borderless ? zeroWindowCornerRadius : normalWindowCornerRadius;
 
-            if (mWindow.WindowState == WindowState.Maximized)
+            if (this.WindowState == WindowState.Maximized)
             {
                 OuterMarginSize = mWindowResizer.CurrentMonitorMargin;
             }
             else if (Borderless)
             {
-                OuterMarginSize = new Thickness(0);
+                OuterMarginSize = zeroThickness;
             }
             else
             {
                 OuterMarginSize = normalMarginSize;
             }
 
-
-            FlatBorderThickness = Borderless && mWindow.WindowState != WindowState.Maximized ? 1 : 0;
-            ResizeBorder = mWindow.WindowState == WindowState.Maximized ? 0 : 4;
+            FlatBorderThickness = Borderless && this.WindowState != WindowState.Maximized ? 1 : 0;
+            ResizeBorder = this.WindowState == WindowState.Maximized ? 0 : 4;
             ResizeBorderThickness = new Thickness(OuterMarginSize.Left + ResizeBorder,
                                                                 OuterMarginSize.Top + ResizeBorder,
                                                                 OuterMarginSize.Right + ResizeBorder,
                                                                 OuterMarginSize.Bottom + ResizeBorder);
 
-
             CaptionHeightGridLength = new GridLength(CaptionHeight + ResizeBorder);
-            IsMaximized = mWindow.WindowState == WindowState.Maximized;
         }
 
         #endregion

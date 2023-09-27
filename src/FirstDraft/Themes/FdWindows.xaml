@@ -401,12 +401,6 @@
     <Style TargetType="{x:Type local:FdWindow}" >
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        <Setter Property="ResizeBorder" Value="4"/>
-        <Setter Property="BeingMoved" Value="False"/>
-        <Setter Property="InnerContentPadding" Value="0"/>
-        <Setter Property="OuterMarginSize" Value="10"/>
-        <Setter Property="WindowCornerRadius" Value="10"/>
-        <Setter Property="FlatBorderThickness" Value="1"/>
         <Setter Property="CaptionHeight" Value="32"/>
         <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
         <Setter Property="WindowChrome.WindowChrome">
@@ -441,7 +435,7 @@
                             <Border CornerRadius="{TemplateBinding WindowCornerRadius}" 
                                     Background="{DynamicResource DefaultBackground }">
                                 <Border.Effect>
-                                    <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.5" />
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="{TemplateBinding OuterMarginBlurRadius}" Opacity="0.5" />
                                 </Border.Effect>
                             </Border>
 
@@ -517,6 +511,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type local:FdWindow}" x:Key="BlankFdWindow" BasedOn="{StaticResource {x:Type local:FdWindow}}"/>
-    
+    <Style TargetType="{x:Type local:FdWindow}" x:Key="BlankFdWindow" BasedOn="{StaticResource {x:Type local:FdWindow}}">
+    </Style>
+
 </ResourceDictionary>
