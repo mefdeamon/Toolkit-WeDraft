@@ -9,7 +9,7 @@
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              WindowStartupLocation="CenterScreen"
-             Title="{Binding WindowsTitle}" Height="600" Width="1100">
+             Height="675" Width="1200">
     <fd:FdWindow.Resources>
         <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
     </fd:FdWindow.Resources>
@@ -59,8 +59,8 @@
 
             <DockPanel DockPanel.Dock="Top"  Margin="0 5 0 10">
                 <fdcontrols:IconButton DockPanel.Dock="Right" 
-                                       Background="{DynamicResource ExAccent}"
-                                       BorderBrush="{DynamicResource ExAccent}"
+                                       Background="{DynamicResource Accent}"
+                                       BorderBrush="{DynamicResource Accent}"
                                        Icon="{Binding search, Source={StaticResource IconSet}}"
                                        Command="{Binding SearchCommand}"
                                        VerticalAlignment="Stretch" />
@@ -107,9 +107,10 @@
         <DockPanel Grid.Column="1" Margin="0">
 
             <Grid  DockPanel.Dock="Top" Height="36">
-
-                <ToggleButton HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" Margin="0 0 110 0"  DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
-
+                <DockPanel Margin="0 0 110 0">
+                    <ToggleButton DockPanel.Dock="Right" Margin="5 0" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
+                    <TextBlock DockPanel.Dock="Right" Margin="5 0" Text="{Binding WindowsTitle}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                </DockPanel>
             </Grid>
 
 

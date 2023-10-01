@@ -7,6 +7,26 @@ Build our own WPF Control Style Library
 
 **First Draft**是面向 Windows Presentation Foundation (WPF)的一套自定义样式库。由 **Meiliyong** 自主设计开发完成，最初基于.NET Core 3.1开发，如需其他框架版本请下载源码重新编译，源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
 
+包含样式和控件如下：
+
+- 新样式控件
+  - 按钮（Button）
+  - 切换按钮（ToggleButton）
+  - 单选按钮（RadioButton）
+  - 复选框（CheckBox）
+  - 文本框（TextBox）
+  - 下拉选项框（ComboBox）
+  - 滑动条（Slider）
+  - 密码框（PasswordBox）
+- 自定义控件
+  - 图标按钮（IconButton）
+  - 图标切换按钮（IconToggleButton）
+  - 图标单选按钮（IconRadioButton）
+  - 图标文本框（IconTextBox）
+  - Fd窗口（FdWindow）
+
+
+
 ## 快速使用（Quick Start）
 
 1. App.xaml中引入资源
@@ -84,4 +104,5 @@ Build our own WPF Control Style Library
 - 示例的应用程序可以直接下载[Release v1.0.1-alpha app demo · mefdeamon/Toolkit-WeDraft (github.com)](https://github.com/mefdeamon/Toolkit-WeDraft/releases/tag/v1.0.1-alpha)。
 
 - 完整的源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
+- 使用文档详细说明：[Home · mefdeamon/Toolkit-WeDraft Wiki (github.com)](https://github.com/mefdeamon/Toolkit-WeDraft/wiki)
 - 开发过程视频：[Bilibili视频](https://www.bilibili.com/video/BV1AA411J7vZ)。
