@@ -75,15 +75,8 @@ namespace FirstDraft
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder
-        {
-            get { return (int)GetValue(ResizeBorderProperty); }
-            private set { SetValue(ResizeBorderProperty, value); }
-        }
+        public int ResizeBorder { get; private set; } = 0;
 
-        // Using a DependencyProperty as the backing store for ResizeBorder.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ResizeBorderProperty =
-            DependencyProperty.Register("ResizeBorder", typeof(int), typeof(FdWindow), new PropertyMetadata(0));
 
         /// <summary>
         /// The size of the resize border around the window, taking into account the outer margin
@@ -296,7 +289,7 @@ namespace FirstDraft
                                                                 OuterMarginSize.Right + ResizeBorder,
                                                                 OuterMarginSize.Bottom + ResizeBorder);
 
-            CaptionHeightGridLength = new GridLength(CaptionHeight + ResizeBorder);
+            CaptionHeightGridLength = new GridLength(CaptionHeight );
         }
 
         #endregion

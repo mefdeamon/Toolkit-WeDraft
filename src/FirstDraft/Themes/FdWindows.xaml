@@ -401,7 +401,7 @@
     <Style TargetType="{x:Type local:FdWindow}" >
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        <Setter Property="CaptionHeight" Value="32"/>
+        <Setter Property="CaptionHeight" Value="36"/>
         <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
