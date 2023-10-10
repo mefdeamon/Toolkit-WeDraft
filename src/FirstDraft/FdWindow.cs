@@ -196,13 +196,16 @@ namespace FirstDraft
 
         #region Constructor
 
+        static FdWindow()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FdWindow), new FrameworkPropertyMetadata(typeof(FdWindow)));
+        }
+
         /// <summary>
         /// Default constructor
         /// </summary>
         public FdWindow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FdWindow), new FrameworkPropertyMetadata(typeof(FdWindow)));
-
             WindowStartupLocation = WindowStartupLocation.Manual;
 
             // Listen out for the window resizing
@@ -289,7 +292,7 @@ namespace FirstDraft
                                                                 OuterMarginSize.Right + ResizeBorder,
                                                                 OuterMarginSize.Bottom + ResizeBorder);
 
-            CaptionHeightGridLength = new GridLength(CaptionHeight );
+            CaptionHeightGridLength = new GridLength(CaptionHeight);
         }
 
         #endregion
