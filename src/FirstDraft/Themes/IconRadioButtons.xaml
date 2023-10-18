@@ -94,7 +94,147 @@
     </Style>
 
 
-    <Style x:Key="LeftNaviIconRaioButton" TargetType="{x:Type controls:IconRadioButton}">
+    <Style x:Key="NaviIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="10 10 10 10"/>
+        <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+                        <Border  Margin="0 0 0 0">
+                            <DockPanel VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="0 0 12 0"
+                                      DockPanel.Dock="Left"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Right"
+                                          Focusable="False"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="RoundCornerNaviIconRaioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="10 10 10 10"/>
+        <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                CornerRadius="5"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+                        <Border  Margin="0 0 0 0">
+                            <DockPanel VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="0 0 12 0"
+                                      DockPanel.Dock="Left"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Right"
+                                          Focusable="False"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="False">
+                            <Setter Property="Margin" TargetName="path" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="LeftNaviIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
@@ -167,8 +307,7 @@
         </Setter>
     </Style>
 
-
-    <Style x:Key="BottomNaviIconRaioButton" TargetType="{x:Type controls:IconRadioButton}">
+    <Style x:Key="BottomNaviIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
@@ -178,7 +317,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Padding" Value="10 10 10 5"/>
+        <Setter Property="Padding" Value="10 10 10 9"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
@@ -242,5 +381,350 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="LeftNaviAccentEffectIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="0 10 10 10"/>
+        <Setter Property="IconSize" Value="20"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+                        <Rectangle x:Name="rect" Visibility="Hidden" Fill="{DynamicResource Accent}" Height="24" Width="4" 
+                                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                        <Border x:Name="icon_text_content" Margin="10 0" Effect="{x:Null}">
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="10 0 0 0"
+                                      DockPanel.Dock="Top"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Top"
+                                          Focusable="False" Margin="10 3 0 0"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="rect"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                            <Setter Property="Effect" TargetName="icon_text_content">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="{DynamicResource AccentColor}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="rect" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="TopNaviAccentEffectIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="0 10 10 10"/>
+        <Setter Property="IconSize" Value="20"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+
+                        <Rectangle x:Name="rect" Visibility="Hidden" Fill="{DynamicResource Accent}" Height="4" Width="24" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                        <Border x:Name="icon_text_content" Margin="10 0" Effect="{x:Null}">
+
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="10 0 0 0"
+                                      DockPanel.Dock="Top"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Top"
+                                          Focusable="False" Margin="10 3 0 0"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="rect"/>
+                            <Setter Property="Effect" TargetName="icon_text_content">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="{DynamicResource AccentColor}" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="rect" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="NaviAccentEffectIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="IconSize" Value="20"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+
+                        <Border x:Name="icon_text_content" Margin="10 0" Effect="{x:Null}">
+
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="0 0 0 0"
+                                      DockPanel.Dock="Top"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Top"
+                                          Focusable="False" Margin="0 3 0 0"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Effect" TargetName="icon_text_content">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="{DynamicResource AccentColor}" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="RoundCornerNaviAccentEffectIconRadioButton" TargetType="{x:Type controls:IconRadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="IconSize" Value="20"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                CornerRadius="5"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+
+                        <Border x:Name="icon_text_content" Margin="10 0" Effect="{x:Null}">
+
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="0 0 0 0"
+                                      DockPanel.Dock="Top"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Top"
+                                          Focusable="False" Margin="0 3 0 0"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="False">
+                            <Setter Property="Margin" TargetName="icon_text_content" Value="10 7.5"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Effect" TargetName="icon_text_content">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0" Direction="0" Color="{DynamicResource AccentColor}" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
 
 </ResourceDictionary>

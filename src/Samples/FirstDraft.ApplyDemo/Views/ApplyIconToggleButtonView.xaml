@@ -19,8 +19,10 @@
                             <StackPanel Orientation="Horizontal">
                                 <controls:IconToggleButton Margin="5" Icon="{Binding tag_line, Source={StaticResource IconSet}}" Content="IconToggleButton"/>
                                 <controls:IconToggleButton Margin="5" Icon="{Binding tag_line, Source={StaticResource IconSet}}" IsChecked="True"/>
+                                <controls:IconToggleButton Style="{DynamicResource RoundBackIconToggleButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Margin="5"/>
+                                <controls:IconToggleButton Style="{DynamicResource RoundCornerIconToggleButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Margin="5"/>
                             </StackPanel>
-
+                            
                         </WrapPanel>
                     </Border>
 
@@ -47,6 +49,59 @@
 
                         </WrapPanel>
                     </Border>
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="RoundBackIconToggleButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RoundBackIconToggleButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中圆形背景状态切换按钮样式，可以设置" />
+                        <Run Text=" IconSize Padding" FontStyle="Oblique"/>
+                        <Run Text="控制大小。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel MinHeight="50" Margin="5">
+
+                            <controls:IconToggleButton Style="{DynamicResource RoundBackIconToggleButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Margin="5"/>
+                            <controls:IconToggleButton Style="{DynamicResource RoundBackIconToggleButton}" Icon="{Binding settings_line, Source={StaticResource IconSet}}" IsEnabled="False" Margin="5"/>
+                            <controls:IconToggleButton Style="{DynamicResource RoundBackIconToggleButton}" IconSize="30" Padding="10" Icon="{Binding home_fill, Source={StaticResource IconSet}}" Margin="5"/>
+
+                        </WrapPanel>
+                    </Border>
+                    
+                    
+                    
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="RoundCornerIconToggleButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RoundCornerIconToggleButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中圆角背景状态切换按钮样式，可以设置" />
+                        <Run Text=" IconSize Padding" FontStyle="Oblique"/>
+                        <Run Text="控制大小。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel MinHeight="50" Margin="5">
+
+                            <controls:IconToggleButton Style="{DynamicResource RoundCornerIconToggleButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Margin="5"/>
+                            <controls:IconToggleButton Style="{DynamicResource RoundCornerIconToggleButton}" Icon="{Binding settings_line, Source={StaticResource IconSet}}" IsEnabled="False" Margin="5"/>
+                            <controls:IconToggleButton Style="{DynamicResource RoundCornerIconToggleButton}" IconSize="30" Padding="10" Icon="{Binding home_fill, Source={StaticResource IconSet}}" Margin="5"/>
+
+                        </WrapPanel>
+                    </Border>
+
+
+
 
 
                 </StackPanel>

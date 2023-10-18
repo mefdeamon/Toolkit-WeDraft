@@ -4,6 +4,16 @@
         <name>FirstDraft</name>
     </assembly>
     <members>
+        <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.AttachProperty">
+            <summary>
+            是否使用附加属性
+            </summary>
+        </member>
         <member name="P:FirstDraft.Controls.IconButton.Icon">
             <summary>
             图标数据
@@ -27,6 +37,21 @@
         <member name="F:FirstDraft.Controls.IconRadioButton.IconProperty">
             <summary>
             <see cref="P:FirstDraft.Controls.IconRadioButton.Icon"/>
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconTextBox.Icon">
+            <summary>
+            图标数据
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconTextBox.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconTextBox.Icon"/>
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconTextBox.IconSize">
+            <summary>
+            图标大小
             </summary>
         </member>
         <member name="T:FirstDraft.Controls.IconToggleButton">
@@ -63,6 +88,293 @@
         <member name="T:FirstDraft.Converters.InvertBooleanToVisibilityConverter">
             <summary>
             <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Windows.Visibility"/> 值 反向向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanToInt01Converter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Int32"/> 值(0,1) 反向向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.FdWindow">
+            <summary>
+            First Draft自定义窗口
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.mWindowResizer">
+            <summary>
+            The window resizer helper that keeps the window size correct in various states
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.mDockPosition">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.zeroWindowCornerRadius">
+            <summary>
+            The default no corner value
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.normalWindowCornerRadius">
+            <summary>
+            The first setted window corner radius
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.normalMarginSize">
+            <summary>
+            The margin size when window in normal state
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.BeingMoved">
+            <summary>
+            True if the window is currently being moved/dragged
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.Borderless">
+            <summary>
+            True if the window should be borderless because it is docked or maximized
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.ResizeBorder">
+            <summary>
+            The size of the resize border around the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.ResizeBorderThickness">
+            <summary>
+            The size of the resize border around the window, taking into account the outer margin
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.InnerContentPadding">
+            <summary>
+            The padding of the inner content of the main window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.OuterMarginBlurRadius">
+            <summary>
+             The drop shadow BlurRadius
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.OuterMarginSize">
+            <summary>
+            The margin around the window to allow for a drop shadow
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.FlatBorderThickness">
+            <summary>
+            The rectangle border around the window when docked
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.WindowCornerRadius">
+            <summary>
+            The radius of the edges of the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.CaptionHeight">
+            <summary>
+            The height of the title bar / caption of the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.CaptionHeightGridLength">
+            <summary>
+            The height of the title bar / caption of the window
+            </summary>
+        </member>
+        <member name="M:FirstDraft.FdWindow.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:FirstDraft.FdWindow.WindowResized">
+            <summary>
+            If the window resizes to a special position (docked or maximized)
+            this will update all required property change events to set the borders and radius values
+            </summary>
+        </member>
+        <member name="T:FirstDraft.WindowResizer">
+            <summary>
+            Fixes the issue with Windows of Style <see cref="F:System.Windows.WindowStyle.None"/> covering the taskbar
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mWindow">
+            <summary>
+            The window to handle the resizing for
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mScreenSize">
+            <summary>
+            The last calculated available screen size
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mEdgeTolerance">
+            <summary>
+            How close to the edge the window has to be to be detected as at the edge of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mMonitorDpi">
+            <summary>
+            The transform matrix used to convert WPF sizes to screen pixels
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mLastScreen">
+            <summary>
+            The last screen the window was on
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mLastDock">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mBeingMoved">
+            <summary>
+            A flag indicating if the window is currently being moved/dragged
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowDockChanged">
+            <summary>
+            Called when the window dock position changes
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowStartedMove">
+            <summary>
+            Called when the window starts being moved/dragged
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowFinishedMove">
+            <summary>
+            Called when the window has been moved/dragged and then finished
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentMonitorSize">
+            <summary>
+            The size and position of the current monitor the window is on
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentMonitorMargin">
+            <summary>
+            The margin around the window for the current window to compensate for any non-usable area
+            such as the task bar
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentScreenSize">
+            <summary>
+            The size and position of the current screen in relation to the multi-screen desktop
+            For example a second monitor on the right will have a Left position of
+            the X resolution of the screens on the left
+            </summary>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.#ctor(System.Windows.Window)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="window">The window to monitor and correctly maximize</param>
+            <param name="adjustSize">The callback for the host to adjust the maximum available size if needed</param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_SourceInitialized(System.Object,System.EventArgs)">
+            <summary>
+            Initialize and hook into the windows message pump
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_LocationChanged(System.Object,System.EventArgs)">
+            <summary>
+            Monitor for moving of the window and constantly check for docked positions
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Monitors for size changes and detects if the window has been docked (Aero snap) to an edge
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.WindowProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)">
+            <summary>
+            Listens out for all windows messages for this window
+            </summary>
+            <param name="hwnd"></param>
+            <param name="msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <param name="handled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.WmGetMinMaxInfo(System.IntPtr,System.IntPtr)">
+            <summary>
+            Get the min/max window size for this window
+            Correctly accounting for the task bar size and position
+            </summary>
+            <param name="hwnd"></param>
+            <param name="lParam"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.GetCursorPosition">
+            <summary>
+            Gets the current cursor position in screen coordinates relative to an entire multi-desktop position
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FirstDraft.WindowDockPosition">
+            <summary>
+            The dock position of the window
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Undocked">
+            <summary>
+            Not docked
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Left">
+            <summary>
+            Docked to the left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Right">
+            <summary>
+            Docked to the right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopBottom">
+            <summary>
+            Docked to the top/bottom of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopLeft">
+            <summary>
+            Docked to the top-left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopRight">
+            <summary>
+            Docked to the top-right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.BottomLeft">
+            <summary>
+            Docked to the bottom-left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.BottomRight">
+            <summary>
+            Docked to the bottom-right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.POINT.X">
+            <summary>
+            x coordinate of point.
+            </summary>
+        </member>
+        <member name="F:FirstDraft.POINT.Y">
+            <summary>
+            y coordinate of point.
+            </summary>
+        </member>
+        <member name="M:FirstDraft.POINT.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a point of coordinates (x,y).
             </summary>
         </member>
         <member name="T:FirstDraft.IconSet">
@@ -275,34 +587,39 @@
             礼花 欢迎
             </summary>
         </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+        <member name="P:FirstDraft.IconSet.slider_fill">
             <summary>
-            GeneratedInternalTypeHelper
+            滑动条
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+        <member name="P:FirstDraft.IconSet.in_dark">
             <summary>
-            CreateInstance
+            黑夜
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+        <member name="P:FirstDraft.IconSet.in_light">
             <summary>
-            GetPropertyValue
+            白天
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+        <member name="P:FirstDraft.IconSet.email_fill">
             <summary>
-            SetPropertyValue
+            电子邮件——填充
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+        <member name="P:FirstDraft.IconSet.email_line">
             <summary>
-            CreateDelegate
+            电子邮件-线条
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+        <member name="P:FirstDraft.IconSet.phone_line">
             <summary>
-            AddEventHandler
+            电话号码
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.phone_fill">
+            <summary>
+            电话号码
             </summary>
         </member>
     </members>

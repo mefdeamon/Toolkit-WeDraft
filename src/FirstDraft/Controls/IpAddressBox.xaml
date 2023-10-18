@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="FirstDraft.Controls.IpAddressBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.Controls"
+             xmlns:attachedprop="clr-namespace:FirstDraft.AttachedProperties"
+             mc:Ignorable="d" Background="{DynamicResource DefaultBackground}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="30" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition MinWidth="30" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition MinWidth="30" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition MinWidth="30" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Part 1  -->
+        <TextBox Grid.Column="0"
+                 x:Name="part1"
+                 PreviewKeyDown="Part1_PreviewKeyDown"
+                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart1Focused, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
+                 Style="{DynamicResource IpAddressTextBox}">
+            <TextBox.Text>
+                <Binding Path="Part1" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IPRangeValidationRule Max="255" Min="0" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBlock Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   FontSize="15"
+                   Text="."
+                   VerticalAlignment="Center"/>
+
+        <!--  Part 2  -->
+        <TextBox Grid.Column="2"
+                x:Name="part2"
+                PreviewKeyDown="Part2_KeyDown"
+                attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart2Focused}"
+                Style="{DynamicResource IpAddressTextBox}">
+            <TextBox.Text>
+                <Binding Path="Part2" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IPRangeValidationRule Max="255" Min="0" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBlock Grid.Column="3"
+                   HorizontalAlignment="Center"
+                   FontSize="15"
+                   Text="."
+                   VerticalAlignment="Center"/>
+
+        <!--  Part 3  -->
+        <TextBox Grid.Column="4"
+                x:Name="part3"
+                PreviewKeyDown="Part3_KeyDown"
+                attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart3Focused}"
+                Style="{DynamicResource IpAddressTextBox}">
+            <TextBox.Text>
+                <Binding Path="Part3" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IPRangeValidationRule Max="255" Min="0" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBlock Grid.Column="5"
+                   HorizontalAlignment="Center"
+                   FontSize="15"
+                   Text="."
+                   VerticalAlignment="Center"/>
+
+        <!--  Part 4  -->
+        <TextBox Grid.Column="6"
+                 x:Name="part4"
+                 PreviewKeyDown="Part4_KeyDown"
+                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart4Focused}"
+                 Style="{DynamicResource IpAddressTextBox}">
+            <TextBox.Text>
+                <Binding Path="Part4" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IPRangeValidationRule Max="255" Min="0" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+    </Grid>
+</UserControl>

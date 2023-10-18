@@ -47,7 +47,8 @@ namespace FirstDraft.ApplyDemo
             services.AddSingleton<IconSetViewModel>();
             services.AddSingleton<ApplyComboBoxViewModel>();
             services.AddSingleton<ApplyRadioButtonViewModel>();
-
+            services.AddSingleton<ApplyIpAddressBoxViewModel>();
+            
             return services.BuildServiceProvider();
         }
     }

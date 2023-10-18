@@ -83,4 +83,153 @@
     </Style>
 
 
+    <Style x:Key="RoundBackIconToggleButton" TargetType="{x:Type controls:IconToggleButton}" >
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="HorizontalContentAlignment"  Value="Center"/>
+        <Setter Property="VerticalContentAlignment"  Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Border Name="border"  Margin="0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            Padding="{TemplateBinding Padding}" CornerRadius="50"
+                            SnapsToDevicePixels="true">
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                            <Path x:Name="icon" DockPanel.Dock="Left"
+                                  Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                  Data="{TemplateBinding Icon}" 
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                            </Path>
+                            <ContentPresenter x:Name="contentPresenter" Margin="5 0 0 0" Visibility="Collapsed"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="True">
+                            <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Checked.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Checked.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.Checked.Foreground}"/>
+                            <Setter Property="Fill"  TargetName="icon" Value="{DynamicResource Button.Checked.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Pressed.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Background"   TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Fill"  TargetName="icon" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="RoundCornerIconToggleButton" TargetType="{x:Type controls:IconToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="IconSize" Value="20"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:IconToggleButton}">
+                    <Grid x:Name="root" >
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Height="{TemplateBinding Width}"
+                                    CornerRadius="5"
+                                    SnapsToDevicePixels="true">
+                        </Border>
+
+                        <Border  Margin="0 0 0 0">
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                <Path Data="{TemplateBinding Icon}" Margin="0 0 0 0"
+                                      DockPanel.Dock="Top"
+                                          Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                          x:Name="path" Fill="{TemplateBinding Foreground}"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Stretch="Uniform">
+                                </Path>
+
+                                <ContentPresenter x:Name="contentPresenter" DockPanel.Dock="Top"
+                                          Focusable="False" Margin="0 3 0 0" Visibility="Visible"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </DockPanel>
+                        </Border>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="False">
+                            <Setter Property="Visibility" TargetName="contentPresenter" Value="Collapsed"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>
+                            <Setter Property="Effect" TargetName="path" Value="{DynamicResource DeepPathEffect}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Static.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>

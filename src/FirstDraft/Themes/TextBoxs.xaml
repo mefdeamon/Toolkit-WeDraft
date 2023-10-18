@@ -1,5 +1,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+                    xmlns:local="clr-namespace:FirstDraft.Controls"
+                    xmlns:attachedprop="clr-namespace:FirstDraft.AttachedProperties"
+                    >
 
 
     <!--<SolidColorBrush x:Key="TextBox.Static.Background" Color="Black"/>
@@ -165,5 +169,46 @@
 
     </Style>
 
+    <Style TargetType="{x:Type TextBox}" x:Key="IpAddressTextBox" BasedOn="{StaticResource BaseTextBox}">
+        <Setter Property="Padding" Value="5 0"/>
+        <Setter Property="MaxLength" Value="3" />
+        <Setter Property="MinWidth" Value="35"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="attachedprop:TextBoxAttProp.SelectAllWhenGotFocus" Value="True"/>
+        <Setter Property="input:InputMethod.IsInputMethodEnabled" Value="False"/>
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate >
+                    <DockPanel>
+                        <TextBlock Margin="1,2"
+                                    DockPanel.Dock="Right"
+                                    FontWeight="Bold"
+                                    Foreground="Red"
+                                    Text="" />
+                        <AdornedElementPlaceholder />
+                    </DockPanel>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="BorderBrush" Value="Red" />
+                    <Setter Property="Background" Value="Red" />
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}" x:Key="PortTextBox" BasedOn="{StaticResource IpAddressTextBox}">
+        <Setter Property="MaxLength" Value="5" />
+        <Setter Property="MinWidth" Value="50"/>
+    </Style>
 
 </ResourceDictionary>

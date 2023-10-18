@@ -87,7 +87,7 @@
                         <DataTemplate DataType="{x:Type local:NaviItem}">
 
                             <fdcontrols:IconRadioButton Content="{Binding Title}"
-                                                        Style="{StaticResource LeftNaviIconRaioButton}"
+                                                        Style="{StaticResource LeftNaviIconRadioButton}"
                                                 GroupName="Items"
                                                 Icon="{Binding Icon}">
                                 <fdcontrols:IconRadioButton.IsChecked>
