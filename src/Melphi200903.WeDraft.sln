@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{2FE5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstDraft.ApplyDemo", "Samples\FirstDraft.ApplyDemo\FirstDraft.ApplyDemo.csproj", "{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstDraft.ApplyDemo.WXWork", "Samples\FirstDraft.ApplyDemo.WXWork\FirstDraft.ApplyDemo.WXWork.csproj", "{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
+		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AB67895-0A79-4337-B8A1-E4F4C0592F31}
