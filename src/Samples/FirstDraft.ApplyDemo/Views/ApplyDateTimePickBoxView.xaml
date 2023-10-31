@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyDateTimePickBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:fdcontrol="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding Source={StaticResource Locator},Path=ApplyDateTimePickBoxViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+                            <WrapPanel>
+                                <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="0 0 5 0"/>
+                                <fdcontrol:TimePickBox DataContext="{Binding TimePicker}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="日期选择框默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="直接将DateTimePickerDataContext对象Binding到" />
+                        <Run Text="DataContext" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="属性，可供修改设置日期信息" />
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+                            <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="0 0 5 0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="时间选择框默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="直接将TimePickerDataContext对象Binding到" />
+                        <Run Text="DataContext" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="属性，可供修改设置日期信息" />
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <StackPanel  HorizontalAlignment="Left" Margin="5">
+                            <fdcontrol:TimePickBox DataContext="{Binding TimePicker}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="ViewModel中可以结合TimePickerDataContext或者DateTimePickerDataContext" />
+                        <Run Text="提供的DateTimeText/TimeText获取日期/时间文本内容" />
+                        <Run Text="提供的SetDateTime/SetTime设置或者初始化时间" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="重载函数" />
+                    </TextBlock>
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

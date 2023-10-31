@@ -35,6 +35,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().radiobutton, Content = new Views.ApplyIconRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标文本框(IconTextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyIconTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "IP地址框(IpAddressBox)", Icon = App.Current.Services.GetService<IconSet>().ipaddressbox, Content = new Views.ApplyIpAddressBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "日期时间选择框(DateTimePickBox)", Icon = App.Current.Services.GetService<IconSet>().datetimepickbox, Content = new Views.ApplyDateTimePickBoxView() });
             NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.IconSetView() });
 
             Current = NaviItems[0];

@@ -4,6 +4,56 @@
         <name>FirstDraft</name>
     </assembly>
     <members>
+        <member name="T:FirstDraft.AttachedProperties.SlideTo">
+            <summary>
+            【To Out】
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.SlideTo.AddSlideToLeft(System.Windows.Media.Animation.Storyboard,System.Single,System.Double,System.Single,System.Boolean)">
+            <summary>
+            【Out】Slide to Right
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="offset"></param>
+            <param name="decelerationRatio"></param>
+            <param name="keepMargin"></param>
+        </member>
+        <member name="T:FirstDraft.AttachedProperties.SildeForm">
+            <summary>
+            【From In】
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.SildeForm.AddSlideFromLeft(System.Windows.Media.Animation.Storyboard,System.Single,System.Double,System.Single,System.Boolean)">
+            <summary>
+            【In】Slide Form Left
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="offset"></param>
+            <param name="decelerationRatio"></param>
+            <param name="keepMargin"></param>
+        </member>
+        <member name="T:FirstDraft.AttachedProperties.FadeInOut">
+            <summary>
+            Fade In Out
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.FadeInOut.AddFadeIn(System.Windows.Media.Animation.Storyboard,System.Single,System.Boolean)">
+            <summary>
+            【In】Fade In
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="from"></param>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.FadeInOut.AddFadeOut(System.Windows.Media.Animation.Storyboard,System.Single)">
+            <summary>
+            【Out】Fade Out
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+        </member>
         <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.PasswordProperty">
             <summary>
             密码
@@ -12,6 +62,24 @@
         <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.AttachProperty">
             <summary>
             是否使用附加属性
+            </summary>
+        </member>
+        <member name="F:FirstDraft.AttachedProperties.TextBoxAttProp.SelectAllWhenGotFocusProperty">
+            <summary>
+            当 TextBoxBase获得焦点的时候，自动全部选择文字。附加属性为SelectAllWhenGotFocus，类型为bool.
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.DateTimePickerBox">
+            <summary>
+            Interaction logic for DateTimePickerBox.xaml
+            </summary>
+            <summary>
+            DateTimePickerBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.DateTimePickerBox.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
         <member name="P:FirstDraft.Controls.IconButton.Icon">
@@ -67,6 +135,59 @@
         <member name="F:FirstDraft.Controls.IconToggleButton.IconProperty">
             <summary>
             <see cref="P:FirstDraft.Controls.IconToggleButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IpAddressBox">
+            <summary>
+            IpAddressBox.xaml 的交互逻辑
+            </summary>
+            <summary>
+            IpAddressBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IpAddressDataContext">
+            <summary>
+            IP地址模型
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IpAddressDataContext.IpBytes">
+            <summary>
+            IP字节
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressDataContext.SetAddress(System.String)">
+            <summary>
+            设置IP地址
+            </summary>
+            <param name="address">地址格式：192.168.1.2</param>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressDataContext.SetAddress(System.Byte[])">
+            <summary>
+            设置IP地址，不改变控件的焦点
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="T:FirstDraft.Controls.TimePickerBox">
+            <summary>
+            Interaction logic for TimePickerBox.xaml
+            </summary>
+            <summary>
+            TimePickerBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.TimePickerBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.TimePickerDataContext.TimeChanged">
+            <summary>
+            通知子类修改
             </summary>
         </member>
         <member name="T:FirstDraft.Converters.BooleanConverter`1">
@@ -620,6 +741,86 @@
         <member name="P:FirstDraft.IconSet.phone_fill">
             <summary>
             电话号码
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.ipaddressbox">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.running">
+            <summary>
+            运行管理
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.folder_opended">
+            <summary>
+            文件夹打开
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.start">
+            <summary>
+            FCT的图标
+            开始测试，
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.scan_gun">
+            <summary>
+            扫码枪
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.enter">
+            <summary>
+            FCT的图标
+            进入
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.exit">
+            <summary>
+            FCT的图标
+            退出
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.reconfig">
+            <summary>
+            重新配置
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.clock">
+            <summary>
+            时钟
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.shell">
+            <summary>
+            命令行/控制台
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.back">
+            <summary>
+            回退
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.to_right">
+            <summary>
+            朝右的箭头
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.database_view">
+            <summary>
+            FCT图标
+            数据库查看
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.add">
+            <summary>
+            FCT图标
+            添加
             </summary>
         </member>
     </members>

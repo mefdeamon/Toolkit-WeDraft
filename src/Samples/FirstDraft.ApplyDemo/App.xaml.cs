@@ -48,6 +48,7 @@ namespace FirstDraft.ApplyDemo
             services.AddSingleton<ApplyComboBoxViewModel>();
             services.AddSingleton<ApplyRadioButtonViewModel>();
             services.AddSingleton<ApplyIpAddressBoxViewModel>();
+            services.AddSingleton<ApplyDateTimePickBoxViewModel>();
             
             return services.BuildServiceProvider();
         }
