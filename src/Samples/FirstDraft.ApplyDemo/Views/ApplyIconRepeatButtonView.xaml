@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyIconRepeatButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="图标重复按钮" />
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding cube_line, Source={StaticResource IconSet}}" Content="功能按钮" />
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" Style="{StaticResource NoBackgroundIconRepeatButton}"  Content="在按下鼠标左键时，不停地发出单击Click事件" Delay="1"/>
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_up, Source={StaticResource IconSet}}" Style="{StaticResource NoBackgroundIconRepeatButton}"  />
+                            </StackPanel>
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="可以通过设置" />
+                        <Run Text="Icon" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="实现只显示图标，也可以给" />
+                        <Run Text="Content" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="附加内容同时显示文本。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <controls:IconRepeatButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}"/>
+                            <controls:IconRepeatButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" IsEnabled="False"/>
+                            <controls:IconRepeatButton Margin="5" Icon="{Binding settings_fill, Source={StaticResource IconSet}}" Content="使能"/>
+                            <controls:IconRepeatButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
+                        </WrapPanel>
+                    </Border>
+                    
+                    
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="VerticalTextIconButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="NoBackgroundIconRepeatButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 不显示背景色的按钮样式。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel Margin="5">
+
+                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" />
+
+                        </WrapPanel>
+                    </Border>
+
+
+
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

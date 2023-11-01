@@ -24,6 +24,11 @@ namespace FirstDraft.Controls
         {
             InitializeComponent();
         }
+
+        private void sumbit_Click(object sender, RoutedEventArgs e)
+        {
+            popup.IsOpen = false;
+        }
     }
 
     public class TimePickerDataContext : NotifyPropertyChanged

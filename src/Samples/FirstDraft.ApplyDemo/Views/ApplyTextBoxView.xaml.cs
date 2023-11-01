@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstDraft.Controls;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,7 +17,7 @@ namespace FirstDraft.ApplyDemo.Views
     /// <summary>
     /// Interaction logic for ApplyTextBoxView.xaml
     /// </summary>
-    public partial class ApplyTextBoxView : UserControl
+    public partial class ApplyTextBoxView : AnimatableUserControl
     {
         public ApplyTextBoxView()
         {

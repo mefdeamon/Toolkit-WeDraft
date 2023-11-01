@@ -14,14 +14,13 @@ using System.Windows.Shapes;
 namespace FirstDraft.ApplyDemo.Views
 {
     /// <summary>
-    /// Interaction logic for ApplyToggleButtonView.xaml
+    /// ApplyListBoxView.xaml 的交互逻辑
     /// </summary>
-    public partial class ApplyToggleButtonView : FirstDraft.Controls.AnimatableUserControl
+    public partial class ApplyListBoxView : UserControl
     {
-        public ApplyToggleButtonView()
+        public ApplyListBoxView()
         {
             InitializeComponent();
-            LoadedAnimateDirection = AttachedProperties.AnimationDirection.Left;
         }
     }
 }

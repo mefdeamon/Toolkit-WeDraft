@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstDraft.Controls;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,11 +17,12 @@ namespace FirstDraft.ApplyDemo.Views
     /// <summary>
     /// Interaction logic for ApplyCheckBoxView.xaml
     /// </summary>
-    public partial class ApplyCheckBoxView : UserControl
+    public partial class ApplyCheckBoxView : AnimatableUserControl
     {
         public ApplyCheckBoxView()
         {
             InitializeComponent();
+            LoadedAnimateDirection = AttachedProperties.AnimationDirection.Bottom;
         }
     }
 }

@@ -8,6 +8,7 @@
         <ResourceDictionary Source="/FirstDraft;component/Themes/IconButtons.xaml"/>
         <ResourceDictionary Source="/FirstDraft;component/Themes/IconRadioButtons.xaml"/>
         <ResourceDictionary Source="/FirstDraft;component/Themes/IconToggleButtons.xaml"/>
+        <ResourceDictionary Source="/FirstDraft;component/Themes/IconRepeatButtons.xaml"/>
         <ResourceDictionary Source="/FirstDraft;component/Themes/IconTextBoxs.xaml"/>
         <ResourceDictionary Source="/FirstDraft;component/Themes/FdWindows.xaml"/>
 

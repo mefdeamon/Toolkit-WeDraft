@@ -18,8 +18,8 @@
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel  HorizontalAlignment="Left" Margin="5">
                             <WrapPanel>
-                                <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="0 0 5 0"/>
-                                <fdcontrol:TimePickBox DataContext="{Binding TimePicker}"/>
+                                <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="5"/>
+                                <fdcontrol:TimePickBox DataContext="{Binding TimePicker}" Margin="5"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -32,7 +32,7 @@
                     </TextBlock>
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel  HorizontalAlignment="Left" Margin="5">
-                            <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="0 0 5 0"/>
+                            <fdcontrol:DateTimePickBox DataContext="{Binding DateTimePicker}" Margin="5"/>
                         </StackPanel>
                     </Border>
 
@@ -44,7 +44,7 @@
                     </TextBlock>
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel  HorizontalAlignment="Left" Margin="5">
-                            <fdcontrol:TimePickBox DataContext="{Binding TimePicker}"/>
+                            <fdcontrol:TimePickBox DataContext="{Binding TimePicker}" Margin="5"/>
                         </StackPanel>
                     </Border>
 

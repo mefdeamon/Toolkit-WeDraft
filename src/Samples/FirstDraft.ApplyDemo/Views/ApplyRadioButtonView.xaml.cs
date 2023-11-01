@@ -16,11 +16,14 @@ namespace FirstDraft.ApplyDemo.Views
     /// <summary>
     /// Interaction logic for ApplyRadioButtonView.xaml
     /// </summary>
-    public partial class ApplyRadioButtonView : UserControl
+    public partial class ApplyRadioButtonView : Controls.AnimatableUserControl
     {
         public ApplyRadioButtonView()
         {
             InitializeComponent();
+            LoadedAnimateDirection = AttachedProperties.AnimationDirection.Right;
+            UnloadAnimateDirection = AttachedProperties.AnimationDirection.Left;
+
         }
     }
 }

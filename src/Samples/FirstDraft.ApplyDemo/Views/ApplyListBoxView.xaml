@@ -1,0 +1,299 @@
+﻿<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyListBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:vm="clr-namespace:FirstDraft.ApplyDemo.ViewModels"
+             xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             DataContext="{Binding ApplyComboBoxViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <ListBox SelectedIndex="0" Margin="5">
+                                <ListBoxItem >ListBox</ListBoxItem>
+                                <ListBoxItem >ListBoxItem</ListBoxItem>
+                                <ListBoxItem >ItemControl</ListBoxItem>
+                            </ListBox>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="列表框。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <ListBox SelectedIndex="0" Margin="5">
+                                <ListBoxItem >ListBox</ListBoxItem>
+                                <ListBoxItem >ListBoxItem</ListBoxItem>
+                                <ListBoxItem >ItemControl</ListBoxItem>
+                            </ListBox>
+
+                            <ListBox SelectedIndex="0" Margin="5" IsEnabled="False">
+                                <ListBoxItem >ListBox</ListBoxItem>
+                                <ListBoxItem >ListBoxItem</ListBoxItem>
+                                <ListBoxItem >ItemControl</ListBoxItem>
+                            </ListBox>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                          <Run Text="绑定的" />
+                        <Run Text="ItemsSource" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="可以使用" />
+                        <Run Text="List" FontStyle="Oblique"/>
+                        <Run Text="ObservableCollection" FontStyle="Oblique"/>
+                        <Run Text="Dictionary" FontStyle="Oblique"/>
+                        <Run Text="等集合类型定义，结合" />
+                        <Run Text="SelectedValue" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="SelectedValuePath" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="SelectedItem" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="DisplayMemberPath" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="等属性使用。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+
+                            <ListBox ItemsSource="{Binding Areas}" 
+                                      Margin="5"
+                                      SelectedItem="{Binding CurrentItem}" 
+                                      DisplayMemberPath="Name"/>
+
+
+                            <TextBlock VerticalAlignment="Center">
+                                <Run Text="{Binding CurrentItem.Id,Mode=OneWay}"/>
+                                <Run Text="{Binding CurrentItem.Name,Mode=OneWay}"/>
+                            </TextBlock>
+
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ListBox ItemsSource="{Binding Areas}" 
+                                      Margin="5"
+                                      SelectedValue="{Binding CurrentId,Mode=TwoWay}" 
+                                      SelectedValuePath="Id"
+                                      DisplayMemberPath="Name"/>
+
+                            <ListBox ItemsSource="{Binding AreaKVs}" 
+                                      Margin="5"
+                                      SelectedValue="{Binding CurrentId,Mode=TwoWay}" 
+                                      SelectedValuePath="Key"
+                                      DisplayMemberPath="Value.Name"/>
+
+                            <TextBlock VerticalAlignment="Center">
+                                <Run Text="{Binding CurrentId,Mode=OneWay}"/>
+                            </TextBlock>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ListBox ItemsSource="{Binding AreaKVs}" 
+                                      Margin="5"
+                                      SelectedValue="{Binding CurrentName,Mode=TwoWay}" 
+                                      SelectedValuePath="Value.Name"
+                                      DisplayMemberPath="Value.Name"/>
+
+                            <TextBlock VerticalAlignment="Center">
+                                <Run Text="{Binding CurrentName,Mode=OneWay}"/>
+                            </TextBlock>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                        </WrapPanel>
+                    </Border>
+
+
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="RadioButtonItemUpDownScrollListBox" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RadioButtonItemUpDownScrollListBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 当列表显示区域不足展示全部内容时，显示可上下滚动按钮的列表。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel Margin="5" Height="80">
+
+                            <ListBox ItemsSource="{Binding Areas}"
+                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                      Margin="5"
+                                      SelectedItem="{Binding CurrentItem}" 
+                                      DisplayMemberPath="Name"/>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+                            
+                            <ListBox ItemsSource="{Binding Areas}" 
+                                      Margin="5"
+                                      SelectedItem="{Binding CurrentItem}" 
+                                      DisplayMemberPath="Name"/>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="NoStyleListBox" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="更多的时候，我们通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="NoStyleListBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 然后使用" />
+                        <Run Text="DataTemplate"  FontStyle="Oblique"/>
+                        <Run Text=" 去重写" />
+                        <Run Text="ItemTemplate"  FontStyle="Oblique"/>
+                        <Run Text=" 来实现我们需要显示的样式" />
+                        <Run Text=" 利用单选按钮RadioButton的" />
+                        <Run Text="IsChecked"  FontStyle="Oblique"/>
+                        <Run Text=" 与ListBox的" />
+                        <Run Text="IsSelected"  FontStyle="Oblique"/>
+                        <Run Text=" 绑定起来使用。" />
+                    </TextBlock>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="如果不使用单选按钮 RadioButton，结合" />
+                        <Run Text="ItemContainerStyle"   FontStyle="Oblique"/>
+                        <Run Text="去设置" />
+                        <Run Text="ListBoxItem"  FontStyle="Oblique"/>
+                        <Run Text="选中或不选中的样式也是不错的选择。" />
+                    </TextBlock>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="注意：单独使用是没选中效果的。"  FontStyle="Oblique"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel Margin="5" >
+
+                            <ListBox ItemsSource="{Binding Areas}"
+                                     Style="{DynamicResource NoStyleListBox}"
+                                      Margin="5"
+                                      SelectedItem="{Binding CurrentItem}" 
+                                      DisplayMemberPath="Name"/>
+                            
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ListBox Style="{DynamicResource NoStyleListBox}" 
+                                     Margin="5"
+                                     ItemsSource="{Binding Areas}" SelectedItem="{Binding CurrentItem}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:ItemDataModel}">
+                                        <RadioButton>
+                                            <RadioButton.IsChecked>
+                                                <Binding Path="IsSelected"
+                                                         RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
+                                                         Mode="TwoWay" />
+                                            </RadioButton.IsChecked>
+                                            <TextBlock >
+                                                <Run Text="{Binding Id,Mode=OneWay}"/>
+                                                <Run Text="{Binding Name,Mode=OneWay}"/>
+                                            </TextBlock>
+                                        </RadioButton>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ListBox Style="{DynamicResource NoStyleListBox}" 
+                                     Margin="5"
+                                     ItemsSource="{Binding Areas}" SelectedItem="{Binding CurrentItem}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:ItemDataModel}">
+                                        <fdcontrols:IconRadioButton Content="{Binding Name}"
+                                                        Style="{StaticResource LeftNaviIconRadioButton}"
+                                                        GroupName="AreaNoStyleListBox"
+                                                        Icon="{Binding  list, Source={StaticResource IconSet}}">
+                                            <fdcontrols:IconRadioButton.IsChecked>
+                                                <Binding Path="IsSelected"
+                                                         RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
+                                                         Mode="TwoWay" />
+                                            </fdcontrols:IconRadioButton.IsChecked>
+                                        </fdcontrols:IconRadioButton>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ListBox ItemsSource="{Binding Areas}"
+                                     Style="{DynamicResource NoStyleListBox}"
+                                      Margin="5"
+                                      SelectedItem="{Binding CurrentItem}" 
+                                      DisplayMemberPath="Name">
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                    <Border x:Name="templateRoot" Background="{DynamicResource DefaultBackground}"
+                                                            BorderThickness="{TemplateBinding BorderThickness}" 
+                                                            CornerRadius="10"
+                                                            SnapsToDevicePixels="true">
+                                                        <ContentPresenter x:Name="contentPresenter" 
+                                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                                          IsHitTestVisible="false" Margin="{TemplateBinding Padding}" 
+                                                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+
+                                                        <Trigger Property="IsSelected" Value="True">
+                                                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
+                                                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="White"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="False">
+                                                            <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
+                                                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                                                        </Trigger>
+
+                                                        <MultiTrigger >
+                                                            <MultiTrigger.Conditions>
+                                                                <Condition  Property="IsSelected" Value="False"/>
+                                                                <Condition  Property="IsEnabled" Value="False"/>
+                                                            </MultiTrigger.Conditions>
+                                                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                                                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFF4F4F4"/>
+                                                            <Setter Property="Background" TargetName="templateRoot" Value="#FFF4F4F4"/>
+                                                        </MultiTrigger>
+
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+                        </WrapPanel>
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

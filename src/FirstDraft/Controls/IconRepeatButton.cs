@@ -1,13 +1,12 @@
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 namespace FirstDraft.Controls
 {
-    public class IconButton : Button
+    public class IconRepeatButton : RepeatButton
     {
-        public IconButton()
+        public IconRepeatButton()
         {
             //DefaultStyleKeyProperty.OverrideMetadata(typeof(IconButton), new FrameworkPropertyMetadata(typeof(IconButton)));
         }
@@ -24,7 +23,7 @@ namespace FirstDraft.Controls
         /// <see cref="Icon"/>
         /// </summary>
         public static readonly DependencyProperty IconProperty =
-            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconButton), new PropertyMetadata(default(Geometry), (s, e) => { }));
+            DependencyProperty.Register(nameof(Icon), typeof(Geometry), typeof(IconRepeatButton), new PropertyMetadata(default(Geometry), (s, e) => { }));
 
 
         public double IconSize
@@ -35,7 +34,7 @@ namespace FirstDraft.Controls
 
         // Using a DependencyProperty as the backing store for IconSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IconSizeProperty =
-            DependencyProperty.Register("IconSize", typeof(double), typeof(IconButton), new PropertyMetadata(12D));
+            DependencyProperty.Register("IconSize", typeof(double), typeof(IconRepeatButton), new PropertyMetadata(12D));
 
 
 

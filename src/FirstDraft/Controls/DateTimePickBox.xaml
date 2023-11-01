@@ -11,7 +11,7 @@
             <Setter Property="IsTodayHighlighted" Value="True"/>
             <Setter Property="SelectedDateFormat" Value="Short"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="BorderBrush">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
@@ -166,8 +166,8 @@
     <Grid>
         <ToggleButton x:Name="PART_TIME" Content="{Binding DateTimeText}" Padding="5 2"  VerticalAlignment="Center"
                       Background="{DynamicResource DefaultBackground}" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}"/>
-      
-        <Popup AllowsTransparency="True"
+
+        <Popup AllowsTransparency="True" x:Name="popup"
                    PlacementTarget="{Binding ElementName=PART_TIME}"
                    IsOpen="{Binding IsChecked, ElementName=PART_TIME}"
                    StaysOpen="False"
@@ -183,30 +183,34 @@
                         BorderThickness="1 1 1 1" CornerRadius="0 5 5 5" >
                     <DockPanel >
 
-                        <DockPanel>
+                        <DockPanel DockPanel.Dock="Bottom" Margin="0 16 0 0">
+                            <TextBox Text="{Binding DateTimeText,Mode=OneWay}" IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button x:Name="sumbit" Content="OK" HorizontalAlignment="Right" Click="sumbit_Click"/>
+                        </DockPanel>
+                        
+                        <DockPanel DockPanel.Dock="Top">
+                            <DockPanel>
+                                <DatePicker Style="{DynamicResource DatePickerStyle1}" VerticalAlignment="Bottom" BorderThickness="0" SelectedDate="{Binding DcDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                    <DatePicker.Resources>
+                                        <Style TargetType="DatePickerTextBox">
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <TextBox x:Name="PART_TextBox" Text="{Binding Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DatePicker.Resources>
+                                </DatePicker>
+                            </DockPanel>
 
-                            <DatePicker Style="{DynamicResource DatePickerStyle1}" VerticalAlignment="Bottom" BorderThickness="0" SelectedDate="{Binding DcDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
-                                <DatePicker.Resources>
-                                    <Style TargetType="DatePickerTextBox">
-                                        <Setter Property="BorderThickness" Value="0"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate>
-                                                    <TextBox x:Name="PART_TextBox" Text="{Binding Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </DatePicker.Resources>
-                            </DatePicker>
+                            <DockPanel DockPanel.Dock="Right">
+                                <local:TimePickBox Margin="0 0 0 0" DataContext="{Binding TimeDc}"/>
+                            </DockPanel>
                         </DockPanel>
 
-                        <DockPanel DockPanel.Dock="Right">
-
-                            <local:TimePickBox Margin="-1 0 0 0" DataContext="{Binding TimeDc}"/>
-
-
-                        </DockPanel>
                     </DockPanel>
 
                 </Border>

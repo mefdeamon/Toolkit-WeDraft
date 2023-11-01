@@ -24,6 +24,8 @@
                                 <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" />
                                 <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
                                 <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding cube_line, Source={StaticResource IconSet}}" Content="收藏" />
+                                <controls:IconButton Margin="5" Style="{StaticResource NoBackgroundIconButton}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
+                                <controls:IconButton Margin="5" Style="{StaticResource NoBackgroundIconButton}" Icon="{Binding cube_line, Source={StaticResource IconSet}}"/>
                             </WrapPanel>
 
                         </StackPanel>
@@ -106,6 +108,27 @@
 
                         </WrapPanel>
                     </Border>
+
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="NoBackgroundIconButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="NoBackgroundIconButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 不显示背景色的按钮样式。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel Margin="5">
+                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
+                        </WrapPanel>
+                    </Border>
+
 
 
                 </StackPanel>

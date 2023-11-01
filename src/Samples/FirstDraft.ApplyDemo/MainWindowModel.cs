@@ -28,11 +28,13 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "复选框(CheckBox)", Icon = App.Current.Services.GetService<IconSet>().checkbox_fill, Content = new Views.ApplyCheckBoxView() });
             NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = App.Current.Services.GetService<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "列表框(ListBox)", Icon = App.Current.Services.GetService<IconSet>().list, Content = new Views.ApplyListBoxView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
             NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
             NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyIconButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = App.Current.Services.GetService<IconSet>().togglebutton, Content = new Views.ApplyIconToggleButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon = App.Current.Services.GetService<IconSet>().radiobutton, Content = new Views.ApplyIconRadioButtonView() });
+            NaviItems.Add(new NaviItem() { Title = "图标重复按钮(IconRepeatButton)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyIconRepeatButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标文本框(IconTextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyIconTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "IP地址框(IpAddressBox)", Icon = App.Current.Services.GetService<IconSet>().ipaddressbox, Content = new Views.ApplyIpAddressBoxView() });
             NaviItems.Add(new NaviItem() { Title = "日期时间选择框(DateTimePickBox)", Icon = App.Current.Services.GetService<IconSet>().datetimepickbox, Content = new Views.ApplyDateTimePickBoxView() });

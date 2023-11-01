@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FirstDraft.Controls"
+             xmlns:controls="clr-namespace:FirstDraft.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ToggleButton x:Name="PART_TIME" Content="{Binding TimeText}" Padding="5 2"  VerticalAlignment="Center"
                       Background="{DynamicResource DefaultBackground}" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}"/>
 
-        <Popup AllowsTransparency="True"
+        <Popup AllowsTransparency="True" x:Name="popup"
                    PlacementTarget="{Binding ElementName=PART_TIME}"
                    IsOpen="{Binding IsChecked, ElementName=PART_TIME}"
                    StaysOpen="False"
@@ -27,11 +27,11 @@
                     <DockPanel>
                         <Grid  DockPanel.Dock="Top" Margin="0 0 0 3">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition MinWidth="30" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition MinWidth="30" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition MinWidth="30" />
+                                <ColumnDefinition MinWidth="50" />
+                                <ColumnDefinition Width="1" />
+                                <ColumnDefinition MinWidth="50" />
+                                <ColumnDefinition Width="1" />
+                                <ColumnDefinition MinWidth="50" />
                             </Grid.ColumnDefinitions>
 
                             <!--  Hour  -->
@@ -56,46 +56,50 @@
                                    VerticalAlignment="Center"/>
                         </Grid>
 
+                        <DockPanel DockPanel.Dock="Bottom" Margin="0 3 0 0">
+                            <TextBox Text="{Binding TimeText,Mode=OneWay}" IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button x:Name="sumbit" Content="OK" HorizontalAlignment="Right" Click="sumbit_Click"/>
+                        </DockPanel>
+
                         <Grid >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition MinWidth="30" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition MinWidth="30" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition MinWidth="30" />
+                                <ColumnDefinition MinWidth="50" />
+                                <ColumnDefinition Width="1" />
+                                <ColumnDefinition MinWidth="50" />
+                                <ColumnDefinition Width="1" />
+                                <ColumnDefinition MinWidth="50" />
                             </Grid.ColumnDefinitions>
 
                             <!--  Hour  -->
-                            <ComboBox Grid.Column="0" VerticalContentAlignment="Center" VerticalAlignment="Center"
-                                  ItemsSource="{Binding Hours}" MaxDropDownHeight="100"
-                                  SelectedItem="{Binding Hour}"/>
+                            <ListBox Grid.Column="0" VerticalContentAlignment="Center" x:Name="hourListBox"
+                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                  ItemsSource="{Binding Hours}" MaxHeight="100"
+                                  SelectedItem="{Binding Hour}">
+                            </ListBox>
 
-                            <TextBlock Grid.Column="1" 
-                                   HorizontalAlignment="Center"
-                                   FontSize="15"
-                                   Text=":"
-                                   VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1"  Background="{DynamicResource DefaultForeground}"/>
+
 
                             <!--  Minute  -->
-                            <ComboBox Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center"
-                                  ItemsSource="{Binding Minutes}" MaxDropDownHeight="100"
+                            <ListBox Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center"
+                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                  ItemsSource="{Binding Minutes}" MaxHeight="100"
                                   SelectedItem="{Binding Minute}" />
                             <TextBlock Grid.Column="3"
-                                   HorizontalAlignment="Center"
-                                   FontSize="15"
-                                   Text=":" 
-                                   VerticalAlignment="Center"/>
+                                   Background="{DynamicResource DefaultForeground}"/>
 
                             <!--  Second  -->
-                            <ComboBox Grid.Column="4" VerticalContentAlignment="Center" VerticalAlignment="Center"
-                                  ItemsSource="{Binding Seconds}" MaxDropDownHeight="100"
+                            <ListBox Grid.Column="4" VerticalContentAlignment="Center" VerticalAlignment="Center"
+                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                  ItemsSource="{Binding Seconds}" MaxHeight="100"
                                   SelectedItem="{Binding Second}" />
                         </Grid>
+
+
                     </DockPanel>
 
                 </Border>
             </DockPanel>
-
 
         </Popup>
     </Grid>

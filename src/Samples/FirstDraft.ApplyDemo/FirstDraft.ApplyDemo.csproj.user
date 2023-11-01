@@ -14,6 +14,9 @@
     <Compile Update="Views\ApplyIconRadioButtonView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyIconRepeatButtonView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ApplyIconTextBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,6 +24,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ApplyIpAddressBoxView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ApplyListBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ApplyPasswordBoxView.xaml.cs">
@@ -49,6 +55,9 @@
     <Page Update="Views\ApplyIconRadioButtonView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ApplyIconRepeatButtonView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ApplyIconTextBoxView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -56,6 +65,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyIpAddressBoxView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyListBoxView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyPasswordBoxView.xaml">

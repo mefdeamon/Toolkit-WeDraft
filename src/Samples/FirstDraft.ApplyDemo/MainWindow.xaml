@@ -71,32 +71,21 @@
 
 
             <DockPanel DockPanel.Dock="Bottom" MinWidth="200">
-                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Current}">
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListBoxItem}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                        <ContentPresenter />
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
+                <ListBox Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                         ItemsSource="{Binding Items}" SelectedItem="{Binding Current}"
+                         ItemContainerStyle="{DynamicResource NoStyleListBoxItem}">
                     <ListBox.ItemTemplate>
                         <DataTemplate DataType="{x:Type local:NaviItem}">
-
                             <fdcontrols:IconRadioButton Content="{Binding Title}"
                                                         Style="{StaticResource LeftNaviIconRadioButton}"
-                                                GroupName="Items"
-                                                Icon="{Binding Icon}">
+                                                        GroupName="Items" 
+                                                        Icon="{Binding Icon}">
                                 <fdcontrols:IconRadioButton.IsChecked>
                                     <Binding Path="IsSelected"
                                              RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
                                              Mode="TwoWay" />
                                 </fdcontrols:IconRadioButton.IsChecked>
                             </fdcontrols:IconRadioButton>
-
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
