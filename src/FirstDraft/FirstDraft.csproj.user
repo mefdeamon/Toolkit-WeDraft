@@ -49,6 +49,9 @@
     <Page Update="Themes\PasswordBoxs.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\ScrollViewers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Sliders.xaml">
       <SubType>Designer</SubType>
     </Page>

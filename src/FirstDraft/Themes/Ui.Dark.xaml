@@ -19,15 +19,16 @@
     <sys:Double x:Key="DefalutIconSize">14</sys:Double>
     <sys:Double x:Key="HintTagFontSize">10</sys:Double>
 
-
     <!--<sys:String x:Key="Opt_OFF">OFF</sys:String>
     <sys:String x:Key="Opt_ON">OFF</sys:String>-->
     <sys:String x:Key="Opt_OFF">关</sys:String>
     <sys:String x:Key="Opt_ON">开</sys:String>
 
-
-
     <!--<SolidColorBrush x:Key="Button.Static.Border" Color="#FFADB2B5"/>-->
+    <Color x:Key="MediumDarkColor" >#66000000</Color>
+    <Color x:Key="MediumLightColor" >#66FFFFFF</Color>
+    <SolidColorBrush x:Key="MediumDark" Color="{DynamicResource MediumDarkColor}"/>
+    <SolidColorBrush x:Key="MediumLight" Color="{DynamicResource MediumLightColor}"/>
     <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
     <SolidColorBrush x:Key="Button.Static.Background" Color="#44FFFFFF"/>
     <SolidColorBrush x:Key="Button.Static.Border" Color="#44FFFFFF"/>
@@ -42,15 +43,11 @@
     <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#22FFFFFF"/>
     <SolidColorBrush x:Key="Button.Disabled.Glyph" Color="#FF707070"/>
 
-
-
-
     <DropShadowEffect x:Key="DeepPathEffect" ShadowDepth="1" Color="Black" />
 
     <SolidColorBrush x:Key="Button.Checked.Background" Color="{DynamicResource AccentColor}"/>
     <SolidColorBrush x:Key="Button.Checked.Border" Color="{DynamicResource AccentColor}"/>
     <SolidColorBrush x:Key="Button.Checked.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
-
 
     <SolidColorBrush x:Key="TextBox.Static.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
     <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
@@ -71,11 +68,26 @@
     <SolidColorBrush x:Key="SliderThumb.Track.Background" Color="#66E4E4E4"/>
     <SolidColorBrush x:Key="SliderThumb.Track.Border" Color="#66E4E4E4"/>
 
-
     <SolidColorBrush x:Key="ListBox.Static.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
     <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3"/>
     <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9"/>
+
+    <SolidColorBrush x:Key="ScrollBar.Static.Background" Color="#101010"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Border" Color="#101010"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Glyph" Color="#606060"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Thumb" Color="#303030"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Background" Color="#404040"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Border" Color="#404040"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Glyph" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Thumb" Color="#666666"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Background" Color="#606060"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Border" Color="#606060"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Thumb" Color="#606060"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Glyph" Color="#000000"/>
+    <SolidColorBrush x:Key="ScrollBar.Disabled.Background" Color="#101010"/>
+    <SolidColorBrush x:Key="ScrollBar.Disabled.Border" Color="#101010"/>
+    <SolidColorBrush x:Key="ScrollBar.Disabled.Glyph" Color="#BFBFBF"/>
 
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
@@ -95,6 +107,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 
 </ResourceDictionary>

@@ -21,6 +21,7 @@
         <ResourceDictionary Source="Sliders.xaml"/>
         <ResourceDictionary Source="TextBlocks.xaml"/>
         <ResourceDictionary Source="PasswordBoxs.xaml"/>
+        <ResourceDictionary Source="ScrollViewers.xaml"/>
 
         <!-- Controls -->
         <ResourceDictionary Source="IconButtons.xaml"/>
