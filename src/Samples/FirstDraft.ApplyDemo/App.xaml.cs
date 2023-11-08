@@ -1,4 +1,5 @@
-﻿using FirstDraft.ApplyDemo.ViewModels;
+﻿using FirstDraft.ApplyDemo.Data;
+using FirstDraft.ApplyDemo.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,7 @@ namespace FirstDraft.ApplyDemo
             services.AddSingleton<ApplyRadioButtonViewModel>();
             services.AddSingleton<ApplyIpAddressBoxViewModel>();
             services.AddSingleton<ApplyDateTimePickBoxViewModel>();
+            services.AddSingleton<ApplyButtonViewModel>();
             
             return services.BuildServiceProvider();
         }

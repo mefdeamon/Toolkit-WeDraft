@@ -13,8 +13,11 @@ namespace FirstDraft.ApplyDemo.Data
         public ApplyRadioButtonViewModel ApplyRadioButtonViewModel => App.Current.Services.GetService<ApplyRadioButtonViewModel>();
         public ApplyIpAddressBoxViewModel ApplyIpAddressBoxViewModel => App.Current.Services.GetService<ApplyIpAddressBoxViewModel>();
         public ApplyDateTimePickBoxViewModel ApplyDateTimePickBoxViewModel => App.Current.Services.GetService<ApplyDateTimePickBoxViewModel>();
+
+        public ApplyButtonViewModel ApplyButtonViewModel => App.Current.Services.GetService<ApplyButtonViewModel>();
         
         public IconSet IconSet => App.Current.Services.GetService<IconSet>();
 
     }
+
 }

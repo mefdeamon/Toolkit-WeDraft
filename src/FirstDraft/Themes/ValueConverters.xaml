@@ -4,8 +4,13 @@
                     xmlns:converters="clr-namespace:FirstDraft.Converters"
                     >
     <converters:InvertBooleanConverter x:Key="InvertBooleanConverter"/>
+    
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <converters:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibilityConverter"/>
+
+    <converters:BooleanToVisibilityHiddenConverter x:Key="BooleanToVisibilityHiddenConverter"/>
+    <converters:InvertBooleanToVisibilityHiddenConverter x:Key="InvertBooleanToVisibilityHiddenConverter"/>
+
     <converters:BooleanToInt01Converter x:Key="BooleanToInt01Converter"/>
 
 </ResourceDictionary>

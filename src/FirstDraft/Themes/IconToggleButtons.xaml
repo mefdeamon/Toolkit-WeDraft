@@ -126,16 +126,17 @@
                         <Trigger Property="HasContent" Value="True">
                             <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
                         </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.MouseOver.Foreground}"/>
+                        </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Checked.Background}"/>
                             <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Checked.Border}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource Button.Checked.Foreground}"/>
-                            <Setter Property="Fill"  TargetName="icon" Value="{DynamicResource Button.Checked.Foreground}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
                             <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.MouseOver.Foreground}"/>
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
                             <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.MouseOver.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
@@ -214,6 +215,9 @@
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource IconRadioButton.Checked.Background}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Accent}"/>
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Accent}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Accent}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource Button.Pressed.Background}"/>

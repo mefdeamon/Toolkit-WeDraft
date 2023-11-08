@@ -23,9 +23,30 @@
                                 <RadioButton Margin="5" IsChecked="True" Content="单选按钮"/>
                             </StackPanel>
 
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource BackgroundRadioButton}" Margin="5" Content="Background"/>
+                                <RadioButton Style="{DynamicResource BackgroundRadioButton}" Margin="5" IsChecked="True" Content="有背景"/>
+                                <RadioButton Style="{DynamicResource BackgroundRadioButton}" Margin="5" BorderThickness="1" Content="Border"/>
+                                <RadioButton Style="{DynamicResource Background2RadioButton}" Margin="5" Content="Background2"/>
+                                <RadioButton Style="{DynamicResource Background2RadioButton}" Margin="5" Content="有背景2"/>
+                            </StackPanel>
+
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource RoundCornerRadioButton}" Margin="5"  Content="RoundCorner"/>
+                                <RadioButton Style="{DynamicResource RoundCornerRadioButton}" Margin="5"  Content="RoundCorner"/>
+                                <RadioButton Style="{DynamicResource RoundCornerRadioButton}" Margin="5"  IsChecked="True" Content="圆角背景"/>
+                                <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" Content="RoundCorner2"/>
+                                <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" Content="圆角背景2"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource AccentEffectRadioButton}" Margin="5" Content="AccentEffect"/>
+                                <RadioButton Style="{DynamicResource AccentEffectRadioButton}" Margin="5" IsChecked="True" Content="阴影背景"/>
+                            </StackPanel>
+
                         </WrapPanel>
                     </Border>
-
 
                     <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
@@ -48,7 +69,6 @@
 
                         </WrapPanel>
                     </Border>
-
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                        <Run Text="数据绑定应用。"/>
@@ -97,6 +117,70 @@
                             </StackPanel>
 
 
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="AccentEffectRadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中阴影背景高亮显示样式。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="BackgroundRadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中显示背景样式。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="Background2RadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中显示背景并且带边框样式。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RoundCornerRadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中显示圆角背景样式。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RoundCorner2RadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中显示圆角背景并且带边框样式。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource AccentEffectRadioButton}" Margin="5" Content="AccentEffectRadioButton"/>
+                                <RadioButton Style="{DynamicResource AccentEffectRadioButton}" Margin="5" IsChecked="True" Content="阴影背景"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource BackgroundRadioButton}" Margin="5" Content="Background"/>
+                                <RadioButton Style="{DynamicResource BackgroundRadioButton}" Margin="5" IsChecked="True" Content="有背景"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource Background2RadioButton}" Margin="5" Content="Background2"/>
+                                <RadioButton Style="{DynamicResource Background2RadioButton}" Margin="5" Content="背景2+边框"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource RoundCornerRadioButton}" Margin="5" Content="RoundCorner"/>
+                                <RadioButton Style="{DynamicResource RoundCornerRadioButton}" Margin="5" IsChecked="True" Content="圆角背景"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" Content="RoundCorner2"/>
+                                <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" IsChecked="True" Content="圆角背景2"/>
+                            </StackPanel>
                         </WrapPanel>
                     </Border>
 

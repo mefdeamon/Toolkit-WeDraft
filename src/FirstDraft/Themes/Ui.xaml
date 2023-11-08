@@ -35,6 +35,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <local:IconSet x:Key="IconSet"/>
+    <local:XiaoJuziIconSet x:Key="XiaoJuziIconSet"/>
 
 
 </ResourceDictionary>

@@ -33,6 +33,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
 
             // 初始化数据源
             var list = FindDititsInfo(App.Current.Services.GetService<IconSet>());
+            list.AddRange( FindDititsInfo(new XiaoJuziIconSet()));
             OriginalIcons = list;
 
             // 初始化界面
@@ -132,6 +133,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
             {
                 IconModel icon = new IconModel();
                 icon.IconName = item.Name;
+                icon.IconType = newType.Name;
                 icon.IconData = item.GetValue(model).ToString();
                 icons.Add(icon);
             }
@@ -143,6 +145,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
     public class IconModel
     {
         public string IconName { get; set; }
+        public string IconType { get; set; }
 
         public string IconData { get; set; }
     }
