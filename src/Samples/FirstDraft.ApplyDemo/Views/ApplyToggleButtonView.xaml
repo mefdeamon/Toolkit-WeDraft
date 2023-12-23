@@ -111,6 +111,29 @@
                         </WrapPanel>
                     </Border>
 
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="TagCheckToggleButton" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                          <Run Text="通过设置" />
+                          <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="为" />
+                          <Run Text="TagContentToggleButton" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="：标签选中状态。设置" />
+                          <Run Text="Content" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="显示内容，设置" />
+                          <Run Text="Tag" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="来设置被选中时显示内容。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <ToggleButton Style="{DynamicResource TagContentToggleButton}" Margin="5" Content="搞笑" Tag="平常"/>
+                            <ToggleButton Style="{DynamicResource TagContentToggleButton}" Margin="5" Content="生活" Tag="工作" BorderBrush="#FF237493"/>
+                            <ToggleButton Style="{DynamicResource TagContentToggleButton}" Margin="5" Content="知识" Tag="活动" BorderBrush="DeepSkyBlue" IsChecked="True"/>
+                        </WrapPanel>
+                    </Border>
+
                 </StackPanel>
 
             </ScrollViewer>

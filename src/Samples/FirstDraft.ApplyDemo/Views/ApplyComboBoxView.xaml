@@ -118,6 +118,53 @@
                     </Border>
 
 
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="可以设置" />
+                        <Run Text="IsEditable" FontStyle="Oblique"/>
+                        <Run Text="为 True" FontStyle="Oblique"/>
+                        <Run Text="实现可以填写的文本。" />
+                        <Run Text="通过" />
+                        <Run Text="Text" FontStyle="Oblique"/>
+                        <Run Text="获取或者设置文本。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+
+                            <ComboBox ItemsSource="{Binding Areas}"
+                                      IsEditable="True"
+                                        Text="{Binding CurrentItem.Name}"
+                                        Margin="5"
+                                        SelectedItem="{Binding CurrentItem}" 
+                                        DisplayMemberPath="Name"/>
+
+
+                            <TextBlock VerticalAlignment="Center">
+                              <Run Text="{Binding CurrentItem.Id,Mode=OneWay}"/>
+                              <Run Text="{Binding CurrentItem.Name,Mode=OneWay}"/>
+                            </TextBlock>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                            <ComboBox ItemsSource="{Binding AreaKVs}" 
+                                        Margin="5"
+                                        Text="{Binding CurrentName}"
+                                      IsEditable="True"
+                                        SelectedValue="{Binding CurrentName,Mode=TwoWay}" 
+                                        SelectedValuePath="Value.Name"
+                                        DisplayMemberPath="Value.Name"/>
+
+                            <TextBlock VerticalAlignment="Center">
+                                        <Run Text="{Binding CurrentName,Mode=OneWay}"/>
+                            </TextBlock>
+
+                            <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
+
+                        </WrapPanel>
+                    </Border>
+
+
+
                 </StackPanel>
 
             </ScrollViewer>

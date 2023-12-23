@@ -55,6 +55,8 @@
     <SolidColorBrush x:Key="IconRadioButton.Checked.Background" Color="#22000000"/>
 
     <SolidColorBrush x:Key="ComboBox.Selected.InList.Background" Color="#44000000"/>
+    <SolidColorBrush x:Key="ComboBox.IsEnabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="ComboBox.IsEnabled.Foreground" Color="#FF838383"/>
 
     <SolidColorBrush x:Key="SliderThumb.Static.Background" Color="#5B5B5B"/>
     <SolidColorBrush x:Key="SliderThumb.Static.Border" Color="#5B5B5B"/>
