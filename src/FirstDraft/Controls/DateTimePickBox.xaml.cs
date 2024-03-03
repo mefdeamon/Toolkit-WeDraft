@@ -30,6 +30,20 @@ namespace FirstDraft.Controls
         {
             popup.IsOpen = false;
         }
+
+        private void copy_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                try
+                {
+                    Clipboard.SetText(PART_TIME.Content as string);
+                }
+                catch (Exception)
+                {
+                }
+            }));
+        }
     }
 
     public class DateTimePickerDataContext : NotifyPropertyChanged

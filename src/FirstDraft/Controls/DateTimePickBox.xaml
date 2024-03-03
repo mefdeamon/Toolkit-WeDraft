@@ -41,107 +41,14 @@
                             <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                                 <Grid.Resources>
                                     <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
-                                    <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type Button}">
-                                        <Grid>
-                                            <VisualStateManager.VisualStateGroups>
-                                                <VisualStateGroup x:Name="CommonStates">
-                                                    <VisualStateGroup.Transitions>
-                                                        <VisualTransition GeneratedDuration="0"/>
-                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
-                                                        <VisualTransition GeneratedDuration="0:0:0.1" To="Pressed"/>
-                                                    </VisualStateGroup.Transitions>
-                                                    <VisualState x:Name="Normal"/>
-                                                    <VisualState x:Name="MouseOver">
-                                                        <Storyboard>
-                                                            <ColorAnimation Duration="0" Storyboard.TargetName="Background" To="#FF448DCA" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"/>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource AccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource AccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource AccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                        </Storyboard>
-                                                    </VisualState>
-                                                    <VisualState x:Name="Pressed">
-                                                        <Storyboard>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="Background" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="#FF448DCA"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <DoubleAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
-                                                            </DoubleAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource ExAccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource ExAccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource ExAccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                            <ColorAnimationUsingKeyFrames BeginTime="0" Duration="00:00:00.001" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
-                                                                <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource ExAccentColor}"/>
-                                                            </ColorAnimationUsingKeyFrames>
-                                                        </Storyboard>
-                                                    </VisualState>
-                                                    <VisualState x:Name="Disabled"/>
-                                                </VisualStateGroup>
-                                            </VisualStateManager.VisualStateGroups>
-                                            <Grid Background="#11FFFFFF" FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="20" Margin="0" VerticalAlignment="Center" Width="19">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="20*"/>
-                                                    <ColumnDefinition Width="20*"/>
-                                                    <ColumnDefinition Width="20*"/>
-                                                    <ColumnDefinition Width="20*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="23*"/>
-                                                    <RowDefinition Height="19*"/>
-                                                    <RowDefinition Height="19*"/>
-                                                    <RowDefinition Height="19*"/>
-                                                </Grid.RowDefinitions>
-                                                <Border x:Name="Highlight" BorderBrush="#FF45D6FA" BorderThickness="1" CornerRadius="0,0,1,1" Grid.ColumnSpan="4" Margin="-1" Opacity="0" Grid.RowSpan="4" Grid.Row="0"/>
-                                                <Border x:Name="Background" Background="#FF1F3B53" BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius=".5" Grid.ColumnSpan="4" Margin="0,-1,0,0" Opacity="1" Grid.RowSpan="3" Grid.Row="1"/>
-                                                <Border x:Name="BackgroundGradient" BorderBrush="#BF000000" BorderThickness="1" CornerRadius=".5" Grid.ColumnSpan="4" Margin="0,-1,0,0" Opacity="1" Grid.RowSpan="3" Grid.Row="1">
-                                                    <Border.Background>
-                                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
-                                                            <GradientStop Color="#FFFFFFFF" Offset="0"/>
-                                                            <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
-                                                            <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
-                                                            <GradientStop Color="#C6FFFFFF" Offset="1"/>
-                                                        </LinearGradientBrush>
-                                                    </Border.Background>
-                                                </Border>
-                                                <Rectangle Grid.ColumnSpan="4" Grid.RowSpan="1" StrokeThickness="1">
-                                                    <Rectangle.Fill>
-                                                        <LinearGradientBrush EndPoint="0.3,-1.1" StartPoint="0.46,1.6">
-                                                            <GradientStop Color="#FF4084BD"/>
-                                                            <GradientStop Color="#FFAFCFEA" Offset="1"/>
-                                                        </LinearGradientBrush>
-                                                    </Rectangle.Fill>
-                                                    <Rectangle.Stroke>
-                                                        <LinearGradientBrush EndPoint="0.48,-1" StartPoint="0.48,1.25">
-                                                            <GradientStop Color="#FF494949"/>
-                                                            <GradientStop Color="#FF9F9F9F" Offset="1"/>
-                                                        </LinearGradientBrush>
-                                                    </Rectangle.Stroke>
-                                                </Rectangle>
-                                                <Path Grid.Column="0" Grid.ColumnSpan="4" Data="M11.426758,8.4305077 L11.749023,8.4305077 L11.749023,16.331387 L10.674805,16.331387 L10.674805,10.299648 L9.0742188,11.298672 L9.0742188,10.294277 C9.4788408,10.090176 9.9094238,9.8090878 10.365967,9.4510155 C10.82251,9.0929432 11.176106,8.7527733 11.426758,8.4305077 z M14.65086,8.4305077 L18.566387,8.4305077 L18.566387,9.3435936 L15.671368,9.3435936 L15.671368,11.255703 C15.936341,11.058764 16.27293,10.960293 16.681133,10.960293 C17.411602,10.960293 17.969301,11.178717 18.354229,11.615566 C18.739157,12.052416 18.931622,12.673672 18.931622,13.479336 C18.931622,15.452317 18.052553,16.438808 16.294415,16.438808 C15.560365,16.438808 14.951641,16.234707 14.468243,15.826504 L14.881817,14.929531 C15.368796,15.326992 15.837872,15.525723 16.289043,15.525723 C17.298809,15.525723 17.803692,14.895514 17.803692,13.635098 C17.803692,12.460618 17.305971,11.873379 16.310528,11.873379 C15.83071,11.873379 15.399232,12.079271 15.016094,12.491055 L14.65086,12.238613 z" Fill="#FF2F2F2F" HorizontalAlignment="Center" Margin="4,3,4,3" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="3" Grid.Row="1" Stretch="Fill" VerticalAlignment="Center"/>
-                                                <Ellipse Grid.ColumnSpan="4" Fill="#FFFFFFFF" HorizontalAlignment="Center" Height="3" StrokeThickness="0" VerticalAlignment="Center" Width="3"/>
-                                                <Border x:Name="DisabledVisual" BorderBrush="#B2FFFFFF" BorderThickness="1" CornerRadius="0,0,.5,.5" Grid.ColumnSpan="4" Opacity="0" Grid.RowSpan="4" Grid.Row="0"/>
-                                            </Grid>
-                                        </Grid>
-                                    </ControlTemplate>
+                                  
                                 </Grid.Resources>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Top" Width="20"/>
-                                <DatePickerTextBox x:Name="PART_TextBox" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Stretch" Grid.Row="0" VerticalContentAlignment="Stretch"/>
+                                <Button x:Name="PART_Button" Background="Transparent" Content="{TemplateBinding SelectedDate}" ContentStringFormat="{}{0:yyyy-MM-dd}" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" VerticalAlignment="Top">
+                                </Button>
                                 <Grid x:Name="PART_DisabledVisual" Grid.Column="0" Grid.ColumnSpan="2" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
@@ -149,15 +56,10 @@
                                     </Grid.ColumnDefinitions>
                                     <Rectangle Grid.Column="0" Fill="#A5FFFFFF" Grid.Row="0" RadiusX="1" RadiusY="1"/>
                                     <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="18" Margin="3,0,3,0" Grid.Row="0" RadiusX="1" RadiusY="1" Width="19"/>
-                                    <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+                                    <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_Button}" StaysOpen="False"/>
                                 </Grid>
                             </Grid>
                         </Border>
-                        <ControlTemplate.Triggers>
-                            <DataTrigger Binding="{Binding Source={x:Static SystemParameters.HighContrast}}" Value="false">
-                                <Setter Property="Foreground" TargetName="PART_TextBox" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"/>
-                            </DataTrigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -179,17 +81,25 @@
                     <DropShadowEffect BlurRadius="5" Color="{DynamicResource DefaultForegrounColor}" Opacity="0.51" ShadowDepth="0" Direction="0"/>
                 </DockPanel.Effect>
 
-                <Border Padding="8 16 8 16" Background="{DynamicResource DefaultBackground}"
+                <Border Padding="8 16 8 8" Background="{DynamicResource DefaultBackground}"
                         BorderThickness="1 1 1 1" CornerRadius="0 5 5 5" >
                     <DockPanel >
 
-                        <DockPanel DockPanel.Dock="Bottom" Margin="0 16 0 0">
-                            <TextBox Text="{Binding DateTimeText,Mode=OneWay}" IsEnabled="False" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <Button x:Name="sumbit" Content="OK" HorizontalAlignment="Right" Click="sumbit_Click"/>
+                        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False" Margin="0 8 0 0">
+                            
                         </DockPanel>
                         
                         <DockPanel DockPanel.Dock="Top">
                             <DockPanel>
+
+                                <Border BorderBrush="{DynamicResource Button.Static.Border}" BorderThickness="1 1 1 1" Margin="0 0 -3 0" >
+                                    <Path Data="M416.087 607.831l95.987 0 0-96-95.987 0L416.087 607.831zM544.078 735.828l96 0 0-95.994-96 0L544.078 735.828zM416.087 735.828l95.987 0 0-95.994-95.987 0L416.087 735.828zM288.084 607.831l96 0 0-96-96 0L288.084 607.831zM288.084 735.828l96 0 0-95.994-96 0L288.084 735.828zM544.078 607.831l96 0 0-96-96 0L544.078 607.831zM672.081 479.831l96 0 0-95.997-96 0L672.081 479.831zM832.078 191.833 224.077 191.833c-17.674 0-31.994 14.326-31.994 32.003l0 575.998c0 17.674 14.32 32 31.994 32l608.001 0c17.674 0 32.003-14.326 32.003-32L864.081 223.837C864.082 206.16 849.752 191.833 832.078 191.833zM832.082 767.832c0 17.674-14.326 32-32 32L256.08 799.832c-17.674 0-32-14.326-32-32L224.08 351.831c0-17.674 14.326-32 32-32l544.001 0c17.674 0 32 14.326 32 32L832.081 767.832zM672.081 607.831l96 0 0-96-96 0L672.081 607.831zM544.078 479.831l96 0 0-95.997-96 0L544.078 479.831z"
+                                    Fill="{DynamicResource Button.Static.Foreground}"
+                                    Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
+                                         VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3 0 3 0"
+                                    />
+                                </Border>
+
                                 <DatePicker Style="{DynamicResource DatePickerStyle1}" VerticalAlignment="Bottom" BorderThickness="0" SelectedDate="{Binding DcDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                     <DatePicker.Resources>
                                         <Style TargetType="DatePickerTextBox">
@@ -206,9 +116,24 @@
                                 </DatePicker>
                             </DockPanel>
 
-                            <DockPanel DockPanel.Dock="Right">
+                            <DockPanel Margin="5 0 0 0">
+                                <Border BorderBrush="{DynamicResource Button.Static.Border}" BorderThickness="1 1 0 1"  >
+                                    <Path Data="M874.179108 149.919291C777.456788 53.255031 648.909794 0 512.10296 0 375.343491 0 246.779689 53.255031 150.097095 149.929986 53.379358 246.635499 0.118216 375.225275 0.118216 512.003079c-0.024446 136.793083 53.195443 265.353829 149.900956 362.11893 96.670371 96.613839 225.246396 149.878037 361.98753 149.878037 136.806834 0 265.42564-53.297812 362.172407-149.978879C1073.767443 674.41297 1073.798001 349.603883 874.179108 149.919291L874.179108 149.919291 874.179108 149.919291zM826.994433 826.827324c-84.130878 84.118655-195.994709 130.492014-314.986203 130.492014-118.90746 0-230.743788-46.350441-314.819662-130.392701C113.111166 742.833957 66.820314 630.993045 66.838649 512.003079c0-118.97316 46.313771-230.826295 130.420203-314.899113 84.094208-84.074346 195.893867-130.372838 314.844108-130.372838 118.954825 0 230.77893 46.296964 314.891473 130.378949C1000.583984 370.74241 1000.583984 653.25458 826.994433 826.827324L826.994433 826.827324 826.994433 826.827324zM733.350836 637.475934l-176.979966-102.351112L556.37087 256.000011c0-23.557196-19.111001-42.666669-42.674308-42.666669-23.544973 0-42.655973 19.109473-42.655973 42.666669l0 298.669736c0 15.826011 19.671741 29.095841 32.467921 36.437411 3.538621 5.329323 13.268303 10.15291 19.199619 13.564716l176.000581 106.673547c20.388327 11.769431 42.495544 4.774694 54.271086-15.619744 11.775542-20.40055 0.811316-46.469617-19.630487-58.245159l0 0L733.349308 637.475934zM733.350836 637.475934"
+                                         Fill="{DynamicResource Button.Static.Foreground}"
+                                         Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
+                                         VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3 0"
+                                         />
+                                </Border>
                                 <local:TimePickBox Margin="0 0 0 0" DataContext="{Binding TimeDc}"/>
                             </DockPanel>
+
+
+                            <Button DockPanel.Dock="Right" Margin="5 0 0 0" BorderThickness="0" ToolTip="复制" VerticalAlignment="Stretch" x:Name="copy" HorizontalAlignment="Right" Click="copy_Click" Background="Transparent">
+                                <Path Data="M725.333333 341.333333h128v512H341.333333v-128H213.333333V213.333333h512v128z m0 42.666667v341.333333H384v85.333334h426.666667V384h-85.333334zM256 256v426.666667h426.666667V256H256z"
+                                      Fill="{DynamicResource Button.Static.Foreground}"
+                                      Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
+                                      />    
+                            </Button>
                         </DockPanel>
 
                     </DockPanel>
