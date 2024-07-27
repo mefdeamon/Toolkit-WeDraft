@@ -17,6 +17,7 @@ namespace FirstDraft.ApplyDemo.Data
         public ApplyButtonViewModel ApplyButtonViewModel => App.Current.Services.GetService<ApplyButtonViewModel>();
         
         public IconSet IconSet => App.Current.Services.GetService<IconSet>();
+        public AboutWindowModel AboutWindowModel => App.Current.Services.GetService<AboutWindowModel>();
 
     }
 

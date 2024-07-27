@@ -51,6 +51,7 @@ namespace FirstDraft.ApplyDemo
             services.AddSingleton<ApplyIpAddressBoxViewModel>();
             services.AddSingleton<ApplyDateTimePickBoxViewModel>();
             services.AddSingleton<ApplyButtonViewModel>();
+            services.AddSingleton<AboutWindowModel>();
             
             return services.BuildServiceProvider();
         }

@@ -17,7 +17,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="github.current.version.fd" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="firstdraft.ico" />
+    <Content Include="github.current.version.fd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
