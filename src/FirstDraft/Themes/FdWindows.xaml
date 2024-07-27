@@ -514,4 +514,98 @@
     <Style TargetType="{x:Type local:FdWindow}" x:Key="BlankFdWindow" BasedOn="{StaticResource {x:Type local:FdWindow}}">
     </Style>
 
+
+    <Style  x:Key="ToolFdWindow" TargetType="{x:Type local:FdWindow}" >
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="CaptionHeight" Value="36"/>
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type local:FdWindow}}}"
+                                      CaptionHeight="{Binding CaptionHeight, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type local:FdWindow}}}"
+                                      CornerRadius="0" GlassFrameThickness="0"
+                                      />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FdWindow}">
+                    <!-- Outer border with the drop shadow margin -->
+                    <Border Padding="{TemplateBinding OuterMarginSize}" ClipToBounds="False" BorderBrush="{StaticResource SpeciColorPurpleBrush}" BorderThickness="{Binding FlatBorderThickness}">
+
+                        <!-- Main window outline -->
+                        <Grid>
+
+                            <!-- Outer dragging border -->
+                            <Border BorderThickness="{TemplateBinding BeingMoved, Converter={StaticResource BooleanToInt01Converter}}"
+                                        Panel.ZIndex="2"
+                                        CornerRadius="{TemplateBinding WindowCornerRadius}"
+                                        BorderBrush="{DynamicResource SpeciVerticalLinearBrush}" />
+
+                            <!-- Opacity mask for corners on grid -->
+                            <Border x:Name="Container"
+                                        Background="{DynamicResource DefaultBackground}"
+                                        CornerRadius="{TemplateBinding WindowCornerRadius}" />
+
+                            <!-- Window border and drop shadow -->
+                            <Border CornerRadius="{TemplateBinding WindowCornerRadius}" 
+                                    Background="{DynamicResource DefaultBackground }">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="{TemplateBinding OuterMarginBlurRadius}" Opacity="0.5" />
+                                </Border.Effect>
+                            </Border>
+
+                            <!-- The main window content -->
+                            <Grid>
+
+                                <!-- Corner clipping -->
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=Container}" />
+                                </Grid.OpacityMask>
+
+                                <Grid.RowDefinitions>
+
+                                    <!-- Caption Bar -->
+                                    <RowDefinition Height="{TemplateBinding CaptionHeightGridLength}" />
+
+                                    <!-- Internet Connection Bar -->
+                                    <RowDefinition Height="Auto" />
+
+                                    <!-- Window Content -->
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+
+                                <!-- Window Buttons -->
+                                <StackPanel Background="{DynamicResource DefaultBackground}" Panel.ZIndex="1" 
+                                                    DockPanel.Dock="Right" Grid.Row="0" HorizontalAlignment="Right" 
+                                                    Orientation="Horizontal" VerticalAlignment="Center">
+
+                                    <Button Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}" 
+                                                    Style="{StaticResource CloseButton}" />
+                                </StackPanel>
+
+
+                                <!-- Page Content -->
+                                <Border Grid.Row="0" Grid.RowSpan="3" Padding="{Binding InnerContentPadding}" ClipToBounds="True">
+                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                </Border>
+
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsActive" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderActive}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>
