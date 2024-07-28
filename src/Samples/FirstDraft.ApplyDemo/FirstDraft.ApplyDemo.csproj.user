@@ -14,6 +14,9 @@
     <Compile Update="Views\ApplyDateTimePickBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyIconControlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ApplyIconRadioButtonView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -56,6 +59,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyDateTimePickBoxView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyIconControlView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyIconRadioButtonView.xaml">

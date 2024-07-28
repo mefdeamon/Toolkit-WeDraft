@@ -24,6 +24,7 @@
         <ResourceDictionary Source="ScrollViewers.xaml"/>
 
         <!-- Controls -->
+        <ResourceDictionary Source="IconControls.xaml"/>
         <ResourceDictionary Source="IconButtons.xaml"/>
         <ResourceDictionary Source="IconRadioButtons.xaml"/>
         <ResourceDictionary Source="IconToggleButtons.xaml"/>

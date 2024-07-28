@@ -33,7 +33,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
 
             // 初始化数据源
             var list = FindDititsInfo(App.Current.Services.GetService<IconSet>());
-            list.AddRange( FindDititsInfo(new XiaoJuziIconSet()));
+            list.AddRange(FindDititsInfo(new XiaoJuziIconSet()));
             OriginalIcons = list;
 
             // 初始化界面
@@ -44,6 +44,11 @@ namespace FirstDraft.ApplyDemo.ViewModels
         /// 原始数据
         /// </summary>
         IEnumerable<IconModel> OriginalIcons;
+
+
+        public Boolean HasText => !string.IsNullOrEmpty(searchText);
+
+        public RelayCommand ClearTextCommand => new RelayCommand(() => SearchText = "");
 
 
         private string searchText;
@@ -58,6 +63,7 @@ namespace FirstDraft.ApplyDemo.ViewModels
             {
                 searchText = value;
                 OnPropertyChanged(nameof(SearchText));
+                OnPropertyChanged(nameof(HasText));
                 OnSearchTextChanged();
             }
         }
@@ -70,11 +76,14 @@ namespace FirstDraft.ApplyDemo.ViewModels
             if (string.IsNullOrWhiteSpace(SearchText))
             {
                 SearchedIcons = new ObservableCollection<IconModel>(OriginalIcons);
-                return;
+            }
+            else
+            {
+                // 根据输入字符，检索原始数据中匹配的图标，并更新界面的绑定数据源
+                SearchedIcons = new ObservableCollection<IconModel>(OriginalIcons.Where(t => t.IconName.ToLowerInvariant().Contains(SearchText.ToLowerInvariant())));
             }
 
-            // 根据输入字符，检索原始数据中匹配的图标，并更新界面的绑定数据源
-            SearchedIcons = new ObservableCollection<IconModel>(OriginalIcons.Where(t => t.IconName.ToLowerInvariant().Contains(SearchText.ToLowerInvariant())));
+            UpdateView();
         }
 
 
@@ -117,6 +126,77 @@ namespace FirstDraft.ApplyDemo.ViewModels
         public RelayCommand<IconModel> ChooseCommand { get; private set; }
 
 
+        public RelayCommand ViewModuleCommand => new RelayCommand(() =>
+        {
+            UpdateView(40, true);
+        });
+
+
+        #region 更新界面大小
+
+
+
+        private Boolean isViewModule = true;
+        public Boolean IsViewModule
+        {
+            get { return isViewModule; }
+            set
+            {
+                SetProperty(ref isViewModule, value);
+            }
+        }
+
+        private Boolean isViewCompact = true;
+        public Boolean IsViewCompact
+        {
+            get { return isViewCompact; }
+            set
+            {
+                SetProperty(ref isViewCompact, value);
+            }
+        }
+
+        private Boolean isViewComfy;
+        public Boolean IsViewComfy
+        {
+            get { return isViewComfy; }
+            set
+            {
+                SetProperty(ref isViewComfy, value);
+            }
+        }
+
+        public RelayCommand UpdateViewCommand => new RelayCommand(UpdateView);
+
+        private void UpdateView()
+        {
+            if (isViewModule)
+            {
+                UpdateView(32, true);
+            }
+            if (isViewCompact)
+            {
+                UpdateView(16, true);
+            }
+            if (isViewComfy)
+            {
+                UpdateView(12, false);
+            }
+        }
+
+        private void UpdateView(int iconSize, Boolean showName)
+        {
+            foreach (var item in SearchedIcons)
+            {
+                item.IconSize = iconSize;
+                item.ShowName = showName;
+            }
+        }
+
+
+
+        #endregion
+
 
 
         /// <summary>
@@ -142,11 +222,26 @@ namespace FirstDraft.ApplyDemo.ViewModels
 
     }
 
-    public class IconModel
+    public class IconModel : ObservableObject
     {
         public string IconName { get; set; }
         public string IconType { get; set; }
 
         public string IconData { get; set; }
+
+        private int iconSize;
+        public int IconSize
+        {
+            get { return iconSize; }
+            set { SetProperty(ref iconSize, value); }
+        }
+
+        private Boolean showName;
+        public Boolean ShowName
+        {
+            get { return showName; }
+            set { SetProperty(ref showName, value); }
+        }
+
     }
 }

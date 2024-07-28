@@ -39,5 +39,18 @@ namespace FirstDraft.Controls
         public static readonly DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double), typeof(IconRadioButton), new PropertyMetadata(12D));
 
+
+
+
+        public CornerRadius CornerRadius
+        {
+            get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CornerRadius.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(IconRadioButton), new PropertyMetadata(new CornerRadius(0)));
+
     }
 }

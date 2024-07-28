@@ -230,5 +230,23 @@ namespace FirstDraft
 
         public string arrow_left => "M597.333333 298.666667l-213.333333 213.333333 213.333333 213.333333V298.666667z";
         public string arrow_right => "M311.560501 71.680032 746.006907 506.126438 311.560501 940.572845Z";
+
+
+        /// <summary>
+        /// 视图-默认
+        /// </summary>
+        public string view_module => "M3,19H9V12H3V19M10,19H22V12H10V19M3,5V11H22V5H3Z";
+        /// <summary>
+        /// 视图-紧凑
+        /// </summary>
+        public string view_compact => "M16,5V11H21V5M10,11H15V5H10M16,18H21V12H16M10,18H15V12H10M4,18H9V12H4M4,11H9V5H4V11Z";
+        /// <summary>
+        /// 视图-舒适
+        /// </summary>
+        public string view_comfy => "M3,9H7V5H3V9M3,14H7V10H3V14M8,14H12V10H8V14M13,14H17V10H13V14M8,9H12V5H8V9M13,5V9H17V5H13M18,14H22V10H18V14M3,19H7V15H3V19M8,19H12V15H8V19M13,19H17V15H13V19M18,19H22V15H18V19M18,5V9H22V5H18Z";
+
+
+        public string windows_close => "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z";
+
     }
 }

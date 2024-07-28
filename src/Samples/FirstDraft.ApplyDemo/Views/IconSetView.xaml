@@ -12,115 +12,87 @@
         <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
     </UserControl.Resources>
     <DockPanel>
+        <DockPanel >
 
-        <DockPanel  >
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock Text="图标集：" FontWeight="Black" Margin="0 10 0 0"/>
+                <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                  <Run Text="控件库自带的图标资源，可以使用绑定静态资源的方式Bingding" />
+                  <Run Text="- IconSet" FontWeight="Black"  FontStyle="Oblique"/>
+                </TextBlock>
+            </StackPanel>
+            <Border BorderThickness="1" BorderBrush="Gainsboro">
+                <DockPanel >
+                    <DockPanel LastChildFill="True" DockPanel.Dock="Top" Margin="10">
 
-            <DockPanel LastChildFill="True" DockPanel.Dock="Top">
-               
-                <Border Margin="0" BorderThickness="1" BorderBrush="{DynamicResource ExAccent}">
-                    <DockPanel>
-                        <Border DockPanel.Dock="Right" Padding="8" Width="30" Height="30" CornerRadius="30"
-                               >
-                            <Viewbox>
-                                    <Path Data="{Binding search, Source={StaticResource IconSet}}" 
+                        <WrapPanel DockPanel.Dock="Right" Margin="20 0 0 0">
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" CornerRadius="5 0 0 5" Icon="{Binding view_module, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewModule}"/>
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewCompact}"/>
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewComfy}"/>
+                        </WrapPanel>
+
+                        <Border Margin="0" BorderThickness="1" BorderBrush="{DynamicResource ExAccent}">
+                            <DockPanel>
+                                <Border DockPanel.Dock="Left" Padding="8" Width="30" Height="30" CornerRadius="30"
+                                        >
+                                    <Viewbox>
+                                        <Path Data="{Binding search, Source={StaticResource IconSet}}" 
                                           Fill="{DynamicResource DefaultForeground}"
                                           Stretch="Uniform">
-                                </Path>
-                            </Viewbox>
-                        </Border>
+                                        </Path>
+                                    </Viewbox>
+                                </Border>
 
-                        <TextBox VerticalAlignment="Center" DockPanel.Dock="Left" Padding="10 0 0 0"
+                                <fd:IconButton Icon="{Binding windows_close, Source={StaticResource IconSet}}" 
+                                               DockPanel.Dock="Right"
+                                               Style="{DynamicResource NoBackgroundIconButton}"
+                                               Visibility="{Binding HasText,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                               Command="{Binding ClearTextCommand}"/>
+
+                                <TextBox VerticalAlignment="Center" DockPanel.Dock="Left" Padding="0 0 0 0"
                                  Style="{DynamicResource HintTagTextBox}" Tag="请输入"
                                  BorderThickness="0"
                                  Background="Transparent"
                                  Text="{Binding Path=SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
+                               
+
+                            </DockPanel>
+                        </Border>
+
                     </DockPanel>
-                </Border>
-            </DockPanel>
 
-            <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
-                <ItemsControl  ItemsSource="{Binding SearchedIcons}" Margin="0 5 0 0">
-
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Padding="5" Margin="0 0 5 5" BorderThickness="1">
-                                <Border.BorderBrush>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="#FF290736"/>
-                                        <GradientStop Color="#FF2C6976" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Border.BorderBrush>
-                                <fd:CommandControl Command="{Binding DataContext.ChooseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1,AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}">
-                                    <DockPanel>
-
-                                        <Grid x:Name="grid" DockPanel.Dock="Top"
-                                          Background="Transparent"
-                                          MinHeight="36"
-                                          MinWidth="36">
-                                            <Path x:Name="icon"
-                                              Data="{Binding IconData}" 
-                                              Width="20"
-                                              Height="20"
-                                              Fill="{DynamicResource DefaultForeground}"
-                                              Stretch="Uniform"
-                                              HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              Opacity="0.8">
-                                                <Path.LayoutTransform>
-                                                    <ScaleTransform x:Name="IconScale"/>
-                                                </Path.LayoutTransform>
-                                            </Path>
-                                        </Grid>
-                                        <TextBlock  Foreground="{DynamicResource DefaultForeground}" Text="{Binding IconName}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                                    </DockPanel>
-                                </fd:CommandControl>
-
-                            </Border>
-
-                            <DataTemplate.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Opacity" TargetName="icon" Value="1"/>
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="IconScale"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             To="1.2"
-                                                             Duration="0:0:0.15" />
-                                                <DoubleAnimation Storyboard.TargetName="IconScale"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             To="1.2"
-                                                             Duration="0:0:0.15" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                    <Trigger.ExitActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="IconScale"
-                                                             Storyboard.TargetProperty="ScaleX"
-                                                             To="1"
-                                                             Duration="0:0:0.15" />
-                                                <DoubleAnimation Storyboard.TargetName="IconScale"
-                                                             Storyboard.TargetProperty="ScaleY"
-                                                             To="1"
-                                                             Duration="0:0:0.15" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.ExitActions>
-                                </Trigger>
-                            </DataTemplate.Triggers>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Top"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </ScrollViewer>
-
+                    <Rectangle DockPanel.Dock="Top" Height="1" Fill="Gainsboro"/>
+                    
+                    <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl  ItemsSource="{Binding SearchedIcons}" Margin="10">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="5" Margin="0 0 5 5" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#FF290736"/>
+                                                <GradientStop Color="#FF2C6976" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                        <fd:CommandControl Command="{Binding DataContext.ChooseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1,AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}">
+                                            <DockPanel>
+                                                <fd:IconControl DockPanel.Dock="Top" IconSize="{Binding IconSize}" Padding="5" Icon="{Binding IconData}"/>
+                                                <TextBlock Visibility="{Binding ShowName,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0 5 0 0" Foreground="{DynamicResource DefaultForeground}" Text="{Binding IconName}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                            </DockPanel>
+                                        </fd:CommandControl>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal" VerticalAlignment="Top"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </DockPanel>
+            </Border>
         </DockPanel>
 
 
