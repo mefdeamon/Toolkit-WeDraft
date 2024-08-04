@@ -20,12 +20,11 @@
                             <WrapPanel  Margin="5">
                                 <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}"/>
                                 <controls:IconButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" />
-                                <controls:IconButton Margin="5" Icon="{Binding record_on, Source={StaticResource IconSet}}" Content="录制"/>
                                 <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" />
-                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
-                                <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding cube_line, Source={StaticResource IconSet}}" Content="收藏" />
-                                <controls:IconButton Margin="5" Style="{StaticResource NoBackgroundIconButton}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
-                                <controls:IconButton Margin="5" Style="{StaticResource NoBackgroundIconButton}" Icon="{Binding cube_line, Source={StaticResource IconSet}}"/>
+                                <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
+                                <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding infomation_fill, Source={StaticResource IconSet}}" Content="信息" />
+                                <controls:IconButton Margin="5" Style="{StaticResource IconButton.NoBack}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
+                                <controls:IconButton Margin="5" Style="{StaticResource IconButton.NoBack}" Icon="{Binding tag_fill, Source={StaticResource IconSet}}"/>
                             </WrapPanel>
 
                         </StackPanel>
@@ -54,7 +53,7 @@
                         <Run Text="可以通过设置" />
                         <Run Text="FontSize IconSize" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="实现字体和图标大小变化，可以通过设置" />
-                        <Run Text="Foreground Background BorderThinese BorderBrush" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="Foreground Background BorderThinese BorderBrush CornerRadius" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="让按钮变得绚丽多彩。" />
                     </TextBlock>
 
@@ -62,25 +61,32 @@
                         <StackPanel>
                             <WrapPanel  Margin="5">
 
-                                <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}" Foreground="Purple"/>
+                                <controls:IconButton Margin="5" Icon="{Binding home_line, Source={StaticResource IconSet}}" />
                                 <controls:IconButton Margin="5" Icon="{Binding home_fill, Source={StaticResource IconSet}}" Foreground="blue" />
-                                <controls:IconButton Margin="5" Icon="{Binding settings_fill, Source={StaticResource IconSet}}" Foreground="Yellow" Background="Purple"/>
-                                <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Foreground="Orange" Background="Cyan"/>
+
+                                <controls:IconButton Margin="5" Icon="{Binding tag_line, Source={StaticResource IconSet}}" Foreground="Black"  BorderBrush="Black" BorderThickness="1"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Black" BorderBrush="Black" BorderThickness="1"/>
+                                <controls:IconButton Margin="5" Icon="{Binding overview_line, Source={StaticResource IconSet}}" Foreground="Black"  BorderBrush="Black" BorderThickness="1" CornerRadius="5"/>
+                                <controls:IconButton Margin="5" Icon="{Binding overview_fill, Source={StaticResource IconSet}}" Foreground="Black" BorderBrush="Black" BorderThickness="1"  CornerRadius="50"/>
+
+                                <controls:IconButton Margin="5" Icon="{Binding settings_fill, Source={StaticResource IconSet}}" Background="SaddleBrown"  BorderBrush="SaddleBrown"/>
+                                <controls:IconButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Foreground="White" Background="SaddleBrown" BorderBrush="SaddleBrown"/>
                                 <controls:IconButton Margin="5" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Foreground="cyan" Background="Blue" BorderBrush="Purple" />
-                                <controls:IconButton Margin="5" Icon="{Binding infomation_fill, Source={StaticResource IconSet}}" Foreground="Green" Background="Orange" BorderBrush="Orange" BorderThickness="1"/>
+                                <controls:IconButton Margin="5" Icon="{Binding infomation_fill, Source={StaticResource IconSet}}" Foreground="Black" Background="{DynamicResource Accent}" BorderBrush="{DynamicResource Accent}" BorderThickness="1"/>
+
 
 
                             </WrapPanel>
                             <WrapPanel  Margin="5">
 
                                 <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Purple"/>
-                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Blue"   IconSize="20"/>
-                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Green"  IconSize="25"/>
-                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Orange" IconSize="30"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" IconSize="20" BorderThickness="1" BorderBrush="Black" Padding="10" CornerRadius="25"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_line, Source={StaticResource IconSet}}" Foreground="Blue" IconSize="25" />
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Foreground="Orange" IconSize="30" />
 
-                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Purple" Background="Green"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Purple" Background="Green" CornerRadius="5"/>
                                 <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Blue"   IconSize="20" FontSize="18"/>
-                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" Foreground="Orange" IconSize="30" FontSize="26" Background="Cyan"/>
+                                <controls:IconButton Margin="5" Icon="{Binding tag_fill, Source={StaticResource IconSet}}" Content="标签" IconSize="30" FontSize="26" BorderThickness="1" BorderBrush="Black" Padding="10" CornerRadius="10"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -89,43 +95,43 @@
                     <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="VerticalTextIconButton" FontWeight="Black" />
+                        <Run Text="IconButton.Vertical" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="VerticalTextIconButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="IconButton.Vertical" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 图标在上，文本在下的垂直布局样式。默认高度是50px，仍然可以像普通图标按钮那样设置它的颜色和大小。" />
                     </TextBlock>
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel MinHeight="50" Margin="5">
 
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
-                            <controls:IconButton Style="{StaticResource VerticalTextIconButton}" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
+                            <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
 
                         </WrapPanel>
                     </Border>
 
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="NoBackgroundIconButton" FontWeight="Black" />
+                        <Run Text="IconButton.NoBack" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="NoBackgroundIconButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="IconButton.NoBack" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 不显示背景色的按钮样式。" />
                     </TextBlock>
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel Margin="5">
-                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
-                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
-                            <controls:IconButton Style="{StaticResource NoBackgroundIconButton}" Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
+                            <controls:IconButton Style="{StaticResource IconButton.NoBack}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource IconButton.NoBack}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource IconButton.NoBack}" Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="标签"/>
                         </WrapPanel>
                     </Border>
 

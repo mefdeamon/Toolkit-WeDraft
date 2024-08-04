@@ -26,9 +26,9 @@
                     <DockPanel LastChildFill="True" DockPanel.Dock="Top" Margin="10">
 
                         <WrapPanel DockPanel.Dock="Right" Margin="20 0 0 0">
-                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" CornerRadius="5 0 0 5" Icon="{Binding view_module, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewModule}"/>
-                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewCompact}"/>
-                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource SelectorIconRadioButton}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewComfy}"/>
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="5 0 0 5" Icon="{Binding view_module, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewModule}"/>
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource IconRadioButton.Selector}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewCompact}"/>
+                            <fd:IconRadioButton Command="{Binding UpdateViewCommand}" Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" IsChecked="{Binding IsViewComfy}"/>
                         </WrapPanel>
 
                         <Border Margin="0" BorderThickness="1" BorderBrush="{DynamicResource ExAccent}">
@@ -45,7 +45,7 @@
 
                                 <fd:IconButton Icon="{Binding windows_close, Source={StaticResource IconSet}}" 
                                                DockPanel.Dock="Right"
-                                               Style="{DynamicResource NoBackgroundIconButton}"
+                                               Style="{DynamicResource IconButton.NoBack}"
                                                Visibility="{Binding HasText,Converter={StaticResource BooleanToVisibilityConverter}}"
                                                Command="{Binding ClearTextCommand}"/>
 
@@ -55,7 +55,7 @@
                                  Background="Transparent"
                                  Text="{Binding Path=SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
-                               
+
 
                             </DockPanel>
                         </Border>
@@ -63,7 +63,7 @@
                     </DockPanel>
 
                     <Rectangle DockPanel.Dock="Top" Height="1" Fill="Gainsboro"/>
-                    
+
                     <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
                         <ItemsControl  ItemsSource="{Binding SearchedIcons}" Margin="10">
                             <ItemsControl.ItemTemplate>

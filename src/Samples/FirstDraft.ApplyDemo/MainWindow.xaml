@@ -77,7 +77,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate DataType="{x:Type local:NaviItem}">
                             <fdcontrols:IconRadioButton Content="{Binding Title}"
-                                                        Style="{StaticResource LeftNaviIconRadioButton}"
+                                                        Style="{StaticResource IconRadioButton.Navi.Left}"
                                                         GroupName="Items" 
                                                         Icon="{Binding Icon}">
                                 <fdcontrols:IconRadioButton.IsChecked>
@@ -93,19 +93,18 @@
 
         </DockPanel>
 
-        <DockPanel Grid.Column="1" Margin="0">
+        <DockPanel Grid.Column="1" Margin="0 0 5 5">
 
             <Grid  DockPanel.Dock="Top" Height="36">
                 <DockPanel Margin="0 0 110 0">
-                    <fdcontrols:IconButton DataContext="{Binding AboutWindowModel, Source={StaticResource Locator}}" Command="{Binding OpenAboutCommand}" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{DynamicResource NoBackgroundIconButton}" ToolTip="关于" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
+                    <fdcontrols:IconButton DataContext="{Binding AboutWindowModel, Source={StaticResource Locator}}" Command="{Binding OpenAboutCommand}" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{DynamicResource IconButton.NoBack}" ToolTip="关于" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
 
                     <ToggleButton DockPanel.Dock="Right" Margin="5 0" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
                     <TextBlock DockPanel.Dock="Right" Margin="5 0" Text="{Binding WindowsTitle}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 </DockPanel>
             </Grid>
 
-
-            <Frame FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
+            <Frame  FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
         </DockPanel >
 
     </Grid>

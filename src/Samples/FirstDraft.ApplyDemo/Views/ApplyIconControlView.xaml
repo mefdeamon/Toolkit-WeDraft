@@ -16,9 +16,10 @@
 
                 <Border BorderThickness="1" BorderBrush="Gainsboro">
                     <WrapPanel  Margin="5">
-                        <fd:IconControl Margin="5" Icon="{Binding view_comfy, Source={StaticResource IconSet}}"/>
-                        <fd:IconControl Margin="5" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsEnabled="False"/>
-                        <fd:IconControl Margin="5" Foreground="{DynamicResource Accent}" Icon="{Binding view_module, Source={StaticResource IconSet}}"  IsEnabled="False"/>
+                        <fd:IconControl Margin="5" Icon="{Binding user_fill, Source={StaticResource IconSet}}"/>
+                        <fd:IconControl Margin="5" Icon="{Binding email_fill, Source={StaticResource IconSet}}" Foreground="{DynamicResource Accent}" />
+                        <fd:IconControl Margin="5" Icon="{Binding phone_fill, Source={StaticResource IconSet}}" IsEnabled="False"/>
+                        <fd:IconControl Margin="5" Icon="{Binding passwrod_fill, Source={StaticResource IconSet}}"/>
                     </WrapPanel>
                 </Border>
 
@@ -33,10 +34,10 @@
 
                 <Border BorderThickness="1" BorderBrush="Gainsboro">
                     <WrapPanel  Margin="5">
-                        <fd:IconControl Margin="5"  Icon="{Binding view_comfy, Source={StaticResource IconSet}}"/>
-                        <fd:IconControl Margin="5" IconSize="20" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsEnabled="False"/>
-                        <fd:IconControl Margin="5" IconSize="25" Foreground="{DynamicResource Accent}" Icon="{Binding search, Source={StaticResource IconSet}}"/>
-                        <fd:IconControl Margin="5" IconSize="30" Icon="{Binding view_module, Source={StaticResource IconSet}}"  IsEnabled="False"/>
+                        <fd:IconControl Margin="5"  Icon="{Binding user_fill, Source={StaticResource IconSet}}"/>
+                        <fd:IconControl Margin="5" IconSize="20" Icon="{Binding email_fill, Source={StaticResource IconSet}}" />
+                        <fd:IconControl Margin="5" IconSize="25" Icon="{Binding phone_fill, Source={StaticResource IconSet}}"/>
+                        <fd:IconControl Margin="5" IconSize="30" Icon="{Binding passwrod_fill, Source={StaticResource IconSet}}"  />
                     </WrapPanel>
                 </Border>
 
@@ -51,10 +52,10 @@
 
                 <Border BorderThickness="1" BorderBrush="Gainsboro">
                     <WrapPanel  Margin="5">
-                        <fd:IconControl Margin="5" IconSize="20" Foreground="{DynamicResource Accent}" Icon="{Binding view_compact, Source={StaticResource IconSet}}"/>
-                        <fd:IconControl Margin="5" IconSize="20" Foreground="{DynamicResource Accent}" Icon="{Binding search, Source={StaticResource IconSet}}" IsEnabled="False"/>
-                        <fd:IconControl Margin="5" IconSize="20" Icon="{Binding view_module, Source={StaticResource IconSet}}" />
-                        <fd:IconControl Margin="5" IconSize="20" Icon="{Binding welcome, Source={StaticResource IconSet}}"  IsEnabled="False" />
+                        <fd:IconControl Margin="5" IconSize="20" Foreground="{DynamicResource Accent}" Icon="{Binding user_fill, Source={StaticResource IconSet}}"/>
+                        <fd:IconControl Margin="5" IconSize="20" Foreground="{DynamicResource Accent}" IsEnabled="False" Icon="{Binding email_fill, Source={StaticResource IconSet}}" />
+                        <fd:IconControl Margin="5" IconSize="20" Icon="{Binding phone_fill, Source={StaticResource IconSet}}" />
+                        <fd:IconControl Margin="5" IconSize="20" IsEnabled="False" Icon="{Binding passwrod_fill, Source={StaticResource IconSet}}"  />
                     </WrapPanel>
                 </Border>
 

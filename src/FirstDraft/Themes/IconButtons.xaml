@@ -3,7 +3,6 @@
                     xmlns:controls="clr-namespace:FirstDraft.Controls">
 
 
-
     <Style x:Key="IconButtonBase" TargetType="{x:Type controls:IconButton}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -15,6 +14,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="CornerRadius" Value="0"/>
     </Style>
 
     <Style x:Key="{x:Type controls:IconButton}" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
@@ -23,29 +23,30 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconButton}">
                     <Border Name="border" 
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}"
-                                        SnapsToDevicePixels="true">
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            SnapsToDevicePixels="true">
 
                         <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
 
                             <Path x:Name="icon" DockPanel.Dock="Left"
-                                    Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
-                                      Data="{TemplateBinding Icon}" 
-                                      Fill="{TemplateBinding Foreground}"
-                                      Stretch="Uniform"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center">
+                                  Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                  Data="{TemplateBinding Icon}" 
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
                             </Path>
 
                             <ContentPresenter x:Name="contentPresenter" Margin="5 0 0 0" Visibility="Collapsed"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
 
                         </DockPanel>
 
@@ -76,7 +77,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="VerticalTextIconButton" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
+    <Style x:Key="IconButton.Vertical" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
         <Setter Property="IconSize" Value="20"/>
         <Setter Property="MinWidth" Value="50"/>
         <Setter Property="Height" Value="50"/>
@@ -85,26 +86,27 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconButton}">
                     <Border Name="border" 
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{TemplateBinding Padding}"
-                                        SnapsToDevicePixels="true">
+                            SnapsToDevicePixels="true">
                         <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Path x:Name="icon" DockPanel.Dock="Top"
-                                    Width="{TemplateBinding IconSize}" 
-                                    Height="{TemplateBinding IconSize}"
-                                      Data="{TemplateBinding Icon}" 
-                                      Fill="{TemplateBinding Foreground}"
-                                      Stretch="Uniform"  Margin="0 0 0 4"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center">
+                                  Width="{TemplateBinding IconSize}" 
+                                  Height="{TemplateBinding IconSize}"
+                                  Data="{TemplateBinding Icon}" 
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"  Margin="0 0 0 4"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
                             </Path>
                             <ContentPresenter x:Name="text" Visibility="Collapsed" DockPanel.Dock="Bottom"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </DockPanel>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -133,32 +135,33 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NoBackgroundIconButton" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
+    <Style x:Key="IconButton.NoBack" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
         <Setter Property="Padding" Value="5 0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconButton}">
                     <Border Name="border" 
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{TemplateBinding Padding}"
-                                        SnapsToDevicePixels="true">
+                            SnapsToDevicePixels="true">
 
                         <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Path x:Name="icon" DockPanel.Dock="Left"
-                                    Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
-                                      Data="{TemplateBinding Icon}" 
-                                      Fill="{TemplateBinding Foreground}"
-                                      Stretch="Uniform"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center">
+                                  Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                  Data="{TemplateBinding Icon}" 
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
                             </Path>
                             <ContentPresenter x:Name="contentPresenter" Margin="5 0 0 0" Visibility="Collapsed"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </DockPanel>
 
                     </Border>
@@ -177,8 +180,6 @@
                             <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
                             <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

@@ -75,7 +75,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NoBackgroundIconRepeatButton" TargetType="{x:Type controls:IconRepeatButton}" BasedOn="{StaticResource IconButtonBase}">
+    <Style x:Key="IconRepeatButton.NoBack" TargetType="{x:Type controls:IconRepeatButton}" BasedOn="{StaticResource IconButtonBase}">
         <Setter Property="Padding" Value="5 0"/>
         <Setter Property="Template">
             <Setter.Value>

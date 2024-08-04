@@ -41,7 +41,7 @@
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="#FFF4F4F4"/>
                             <Setter Property="Background" TargetName="templateRoot" Value="#FFF4F4F4"/>
                         </MultiTrigger>
-                        
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -50,7 +50,7 @@
 
     <Style x:Key="{x:Type ListBoxItem}"  TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemBase}">
     </Style>
-    
+
     <Style x:Key="NoStyleListBoxItem" TargetType="{x:Type ListBoxItem}">
         <Setter Property="Template">
             <Setter.Value>
@@ -150,11 +150,11 @@
                                             </Grid.RowDefinitions>
 
                                             <controls:IconRepeatButton  x:Name="up" Grid.Row="0" Icon="M960 704L512 256l-448 448z" 
-                                                                        Style="{DynamicResource NoBackgroundIconRepeatButton}"
+                                                                        Style="{DynamicResource IconRepeatButton.NoBack}"
                                                                         Command="{x:Static ScrollBar.LineUpCommand}" 
                                                                         CommandTarget="{Binding ElementName=scrollViewer}" />
                                             <controls:IconRepeatButton  x:Name="down" Grid.Row="2" Icon="M64 320l448 448 448-448z" 
-                                                                        Style="{DynamicResource NoBackgroundIconRepeatButton}"
+                                                                        Style="{DynamicResource IconRepeatButton.NoBack}"
                                                                         Command="{x:Static ScrollBar.LineDownCommand}" 
                                                                         CommandTarget="{Binding ElementName=scrollViewer}" />
 

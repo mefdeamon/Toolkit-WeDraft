@@ -139,7 +139,7 @@
                                       DisplayMemberPath="Name"/>
 
                             <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
-                            
+
                             <ListBox ItemsSource="{Binding Areas}" 
                                       Margin="5"
                                       SelectedItem="{Binding CurrentItem}" 
@@ -189,7 +189,7 @@
                                       Margin="5"
                                       SelectedItem="{Binding CurrentItem}" 
                                       DisplayMemberPath="Name"/>
-                            
+
                             <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
                             <ListBox Style="{DynamicResource NoStyleListBox}" 
@@ -220,7 +220,7 @@
                                 <ListBox.ItemTemplate>
                                     <DataTemplate DataType="{x:Type vm:ItemDataModel}">
                                         <fdcontrols:IconRadioButton Content="{Binding Name}"
-                                                        Style="{StaticResource LeftNaviIconRadioButton}"
+                                                        Style="{StaticResource IconRadioButton.Navi.Left}"
                                                         GroupName="AreaNoStyleListBox"
                                                         Icon="{Binding  list, Source={StaticResource IconSet}}">
                                             <fdcontrols:IconRadioButton.IsChecked>

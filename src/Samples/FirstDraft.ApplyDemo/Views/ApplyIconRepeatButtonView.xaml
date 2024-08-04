@@ -19,8 +19,8 @@
                             <StackPanel Orientation="Horizontal">
                                 <controls:IconRepeatButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="图标重复按钮" />
                                 <controls:IconRepeatButton Margin="5" Icon="{Binding cube_line, Source={StaticResource IconSet}}" Content="功能按钮" />
-                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" Style="{StaticResource NoBackgroundIconRepeatButton}"  Content="在按下鼠标左键时，不停地发出单击Click事件" Delay="1"/>
-                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_up, Source={StaticResource IconSet}}" Style="{StaticResource NoBackgroundIconRepeatButton}"  />
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" Style="{StaticResource IconRepeatButton.NoBack}"  Content="在按下鼠标左键时，不停地发出单击Click事件" Delay="1"/>
+                                <controls:IconRepeatButton Margin="5" Icon="{Binding sort_up, Source={StaticResource IconSet}}" Style="{StaticResource IconRepeatButton.NoBack}"  />
                             </StackPanel>
                         </WrapPanel>
                     </Border>
@@ -43,27 +43,27 @@
                             <controls:IconRepeatButton Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
                         </WrapPanel>
                     </Border>
-                    
-                    
+
+
                     <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="VerticalTextIconButton" FontWeight="Black" />
+                        <Run Text="IconRepeatButton.NoBack" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="NoBackgroundIconRepeatButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="IconRepeatButton.NoBack" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 不显示背景色的按钮样式。" />
                     </TextBlock>
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel Margin="5">
 
-                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
-                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
-                            <controls:IconRepeatButton Style="{StaticResource NoBackgroundIconRepeatButton}" Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" />
+                            <controls:IconRepeatButton Style="{StaticResource IconRepeatButton.NoBack}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconRepeatButton Style="{StaticResource IconRepeatButton.NoBack}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconRepeatButton Style="{StaticResource IconRepeatButton.NoBack}" Margin="5" Icon="{Binding sort_down, Source={StaticResource IconSet}}" />
 
                         </WrapPanel>
                     </Border>
