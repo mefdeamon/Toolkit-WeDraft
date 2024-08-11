@@ -22,6 +22,9 @@
     <Page Update="Themes\CommandControls.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\DataGrids.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\FdWindows.xaml">
       <SubType>Designer</SubType>
     </Page>

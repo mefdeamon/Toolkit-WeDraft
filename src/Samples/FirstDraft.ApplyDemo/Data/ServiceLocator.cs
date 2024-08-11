@@ -18,6 +18,7 @@ namespace FirstDraft.ApplyDemo.Data
         
         public IconSet IconSet => App.Current.Services.GetService<IconSet>();
         public AboutWindowModel AboutWindowModel => App.Current.Services.GetService<AboutWindowModel>();
+        public ApplyDataGridViewModel ApplyDataGridViewModel => App.Current.Services.GetService<ApplyDataGridViewModel>();
 
     }
 

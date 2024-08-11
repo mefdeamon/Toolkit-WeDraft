@@ -22,6 +22,7 @@
         <ResourceDictionary Source="TextBlocks.xaml"/>
         <ResourceDictionary Source="PasswordBoxs.xaml"/>
         <ResourceDictionary Source="ScrollViewers.xaml"/>
+        <ResourceDictionary Source="DataGrids.xaml"/>
 
         <!-- Controls -->
         <ResourceDictionary Source="IconControls.xaml"/>

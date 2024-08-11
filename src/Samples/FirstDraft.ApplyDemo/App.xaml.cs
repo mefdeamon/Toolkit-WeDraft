@@ -52,7 +52,10 @@ namespace FirstDraft.ApplyDemo
             services.AddSingleton<ApplyDateTimePickBoxViewModel>();
             services.AddSingleton<ApplyButtonViewModel>();
             services.AddSingleton<AboutWindowModel>();
+            services.AddSingleton<ApplyDataGridViewModel>();
             
+
+
             return services.BuildServiceProvider();
         }
     }

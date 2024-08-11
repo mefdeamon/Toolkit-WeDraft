@@ -29,6 +29,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "文本框(TextBox)", Icon = App.Current.Services.GetService<IconSet>().textbox, Content = new Views.ApplyTextBoxView() });
             NaviItems.Add(new NaviItem() { Title = "下拉选项框(ComboBox)", Icon = App.Current.Services.GetService<IconSet>().combobox, Content = new Views.ApplyComboBoxView() });
             NaviItems.Add(new NaviItem() { Title = "列表框(ListBox)", Icon = App.Current.Services.GetService<IconSet>().list, Content = new Views.ApplyListBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "表格(DataGrid)", Icon = App.Current.Services.GetService<IconSet>().view_compact, Content = new Views.ApplyDataGridView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
             NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
             NaviItems.Add(new NaviItem() { Title = "图标(IconControl)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.ApplyIconControlView() });
