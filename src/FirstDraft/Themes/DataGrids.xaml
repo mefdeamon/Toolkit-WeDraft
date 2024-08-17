@@ -1,39 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.GridLine" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.BorderLine" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.MouseOver.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.MouseOver.Background" Color="#DDDDDD"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Pressed.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Pressed.Background" Color="#DDDDDD"/>
-
+    
     <BooleanToVisibilityConverter x:Key="bool2VisibilityConverter"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.BorderLine" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.MouseOver.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.MouseOver.Background" Color="#DDDDDD"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Pressed.Foreground" Color="Black"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Pressed.Background" Color="#DDDDDD"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.RowSelected.Foreground" Color="#EEEEEE"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.RowSelected.Background" Color="{DynamicResource AccentColor}"/>
-
-
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Row.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Row.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
-
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Foreground" Color="#FF000000"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.BorderBrush" Color="Transparent"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.MouseOver.Foreground" Color="#FFFFFF"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Background" Color="{DynamicResource AccentColor}"/>
-    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Foreground" Color="#FFFFFF"/>
 
     <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
         <Setter Property="BorderThickness" Value="0 0 0 1"/>

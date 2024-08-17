@@ -91,6 +91,37 @@
     <SolidColorBrush x:Key="ScrollBar.Disabled.Border" Color="#F0F0F0"/>
     <SolidColorBrush x:Key="ScrollBar.Disabled.Glyph" Color="#BFBFBF"/>
 
+
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.GridLine" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.BorderLine" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.MouseOver.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.MouseOver.Background" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Pressed.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.ColumnHeader.Pressed.Background" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.BorderLine" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.MouseOver.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.MouseOver.Background" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Pressed.Foreground" Color="Black"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.Pressed.Background" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.RowSelected.Foreground" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.RowHeader.RowSelected.Background" Color="{DynamicResource AccentColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Row.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Row.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Foreground" Color="#FF000000"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.BorderBrush" Color="Transparent"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.MouseOver.Background" Color="{DynamicResource AccentColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.MouseOver.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Background" Color="{DynamicResource AccentColor}"/>
+    <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
+
+
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
