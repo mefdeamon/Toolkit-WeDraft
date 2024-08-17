@@ -18,11 +18,16 @@ Build our own WPF Control Style Library
   - 下拉选项框（ComboBox）
   - 滑动条（Slider）
   - 密码框（PasswordBox）
+  - 数据网格（DataGrid）
+  - 列表框（ListBox）
 - 自定义控件
+  - 图标（IconControl）
   - 图标按钮（IconButton）
   - 图标切换按钮（IconToggleButton）
   - 图标单选按钮（IconRadioButton）
+  - 图标复选按钮（IconRepeatButton）
   - 图标文本框（IconTextBox）
+  - IP地址框（IpAddressBox）
   - Fd窗口（FdWindow）
 
 
@@ -106,3 +111,18 @@ Build our own WPF Control Style Library
 - 完整的源码地址：[https://github.com/mefdeamon/Toolkit-WeDraft](https://github.com/mefdeamon/Toolkit-WeDraft)。
 - 使用文档详细说明：[Home · mefdeamon/Toolkit-WeDraft Wiki (github.com)](https://github.com/mefdeamon/Toolkit-WeDraft/wiki)
 - 开发过程视频：[Bilibili视频](https://www.bilibili.com/video/BV1AA411J7vZ)。
+
+
+
+
+
+## 支持我（Reward）
+
+如果你喜欢这个项目并希望支持我，你可以通过支付宝/微信打赏来支持我。以下是我的支付宝/微信收款二维码：
+
+<figure class="half">    
+    <img src="res/assist/alipay.jpg" width="48%">    
+    <img src="res/assist/wechatpay.jpg" width="48%"> 
+</figure>
+
+非常感谢你的支持！

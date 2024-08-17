@@ -25,6 +25,7 @@ namespace FirstDraft.ApplyDemo
         });
 
 
+
         public ObservableCollection<GitHubRelease> Releases { get; set; } = new ObservableCollection<GitHubRelease>();
 
         public async void Search()

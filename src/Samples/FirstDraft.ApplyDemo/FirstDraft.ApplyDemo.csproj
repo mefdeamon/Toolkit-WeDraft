@@ -17,7 +17,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="alipay.jpg" />
+    <None Remove="ali_wechat_pay.jpg" />
+    <None Remove="ali_wechat_pay.png" />
     <None Remove="github.current.version.fd" />
+    <None Remove="wechatpay.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +38,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\FirstDraft\FirstDraft.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="alipay.jpg" />
+    <Resource Include="ali_wechat_pay.jpg" />
+    <Resource Include="ali_wechat_pay.png" />
+    <Resource Include="wechatpay.jpg" />
   </ItemGroup>
 
 </Project>

@@ -98,6 +98,7 @@
             <Grid  DockPanel.Dock="Top" Height="36">
                 <DockPanel Margin="0 0 110 0">
                     <fdcontrols:IconButton DataContext="{Binding AboutWindowModel, Source={StaticResource Locator}}" Command="{Binding OpenAboutCommand}" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{DynamicResource IconButton.NoBack}" ToolTip="关于" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
+                    <fdcontrols:IconButton Command="{Binding OpenRewardCommand}" Icon="{Binding 喜欢, Source={StaticResource XiaoJuziIconSet}}" Style="{DynamicResource IconButton.NoBack}" Foreground="Red" ToolTip="支持我" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
 
                     <ToggleButton DockPanel.Dock="Right" Margin="5 0" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
                     <TextBlock DockPanel.Dock="Right" Margin="5 0" Text="{Binding WindowsTitle}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" />

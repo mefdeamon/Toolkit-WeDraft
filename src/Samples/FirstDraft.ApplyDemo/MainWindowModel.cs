@@ -115,6 +115,12 @@ namespace FirstDraft.ApplyDemo
                 SetProperty(ref items, value);
             }
         }
+
+
+        public RelayCommand OpenRewardCommand => new RelayCommand(() =>
+        {
+            RewardWindow.ShowInstance();
+        });
     }
 
 
