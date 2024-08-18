@@ -427,7 +427,7 @@
             <DockPanel LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top">
                     <Grid Height="77">
-                        <fdcontrols:IconButton Style="{DynamicResource NoBackgroundIconButton}" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Center" Icon="M709.818182 928.581818L293.236364 512 709.818182 95.418182l32.581818 32.581818L358.4 512l384 384z" IconSize="20" Margin="0 5"/>
+                        <fdcontrols:IconButton Style="{DynamicResource IconButton.NoBack}" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Center" Icon="M709.818182 928.581818L293.236364 512 709.818182 95.418182l32.581818 32.581818L358.4 512l384 384z" IconSize="20" Margin="0 5"/>
                     </Grid>
                     <StackPanel x:Name="PART_LIST_START">
                         <fdcontrols:IconRadioButton GroupName="NAVI" x:Name="NAVI_HOME" Icon="{Binding 主页, Source={StaticResource XiaoJuziIconSet}}" IconSize="28" Content="首页" Style="{DynamicResource NaviAccentEffectIconRadioButton}"/>
@@ -440,9 +440,9 @@
 
                 <StackPanel DockPanel.Dock="Bottom" Margin="0 10 0 20">
                     <fdcontrols:IconRadioButton GroupName="NAVI" x:Name="NAVI_USER" Icon="{Binding 福利, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource NaviAccentEffectIconRadioButton}" />
-                    <fdcontrols:IconButton Icon="{Binding 奖杯, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource NoBackgroundIconButton}"/>
+                    <fdcontrols:IconButton Icon="{Binding 奖杯, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource IconButton.NoBack}"/>
                     <fdcontrols:IconToggleButton x:Name="PART_MESSAGE" Icon="{Binding 邮件, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25" />
-                    <fdcontrols:IconButton Icon="{Binding 短信, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource NoBackgroundIconButton}"/>
+                    <fdcontrols:IconButton Icon="{Binding 短信, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource IconButton.NoBack}"/>
                     <fdcontrols:IconRadioButton GroupName="NAVI" x:Name="NAVI_CONF" Icon="{Binding 扳手, Source={StaticResource XiaoJuziIconSet}}" Padding="0 10" IconSize="25"  Style="{DynamicResource NaviAccentEffectIconRadioButton}" />
                 </StackPanel>
 
@@ -553,7 +553,7 @@
                         </Style>
                     </ToggleButton.Style>
                     <DockPanel Margin="5 2">
-                        <fdcontrols:IconButton Icon="{Binding 放大镜, Source={StaticResource XiaoJuziIconSet}}" IconSize="18" Style="{DynamicResource NoBackgroundIconButton}" DockPanel.Dock="Right"/>
+                        <fdcontrols:IconButton Icon="{Binding 放大镜, Source={StaticResource XiaoJuziIconSet}}" IconSize="18" Style="{DynamicResource IconButton.NoBack}" DockPanel.Dock="Right"/>
                         <TextBlock Width="240" VerticalAlignment="Center" Tag="" Foreground="#999999" Margin="10 0 0 0" FontSize="14" Text="搜索你感兴趣的视频"/>
                     </DockPanel>
                 </ToggleButton>
@@ -573,7 +573,7 @@
                     <DockPanel >
                         <Border Width="400" x:Name="PART_SEARCH" DockPanel.Dock="Top" SnapsToDevicePixels="True" BorderThickness="1" BorderBrush="{DynamicResource Accent}"  CornerRadius="5"   VerticalAlignment="Center">
                             <DockPanel Margin="5">
-                                <fdcontrols:IconButton Icon="{Binding 放大镜, Source={StaticResource XiaoJuziIconSet}}" IconSize="16" Style="{DynamicResource NoBackgroundIconButton}" DockPanel.Dock="Right"/>
+                                <fdcontrols:IconButton Icon="{Binding 放大镜, Source={StaticResource XiaoJuziIconSet}}" IconSize="16" Style="{DynamicResource IconButton.NoBack}" DockPanel.Dock="Right"/>
                                 <TextBox Focusable="True" Background="Transparent" BorderThickness="0" Style="{DynamicResource HintTagTextBox}" Tag="搜索你感兴趣的视频" FontSize="14" Text=""/>
                             </DockPanel>
                         </Border>
