@@ -403,6 +403,7 @@
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="CaptionHeight" Value="36"/>
         <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SpeciColorPurpleBrush}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type local:FdWindow}}}"
@@ -415,7 +416,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:FdWindow}">
                     <!-- Outer border with the drop shadow margin -->
-                    <Border Padding="{TemplateBinding OuterMarginSize}" ClipToBounds="False" BorderBrush="{StaticResource SpeciColorPurpleBrush}" BorderThickness="{Binding FlatBorderThickness}">
+                    <Border Padding="{TemplateBinding OuterMarginSize}" ClipToBounds="False" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{Binding FlatBorderThickness}">
 
                         <!-- Main window outline -->
                         <Grid>
@@ -424,7 +425,7 @@
                             <Border BorderThickness="{TemplateBinding BeingMoved, Converter={StaticResource BooleanToInt01Converter}}"
                                         Panel.ZIndex="2"
                                         CornerRadius="{TemplateBinding WindowCornerRadius}"
-                                        BorderBrush="{DynamicResource SpeciVerticalLinearBrush}" />
+                                        BorderBrush="{TemplateBinding BorderBrush}" />
 
                             <!-- Opacity mask for corners on grid -->
                             <Border x:Name="Container"
@@ -495,7 +496,7 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsActive" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderActive}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
                         </Trigger>
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="Maximize" Property="Visibility" Value="Collapsed" />
@@ -599,7 +600,183 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsActive" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderActive}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SubFdWindow" TargetType="{x:Type local:FdWindow}" >
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="CaptionHeight" Value="24"/>
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type local:FdWindow}}}"
+                              CaptionHeight="{Binding CaptionHeight, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type local:FdWindow}}}"
+                              CornerRadius="0" GlassFrameThickness="0"
+                              />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FdWindow}">
+                    <!-- Outer border with the drop shadow margin -->
+                    <Border Padding="{TemplateBinding OuterMarginSize}" ClipToBounds="False" BorderBrush="{StaticResource SpeciColorPurpleBrush}" BorderThickness="{Binding FlatBorderThickness}">
+
+                        <!-- Main window outline -->
+                        <Grid>
+
+                            <!-- Outer dragging border -->
+                            <Border BorderThickness="{TemplateBinding BeingMoved, Converter={StaticResource BooleanToInt01Converter}}"
+                                        Panel.ZIndex="2"
+                                        CornerRadius="{TemplateBinding WindowCornerRadius}"
+                                        BorderBrush="{DynamicResource SpeciVerticalLinearBrush}" />
+
+                            <!-- Opacity mask for corners on grid -->
+                            <Border x:Name="Container"
+                                        Background="{DynamicResource DefaultBackground}"
+                                        CornerRadius="{TemplateBinding WindowCornerRadius}" />
+
+                            <!-- Window border and drop shadow -->
+                            <Border CornerRadius="{TemplateBinding WindowCornerRadius}" 
+                                    Background="{DynamicResource DefaultBackground }">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" BlurRadius="{TemplateBinding OuterMarginBlurRadius}" Opacity="0.5" />
+                                </Border.Effect>
+                            </Border>
+
+                            <!-- The main window content -->
+                            <Grid>
+
+                                <!-- Corner clipping -->
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=Container}" />
+                                </Grid.OpacityMask>
+
+                                <Grid.RowDefinitions>
+
+                                    <!-- Caption Bar -->
+                                    <RowDefinition Height="{TemplateBinding CaptionHeightGridLength}" />
+
+                                    <!-- Internet Connection Bar -->
+                                    <RowDefinition Height="Auto" />
+
+                                    <!-- Window Content -->
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+
+                                <DockPanel Background="#EEEEF2">
+                                    <StackPanel  Panel.ZIndex="1" 
+                                                    DockPanel.Dock="Left" Grid.Row="0" HorizontalAlignment="Left" 
+                                                    Orientation="Horizontal" VerticalAlignment="Center">
+
+                                        <TextBlock Text="{TemplateBinding Title}" Padding="5 0"/>
+                                    </StackPanel>
+
+                                    <!-- Window Buttons -->
+                                    <StackPanel Panel.ZIndex="1" 
+                                                    DockPanel.Dock="Right" Grid.Row="0" HorizontalAlignment="Right" 
+                                                    Orientation="Horizontal" VerticalAlignment="Center">
+                                        <Button Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}" >
+                                            <Button.Style>
+                                                <Style TargetType="{x:Type Button}" >
+                                                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                                                    <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}" />
+                                                    <Setter Property="Background" Value="Transparent"/>
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter Property="ToolTip" Value="{DynamicResource WinLabel_Close}"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                                <Grid x:Name="grid"
+                                                                      Background="{TemplateBinding Background}"
+                                                                      MinHeight="24"
+                                                                      MinWidth="24">
+                                                                    <Path x:Name="icon"
+                                                                          Width="15"
+                                                                          Height="15"
+                                                                          Fill="{TemplateBinding Foreground}"
+                                                                          Stretch="Uniform"
+                                                                          HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"
+                                                                              RenderTransformOrigin="0.5 0.5"
+                                                                          Opacity="0.8">
+                                                                        <Path.Data>
+                                                                            <GeometryGroup FillRule="Nonzero">
+                                                                                <RectangleGeometry Rect="0 7 15 1"/>
+                                                                                <RectangleGeometry Rect="7 0 1 15"/>
+                                                                            </GeometryGroup>
+                                                                        </Path.Data>
+                                                                        <Path.LayoutTransform>
+                                                                            <TransformGroup>
+                                                                                <ScaleTransform x:Name="IconScale"/>
+                                                                                <RotateTransform x:Name="IconRotate" Angle="45"/>
+                                                                            </TransformGroup>
+                                                                        </Path.LayoutTransform>
+                                                                    </Path>
+                                                                </Grid>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="Background" Value="Red"/>
+                                                                        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}" />
+                                                                        <Setter Property="Opacity" TargetName="icon" Value="1"/>
+                                                                        <Trigger.EnterActions>
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="IconRotate"
+                                                                                                     Storyboard.TargetProperty="Angle"
+                                                                                                     To="-45"
+                                                                                                     Duration="0:0:0.15" />
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </Trigger.EnterActions>
+                                                                        <Trigger.ExitActions>
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="IconRotate"
+                                                                                                     Storyboard.TargetProperty="Angle"
+                                                                                                     To="45"
+                                                                                                     Duration="0:0:0.15" />
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </Trigger.ExitActions>
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsPressed" Value="True">
+                                                                        <Setter Property="Foreground" Value="{StaticResource SpeciColorBlueBrush}" />
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsEnabled" Value="False">
+                                                                        <Setter Property="Foreground" Value="#99000000" />
+                                                                        <Setter TargetName="icon" Property="Opacity" Value="0.3" />
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </StackPanel>
+                                </DockPanel>
+
+                                <!-- Page Content -->
+                                <Border Grid.Row="1" Grid.RowSpan="2" Padding="{Binding InnerContentPadding}" ClipToBounds="True">
+                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsActive" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

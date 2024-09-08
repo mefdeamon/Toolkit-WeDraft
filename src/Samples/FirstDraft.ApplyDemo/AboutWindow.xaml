@@ -7,20 +7,17 @@
              xmlns:fd="clr-namespace:FirstDraft;assembly=FirstDraft"
              xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
              mc:Ignorable="d"
-             WindowStartupLocation="CenterOwner"  Style="{StaticResource ToolFdWindow}"
+             WindowStartupLocation="CenterOwner"
+             Style="{DynamicResource SubFdWindow}"
              DataContext="{Binding AboutWindowModel, Source={StaticResource Locator}}"
              ShowInTaskbar="False"
-             Title="AboutWindow" Height="450" Width="800">
+             Title="关于First Draft" Height="400" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="36"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <Border BorderThickness="0 0 0 1" BorderBrush="{DynamicResource ExAccent}">
-            <TextBlock Grid.Row="0" Text="关于First Draft" Margin="10"/>
-        </Border>
 
         <DockPanel Grid.Row="1" Margin="10 10 10 10" >
             <DockPanel  DockPanel.Dock="Top"  >
