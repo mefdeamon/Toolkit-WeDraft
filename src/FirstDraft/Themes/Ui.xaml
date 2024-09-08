@@ -23,6 +23,7 @@
         <ResourceDictionary Source="PasswordBoxs.xaml"/>
         <ResourceDictionary Source="ScrollViewers.xaml"/>
         <ResourceDictionary Source="DataGrids.xaml"/>
+        <ResourceDictionary Source="DatePickers.xaml"/>
 
         <!-- Controls -->
         <ResourceDictionary Source="IconControls.xaml"/>

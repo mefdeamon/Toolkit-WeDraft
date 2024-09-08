@@ -62,7 +62,7 @@ namespace FirstDraft.Controls
         public TimePickerDataContext TimeDc { get; set; }
 
 
-        private DateTime dcDateTime;
+        private DateTime dcDateTime = DateTime.Now;
 
         public DateTime DcDateTime
         {

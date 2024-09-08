@@ -3,68 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:FirstDraft.Controls"
              mc:Ignorable="d" >
-    <UserControl.Resources>
-        <Style x:Key="DatePickerStyle1" TargetType="{x:Type DatePicker}">
-            <Setter Property="Foreground" Value="#FF333333"/>
-            <Setter Property="IsTodayHighlighted" Value="True"/>
-            <Setter Property="SelectedDateFormat" Value="Short"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="BorderBrush">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
-                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
-                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
-                        <GradientStop Color="#FF718597" Offset="0.375"/>
-                        <GradientStop Color="#FF617584" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type DatePicker}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal"/>
-                                    <VisualState x:Name="Disabled">
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0" Storyboard.TargetName="PART_DisabledVisual" To="1" Storyboard.TargetProperty="Opacity"/>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <Grid.Resources>
-                                    <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF"/>
-                                  
-                                </Grid.Resources>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Button x:Name="PART_Button" Background="Transparent" Content="{TemplateBinding SelectedDate}" ContentStringFormat="{}{0:yyyy-MM-dd}" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" VerticalAlignment="Top">
-                                </Button>
-                                <Grid x:Name="PART_DisabledVisual" Grid.Column="0" Grid.ColumnSpan="2" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Rectangle Grid.Column="0" Fill="#A5FFFFFF" Grid.Row="0" RadiusX="1" RadiusY="1"/>
-                                    <Rectangle Grid.Column="1" Fill="#A5FFFFFF" Height="18" Margin="3,0,3,0" Grid.Row="0" RadiusX="1" RadiusY="1" Width="19"/>
-                                    <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_Button}" StaysOpen="False"/>
-                                </Grid>
-                            </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Resources>
     <Grid>
         <ToggleButton x:Name="PART_TIME" Content="{Binding DateTimeText}" Padding="5 2"  VerticalAlignment="Center"
                       Background="{DynamicResource DefaultBackground}" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}"/>
@@ -90,17 +31,18 @@
                         </DockPanel>
                         
                         <DockPanel DockPanel.Dock="Top">
-                            <DockPanel>
+                            <DockPanel >
 
-                                <Border BorderBrush="{DynamicResource Button.Static.Border}" BorderThickness="1 1 1 1" Margin="0 0 -3 0" >
+                                <Border BorderBrush="{DynamicResource Button.Static.Border}" BorderThickness="1 1 0 1"  >
                                     <Path Data="M416.087 607.831l95.987 0 0-96-95.987 0L416.087 607.831zM544.078 735.828l96 0 0-95.994-96 0L544.078 735.828zM416.087 735.828l95.987 0 0-95.994-95.987 0L416.087 735.828zM288.084 607.831l96 0 0-96-96 0L288.084 607.831zM288.084 735.828l96 0 0-95.994-96 0L288.084 735.828zM544.078 607.831l96 0 0-96-96 0L544.078 607.831zM672.081 479.831l96 0 0-95.997-96 0L672.081 479.831zM832.078 191.833 224.077 191.833c-17.674 0-31.994 14.326-31.994 32.003l0 575.998c0 17.674 14.32 32 31.994 32l608.001 0c17.674 0 32.003-14.326 32.003-32L864.081 223.837C864.082 206.16 849.752 191.833 832.078 191.833zM832.082 767.832c0 17.674-14.326 32-32 32L256.08 799.832c-17.674 0-32-14.326-32-32L224.08 351.831c0-17.674 14.326-32 32-32l544.001 0c17.674 0 32 14.326 32 32L832.081 767.832zM672.081 607.831l96 0 0-96-96 0L672.081 607.831zM544.078 479.831l96 0 0-95.997-96 0L544.078 479.831z"
-                                    Fill="{DynamicResource Button.Static.Foreground}"
-                                    Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
-                                         VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3 0 3 0"
-                                    />
+                                          Fill="{DynamicResource Button.Static.Foreground}"
+                                          Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
+                                          VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3"
+                                          />
                                 </Border>
 
-                                <DatePicker Style="{DynamicResource DatePickerStyle1}" VerticalAlignment="Bottom" BorderThickness="0" SelectedDate="{Binding DcDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                                <DatePicker Style="{DynamicResource DatePicker.DateTimePickBox}" VerticalAlignment="Center" BorderThickness="0" Margin="0"
+                                            SelectedDate="{Binding DcDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                                     <DatePicker.Resources>
                                         <Style TargetType="DatePickerTextBox">
                                             <Setter Property="BorderThickness" Value="0"/>
@@ -121,7 +63,7 @@
                                     <Path Data="M874.179108 149.919291C777.456788 53.255031 648.909794 0 512.10296 0 375.343491 0 246.779689 53.255031 150.097095 149.929986 53.379358 246.635499 0.118216 375.225275 0.118216 512.003079c-0.024446 136.793083 53.195443 265.353829 149.900956 362.11893 96.670371 96.613839 225.246396 149.878037 361.98753 149.878037 136.806834 0 265.42564-53.297812 362.172407-149.978879C1073.767443 674.41297 1073.798001 349.603883 874.179108 149.919291L874.179108 149.919291 874.179108 149.919291zM826.994433 826.827324c-84.130878 84.118655-195.994709 130.492014-314.986203 130.492014-118.90746 0-230.743788-46.350441-314.819662-130.392701C113.111166 742.833957 66.820314 630.993045 66.838649 512.003079c0-118.97316 46.313771-230.826295 130.420203-314.899113 84.094208-84.074346 195.893867-130.372838 314.844108-130.372838 118.954825 0 230.77893 46.296964 314.891473 130.378949C1000.583984 370.74241 1000.583984 653.25458 826.994433 826.827324L826.994433 826.827324 826.994433 826.827324zM733.350836 637.475934l-176.979966-102.351112L556.37087 256.000011c0-23.557196-19.111001-42.666669-42.674308-42.666669-23.544973 0-42.655973 19.109473-42.655973 42.666669l0 298.669736c0 15.826011 19.671741 29.095841 32.467921 36.437411 3.538621 5.329323 13.268303 10.15291 19.199619 13.564716l176.000581 106.673547c20.388327 11.769431 42.495544 4.774694 54.271086-15.619744 11.775542-20.40055 0.811316-46.469617-19.630487-58.245159l0 0L733.349308 637.475934zM733.350836 637.475934"
                                          Fill="{DynamicResource Button.Static.Foreground}"
                                          Stretch="Uniform" Height="{DynamicResource DefalutIconSize}" Width="{DynamicResource DefalutIconSize}"
-                                         VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3 0"
+                                         VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3"
                                          />
                                 </Border>
                                 <local:TimePickBox Margin="0 0 0 0" DataContext="{Binding TimeDc}"/>

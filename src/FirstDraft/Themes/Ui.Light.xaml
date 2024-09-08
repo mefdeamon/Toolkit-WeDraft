@@ -121,7 +121,15 @@
     <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Background" Color="{DynamicResource AccentColor}"/>
     <SolidColorBrush x:Key="SolidBrush.DataGrid.Cell.Selected.Foreground" Color="{DynamicResource DefaultBackgrounColor}"/>
 
+    
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.Foreground.Default" Color="{DynamicResource DefaultForegrounColor}" />
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.Foreground.Seleted" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.BorderBrush.Default"  Color="#222222" />
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.BorderBrush.OnMouseOver"   Color="{DynamicResource AccentColor}" />
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.Background.Default"   Color="{DynamicResource DefaultBackgrounColor}" />
+    <SolidColorBrush x:Key="SolidBrush.DatePicker.Background.HighlightToday"    Color="#66ef8736" />
 
+    
     <Style x:Key="FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
