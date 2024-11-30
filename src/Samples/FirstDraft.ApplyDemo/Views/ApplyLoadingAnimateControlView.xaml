@@ -1,0 +1,48 @@
+﻿<fdcontrols:AnimatableUserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyLoadingAnimateControlView"
+                                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                                  xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+                                  xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+                                  mc:Ignorable="d" 
+                                  d:DesignHeight="450" d:DesignWidth="800">
+    <fdcontrols:AnimatableUserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </fdcontrols:AnimatableUserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel>
+                                <ContentControl Style="{StaticResource LoadingAnimationControl}" />
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="LoadingAnimationControl"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+
+                                <ContentControl Style="{StaticResource LoadingAnimationControl}" />
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+    </Grid>
+    </fdcontrols:AnimatableUserControl>

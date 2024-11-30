@@ -44,6 +44,9 @@
     <Compile Update="Views\ApplyListBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyLoadingAnimateControlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ApplyPasswordBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,6 +101,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyListBoxView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyLoadingAnimateControlView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplyPasswordBoxView.xaml">

@@ -33,6 +33,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "日期(DatePicker)", Icon = App.Current.Services.GetService<IconSet>().datepicker, Content = new Views.ApplyDatePickerView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
             NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "加载动画(ContentControl)", Icon = App.Current.Services.GetService<IconSet>().animate, Content = new Views.ApplyLoadingAnimateControlView() });
             NaviItems.Add(new NaviItem() { Title = "图标(IconControl)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.ApplyIconControlView() });
             NaviItems.Add(new NaviItem() { Title = "图标按钮(IconButton)", Icon = App.Current.Services.GetService<IconSet>().rect_fill, Content = new Views.ApplyIconButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标切换按钮(IconToggleButton)", Icon = App.Current.Services.GetService<IconSet>().togglebutton, Content = new Views.ApplyIconToggleButtonView() });
