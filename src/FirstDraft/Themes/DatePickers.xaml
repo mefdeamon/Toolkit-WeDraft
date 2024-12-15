@@ -284,6 +284,7 @@
     </Style>
 
     <Style x:Key="DatePickerBaseStyle" TargetType="{x:Type DatePicker}" >
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DatePicker.Foreground.Default}" />
         <Setter Property="IsTodayHighlighted" Value="True" />
@@ -395,6 +396,7 @@
 
 
     <Style x:Key="DatePicker.DateTimePickBox" TargetType="{x:Type DatePicker}" BasedOn="{StaticResource DatePickerBaseStyle}">
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
@@ -430,7 +432,7 @@
                             <ToggleButton x:Name="PART_Button" Background="Transparent"
                                       Content="{TemplateBinding SelectedDate}"  BorderThickness="1"
                                       ContentStringFormat="{}{0:yyyy-MM-dd}" Grid.Column="1" Foreground="{TemplateBinding Foreground}" 
-                                      Focusable="False" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Center">
+                                      HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Center">
                             </ToggleButton>
 
                             <Popup x:Name="PART_Popup"

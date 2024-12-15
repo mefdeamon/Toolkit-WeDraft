@@ -4,7 +4,7 @@
 
 
     <Style x:Key="IconTextBoxBase" TargetType="{x:Type controls:IconTextBox}">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Padding" Value="5 2" />

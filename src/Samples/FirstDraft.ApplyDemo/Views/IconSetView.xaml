@@ -68,17 +68,17 @@
                         <ItemsControl  ItemsSource="{Binding SearchedIcons}" Margin="10">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Padding="5" Margin="0 0 5 5" BorderThickness="1">
+                                    <Border Padding="5" Margin="0 0 5 5" BorderThickness="1" Focusable="False">
                                         <Border.BorderBrush>
                                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                                 <GradientStop Color="#FF290736"/>
                                                 <GradientStop Color="#FF2C6976" Offset="1"/>
                                             </LinearGradientBrush>
                                         </Border.BorderBrush>
-                                        <fd:CommandControl Command="{Binding DataContext.ChooseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1,AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}">
+                                        <fd:CommandControl  Focusable="False" Command="{Binding DataContext.ChooseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1,AncestorType={x:Type UserControl}}}" CommandParameter="{Binding .}">
                                             <DockPanel>
-                                                <fd:IconControl DockPanel.Dock="Top" IconSize="{Binding IconSize}" Padding="5" Icon="{Binding IconData}"/>
-                                                <TextBlock Visibility="{Binding ShowName,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0 5 0 0" Foreground="{DynamicResource DefaultForeground}" Text="{Binding IconName}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                                <fd:IconControl Focusable="False" DockPanel.Dock="Top" IconSize="{Binding IconSize}" Padding="5" Icon="{Binding IconData}"/>
+                                                <TextBlock Focusable="False" Visibility="{Binding ShowName,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0 5 0 0" Foreground="{DynamicResource DefaultForeground}" Text="{Binding IconName}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                                             </DockPanel>
                                         </fd:CommandControl>
                                     </Border>

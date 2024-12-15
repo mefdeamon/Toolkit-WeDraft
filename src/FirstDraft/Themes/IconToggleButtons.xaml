@@ -4,7 +4,7 @@
 
 
     <Style x:Key="IconToggleButton.Base" TargetType="{x:Type controls:IconToggleButton}" >
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="HorizontalContentAlignment"  Value="Center"/>

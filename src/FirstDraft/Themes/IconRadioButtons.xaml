@@ -92,7 +92,7 @@
 
 
     <Style x:Key="IconRadioButton.Navi" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
@@ -317,7 +317,7 @@
 
 
     <Style x:Key="IconRadioButton.Navi.AccentEffect" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource IconRadioButton.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource IconRadioButton.Static.Foreground}"/>
@@ -578,7 +578,7 @@
     <SolidColorBrush x:Key="IconRadioButton.Selector.Pressed.Background" Color="#66ef8736"/>
 
     <Style x:Key="IconRadioButton.Selector" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{DynamicResource IconRadioButton.Selector.Static.BorderBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource IconRadioButton.Static.Foreground}"/>
