@@ -11,6 +11,7 @@
         <Setter Property="HorizontalContentAlignment"  Value="Center"/>
         <Setter Property="VerticalContentAlignment"  Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
@@ -26,11 +27,11 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
+                            Padding="{TemplateBinding Padding}" HorizontalAlignment="Stretch"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             SnapsToDevicePixels="true">
 
-                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <DockPanel VerticalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
 
 
                             <Path x:Name="icon" DockPanel.Dock="Left"

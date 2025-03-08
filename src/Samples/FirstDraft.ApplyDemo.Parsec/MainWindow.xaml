@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Parsec"
              xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
              xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:views="clr-namespace:FirstDraft.ApplyDemo.Parsec.Views"
              xmlns:fd="clr-namespace:FirstDraft;assembly=FirstDraft"
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
              mc:Ignorable="d"
@@ -85,18 +86,61 @@
                             </ListBox.ItemsPanel>
                         </ListBox>
 
-                        <fdcontrols:IconToggleButton ToolTip="Frends" 
+                        <fdcontrols:IconToggleButton ToolTip="Frends"  x:Name="PART_Frends"
                                                       Margin="0 5"
                                                    Style="{DynamicResource IconToggleButton.Navi.AccentFore}"
                                                    Icon="M498.912 695.168c11.072 3.072 22.528 6.272 33.856 10.24-53.12 28.128-116.8 77.056-116.8 190.592H96c-35.328 0-65.056-28.96-59.104-63.808 17.856-104.192 81.408-121.856 136.224-137.056 37.6-10.464 71.104-19.776 82.88-55.136v-64c-14.4-7.136-55.552-56.16-59.872-94.496-11.328-0.864-29.12-11.264-34.368-52.32-2.816-22.016 8.384-34.432 15.168-38.336C141.888 251.936 159.68 131.008 334.144 128c43.616 0 77.12 10.976 90.24 32.64 48.928 4.832 71.744 41.44 80.48 84.896-24.448 63.2-24.448 143.552-24.416 184.48v2.784c0 7.296-1.984 39.68-4.544 48.736C471.552 519.84 430.4 568.864 416 576v64c11.776 35.392 45.312 44.704 82.912 55.168z M590.368 748.384c-52.928 24.8-110.4 51.744-110.4 147.616h448c35.392 0 66.464-29.952 53.184-62.72-19.136-47.2-60.544-66.624-99.52-84.896-35.424-16.64-68.8-32.288-81.632-67.008v-41.216c116.448 0 143.456-46.08 143.456-46.08-21.76-17.888-23.584-72.224-25.728-136.736C913.44 328.832 907.808 160 739.968 160 704 160 676.16 192 676.16 192c-133.568 0-132.544 147.104-131.712 264.416 0.448 63.776 0.832 118.72-20.48 136.448 0 0 32.16 47.712 148.032 47.712v40.8c-12.8 34.72-46.24 50.4-81.632 67.008z">
                         </fdcontrols:IconToggleButton>
 
-                        <fdcontrols:IconToggleButton ToolTip="Help" 
+                        <Popup AllowsTransparency="True"
+                               PlacementTarget="{Binding ElementName=PART_Frends}"
+                               IsOpen="{Binding IsChecked, ElementName=PART_Frends}"
+                               StaysOpen="False"
+                               PopupAnimation="Slide" 
+                               VerticalOffset="-160"
+                               HorizontalOffset="10"
+                               Placement="Right"  >
+                            <Border MinHeight="400" MinWidth="300" CornerRadius="10" Background="{DynamicResource MediumDark}">
+                                <views:FrendsView Margin="5"/>
+                            </Border>
+                        </Popup>
+
+
+                        <fdcontrols:IconToggleButton ToolTip="Help"  x:Name="PART_Help"
                                                        Margin="0 5" 
                                                     Style="{DynamicResource IconToggleButton.Navi.AccentFore}"
                                                     Icon="M512 0C229.205333 0 0 229.205333 0 512s229.205333 512 512 512 512-229.205333 512-512S794.794667 0 512 0z m-6.485333 812.586667a43.306667 43.306667 0 1 1 0-86.613334 43.306667 43.306667 0 0 1 0 86.613334z m185.770666-421.546667c-2.474667 46.250667-16.682667 82.773333-87.68 153.770667-36.010667 36.010667-58.709333 62.976-61.013333 86.698666a36.010667 36.010667 0 1 1-71.68-7.125333c4.906667-49.92 41.472-90.197333 81.792-130.474667 64.512-64.512 65.578667-84.992 66.688-106.709333a92.586667 92.586667 0 0 0-26.410667-69.12 112.341333 112.341333 0 0 0-81.194666-34.56h-0.170667a107.690667 107.690667 0 0 0-107.306667 107.52 35.968 35.968 0 1 1-72.021333 0 178.346667 178.346667 0 0 1 52.394667-126.848 178.261333 178.261333 0 0 1 126.72-52.693333 184.746667 184.746667 0 0 1 133.802666 57.002666 163.413333 163.413333 0 0 1 46.08 122.496z">
                         </fdcontrols:IconToggleButton>
-                       
+
+
+                        <Popup AllowsTransparency="True"
+                               PlacementTarget="{Binding ElementName=PART_Help}"
+                               IsOpen="{Binding IsChecked, ElementName=PART_Help}"
+                               StaysOpen="False"
+                               PopupAnimation="Slide"
+                               HorizontalOffset="10"
+                               Placement="Right"  >
+
+                            <Border CornerRadius="10" Background="{DynamicResource MediumDark}">
+
+                                <StackPanel Margin="5">
+                                    <Button Style="{DynamicResource Button.Over.Back}">Help</Button>
+                                    <Button Style="{DynamicResource Button.Over.Back}">Discord</Button>
+                                    <Button Style="{DynamicResource Button.Over.Back}">Console</Button>
+                                    <Button Style="{DynamicResource Button.Over.Back}">Log File Host</Button>
+                                    <Button Style="{DynamicResource Button.Over.Back}">Log File Client</Button>
+                                </StackPanel>
+                                
+                                <!--<ListBox Padding="10" Margin="10" Background="Transparent">
+                                    <ListBoxItem>Help</ListBoxItem>
+                                    <ListBoxItem>Discord</ListBoxItem>
+                                    <ListBoxItem>Console</ListBoxItem>
+                                    <ListBoxItem>Log File Host</ListBoxItem>
+                                    <ListBoxItem>Log File Client</ListBoxItem>
+                                </ListBox>-->
+                            </Border>
+                        </Popup>
+
 
                         <fdcontrols:IconButton ToolTip="Log Out" 
                                 Margin="0 5" Foreground="OrangeRed"
