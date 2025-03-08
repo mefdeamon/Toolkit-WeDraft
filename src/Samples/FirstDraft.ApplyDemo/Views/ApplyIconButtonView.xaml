@@ -25,6 +25,7 @@
                                 <controls:IconButton Style="{StaticResource IconButton.Vertical}" Icon="{Binding infomation_fill, Source={StaticResource IconSet}}" Content="信息" />
                                 <controls:IconButton Margin="5" Style="{StaticResource IconButton.NoBack}" Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="用户"/>
                                 <controls:IconButton Margin="5" Style="{StaticResource IconButton.NoBack}" Icon="{Binding tag_fill, Source={StaticResource IconSet}}"/>
+                                <controls:IconButton Margin="5" Style="{StaticResource IconButton.Navi.AccentFore}" Icon="{Binding tag_fill, Source={StaticResource IconSet}}"/>
                             </WrapPanel>
 
                         </StackPanel>
@@ -124,7 +125,7 @@
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
                         <Run Text="IconButton.NoBack" FontWeight="Black"  FontStyle="Oblique"/>
-                        <Run Text=" 不显示背景色的按钮样式。" />
+                        <Run Text=" 不显示背景色，鼠标放上去前景色变化的的按钮样式。" />
                     </TextBlock>
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
@@ -135,6 +136,26 @@
                         </WrapPanel>
                     </Border>
 
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="IconButton.Navi.AccentFore" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                         <Run Text="通过设置" />
+                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="为" />
+                         <Run Text="IconButton.Navi.AccentFore" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text=" 不显示背景色，鼠标放上去前景色变化的按钮样式。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel Margin="5">
+                            <controls:IconButton Style="{StaticResource IconButton.Navi.AccentFore}" Margin="5" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="我的" />
+                            <controls:IconButton Style="{StaticResource IconButton.Navi.AccentFore}" Margin="5" Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" IsEnabled="False"/>
+                            <controls:IconButton Style="{StaticResource IconButton.Navi.AccentFore}" Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" />
+                            <controls:IconButton Style="{StaticResource IconButton.Navi.AccentFore}" Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" CornerRadius="100" />
+                        </WrapPanel>
+                    </Border>
 
 
                 </StackPanel>

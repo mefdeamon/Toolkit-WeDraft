@@ -111,6 +111,13 @@
                         <Run Text="IconRadioButton.Navi.AccentEffect.Top" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="：顶部高亮阴影光晕导航拦按钮。" />
                     </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.AccentFore" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：选中背景变化，前景高亮导航拦按钮。" />
+                    </TextBlock>
                     <TextBlock Padding="20 0 0 0" TextWrapping="Wrap">
                          <Run Text="可以通过" />
                          <Run Text="BorderThickness" FontWeight="Black"  FontStyle="Oblique"/>
@@ -158,7 +165,10 @@
                                 <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Top}" IsChecked="True"/>
                             </StackPanel>
 
-
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentFore}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore}" IsChecked="True"/>
+                            </StackPanel>
 
 
                         </WrapPanel>

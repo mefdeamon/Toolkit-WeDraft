@@ -221,16 +221,16 @@
     <Style x:Key="IconToggleButton.Navi.AccentFore" TargetType="{x:Type controls:IconToggleButton}">
         <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource IconRadioButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource IconRadioButton.Static.Border}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Padding" Value="14"/>
         <Setter Property="IconSize" Value="23"/>
-        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="CornerRadius" Value="100"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
             <Setter.Value>
