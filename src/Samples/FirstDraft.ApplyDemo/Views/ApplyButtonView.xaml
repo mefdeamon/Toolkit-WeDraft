@@ -70,6 +70,29 @@
                     </Border>
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="Button.Navi.TextBold" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="Button.Navi.TextBold" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 不显示背景色的按钮样式。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{DynamicResource Button.Navi.TextBold}" Margin="5" Content="使能"/>
+                                <Button Style="{DynamicResource Button.Navi.TextBold}" Margin="5" Content="不使能" IsEnabled="False"/>
+                                <Button Style="{DynamicResource Button.Navi.TextBold}" Margin="5" Content="点击查看详情" Foreground="Brown"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="SpinButton" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">

@@ -45,6 +45,13 @@
                                 <RadioButton Style="{DynamicResource AccentEffectRadioButton}" Margin="5" IsChecked="True" Content="阴影背景"/>
                             </StackPanel>
 
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource RadioButton.Navi.TextBold}" Margin="5" Content="Navi.TextBold"/>
+                                <RadioButton Style="{DynamicResource RadioButton.Navi.TextBold}" Margin="5" IsChecked="True" Content="文本变深色"/>
+                            </StackPanel>
+
+
                         </WrapPanel>
                     </Border>
 
@@ -156,7 +163,13 @@
                         <Run Text="RoundCorner2RadioButton" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 选中显示圆角背景并且带边框样式。" />
                     </TextBlock>
-
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="RoundCorner2RadioButton" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text=" 选中显示圆角背景并且带边框样式。" />
+                    </TextBlock>
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <WrapPanel  Margin="5">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
@@ -180,6 +193,11 @@
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                                 <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" Content="RoundCorner2"/>
                                 <RadioButton Style="{DynamicResource RoundCorner2RadioButton}" Margin="5" IsChecked="True" Content="圆角背景2"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <RadioButton Style="{DynamicResource RadioButton.Navi.TextBold}" Margin="5" Content="Navi.TextBold"/>
+                                <RadioButton Style="{DynamicResource RadioButton.Navi.TextBold}" Margin="5" IsChecked="True" Content="文本加粗"/>
                             </StackPanel>
                         </WrapPanel>
                     </Border>
