@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstDraft.ApplyDemo.WXWork
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstDraft.ApplyDemo.Bilibili", "Samples\FirstDraft.ApplyDemo.Bilibili\FirstDraft.ApplyDemo.Bilibili.csproj", "{6BAA3697-2298-4278-A6DC-7C51DF95FAFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstDraft.ApplyDemo.Parsec", "Samples\FirstDraft.ApplyDemo.Parsec\FirstDraft.ApplyDemo.Parsec.csproj", "{2A152A47-3221-41C6-9BCA-735C17E83DD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{6BAA3697-2298-4278-A6DC-7C51DF95FAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BAA3697-2298-4278-A6DC-7C51DF95FAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BAA3697-2298-4278-A6DC-7C51DF95FAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A152A47-3221-41C6-9BCA-735C17E83DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A152A47-3221-41C6-9BCA-735C17E83DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A152A47-3221-41C6-9BCA-735C17E83DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A152A47-3221-41C6-9BCA-735C17E83DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{6590836F-DFA4-4EF8-A0C4-BE41EA3D2DCE} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
 		{DAC6DF76-EFF8-4D1D-8660-5468E872A5A1} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
 		{6BAA3697-2298-4278-A6DC-7C51DF95FAFC} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
+		{2A152A47-3221-41C6-9BCA-735C17E83DD3} = {2FE50F11-0CEA-46AA-B89A-AB31B1BB8712}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AB67895-0A79-4337-B8A1-E4F4C0592F31}

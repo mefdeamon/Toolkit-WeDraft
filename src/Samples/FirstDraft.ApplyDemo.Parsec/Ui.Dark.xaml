@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!-- default accent colors and brushes -->
-    <Color x:Key="AccentColor">#FFef8736</Color>
+    <Color x:Key="AccentColor">#FF2590FF</Color>
     <SolidColorBrush x:Key="Accent" Color="{DynamicResource AccentColor}" />
 
     <!-- 多用于控件被按下时颜色变化 -->
@@ -26,8 +26,8 @@
 
     <!--<SolidColorBrush x:Key="Button.Static.Border" Color="#FFADB2B5"/>-->
     <Color x:Key="MediumLightColor" >#66FFFFFF</Color>
-    <Color x:Key="MediumColor" >#55000000</Color>
-    <Color x:Key="MediumDarkColor" >#66000000</Color>
+    <Color x:Key="MediumColor" >#FF282828</Color>
+    <Color x:Key="MediumDarkColor" >#191919</Color>
     <SolidColorBrush x:Key="MediumLight" Color="{DynamicResource MediumLightColor}"/>
     <SolidColorBrush x:Key="Medium" Color="{DynamicResource MediumColor}"/>
     <SolidColorBrush x:Key="MediumDark" Color="{DynamicResource MediumDarkColor}"/>
@@ -54,7 +54,7 @@
     <SolidColorBrush x:Key="TextBox.Static.Background" Color="{DynamicResource DefaultBackgrounColor}"/>
     <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
 
-    <SolidColorBrush x:Key="IconRadioButton.Checked.Background" Color="#22FFFFFF"/>
+    <SolidColorBrush x:Key="IconRadioButton.Checked.Background" Color="#000000"/>
     <SolidColorBrush x:Key="IconButton.MouseOver.Background" Color="#22FFFFFF"/>
 
     <SolidColorBrush x:Key="ComboBox.Selected.InList.Background" Color="#44FFFFFF"/>

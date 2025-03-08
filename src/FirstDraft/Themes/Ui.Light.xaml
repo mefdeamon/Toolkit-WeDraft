@@ -25,10 +25,12 @@
     <sys:String x:Key="Opt_ON">开</sys:String>
 
     <!--<SolidColorBrush x:Key="Button.Static.Border" Color="#FFADB2B5"/>-->
-    <Color x:Key="MediumDarkColor" >#66000000</Color>
     <Color x:Key="MediumLightColor" >#66FFFFFF</Color>
-    <SolidColorBrush x:Key="MediumDark" Color="{DynamicResource MediumDarkColor}"/>
+    <Color x:Key="MediumColor" >#55000000</Color>
+    <Color x:Key="MediumDarkColor" >#66000000</Color>
     <SolidColorBrush x:Key="MediumLight" Color="{DynamicResource MediumLightColor}"/>
+    <SolidColorBrush x:Key="Medium" Color="{DynamicResource MediumColor}"/>
+    <SolidColorBrush x:Key="MediumDark" Color="{DynamicResource MediumDarkColor}"/>
     <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
     <SolidColorBrush x:Key="Button.Static.Background" Color="#44000000"/>
     <SolidColorBrush x:Key="Button.Static.Border" Color="#44000000"/>
@@ -53,6 +55,7 @@
     <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
 
     <SolidColorBrush x:Key="IconRadioButton.Checked.Background" Color="#22000000"/>
+    <SolidColorBrush x:Key="IconButton.MouseOver.Background" Color="#22FFFFFF"/>
 
     <SolidColorBrush x:Key="ComboBox.Selected.InList.Background" Color="#44000000"/>
     <SolidColorBrush x:Key="ComboBox.IsEnabled.Background" Color="#FFF4F4F4"/>
