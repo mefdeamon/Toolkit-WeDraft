@@ -55,6 +55,13 @@
     <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
 
     <SolidColorBrush x:Key="IconRadioButton.Checked.Background" Color="#22000000"/>
+    <SolidColorBrush x:Key="IconRadioButton.Static.Border" Color="#44000000"/>
+    <SolidColorBrush x:Key="IconRadioButton.Static.Foreground" Color="{DynamicResource DefaultForegrounColor}"/>
+    <SolidColorBrush x:Key="IconRadioButton.Disabled.Foreground" Color="#22000000"/>
+    <SolidColorBrush x:Key="IconRadioButton.Disabled.Background" Color="#22000000"/>
+    <SolidColorBrush x:Key="IconRadioButton.Pressed.Background" Color="{DynamicResource ExAccentColor}"/>
+    <SolidColorBrush x:Key="IconRadioButton.Pressed.Foreground" Color="#44000000"/>
+    
     <SolidColorBrush x:Key="IconButton.MouseOver.Background" Color="#22FFFFFF"/>
 
     <SolidColorBrush x:Key="ComboBox.Selected.InList.Background" Color="#44000000"/>
