@@ -10,6 +10,10 @@
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
     </Style>
 
 

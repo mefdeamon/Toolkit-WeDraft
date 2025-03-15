@@ -16,6 +16,9 @@
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
     </Style>
 
     <Style x:Key="{x:Type controls:IconButton}" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
@@ -191,20 +194,14 @@
 
 
 
-    <Style x:Key="IconButton.Navi.AccentFore" TargetType="{x:Type controls:IconButton}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
-        <Setter Property="Background" Value="Transparent"/>
+    <Style x:Key="IconButton.Navi.AccentFore" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource IconButtonBase}">
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="ToolTipService.VerticalOffset" Value="11"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Padding" Value="14"/>
         <Setter Property="IconSize" Value="23"/>
         <Setter Property="CornerRadius" Value="100"/>
-        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconButton}">

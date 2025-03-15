@@ -54,6 +54,10 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Regular"/>
         <Setter Property="Padding" Value="5 2"/>
+
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
         <Setter Property="Template" Value="{StaticResource ButtonBaseTemplate}"/>
     </Style>
 

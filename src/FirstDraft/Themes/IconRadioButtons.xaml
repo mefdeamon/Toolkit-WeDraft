@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:FirstDraft.Controls">
 
-    <Style x:Key="{x:Type controls:IconRadioButton}" TargetType="{x:Type controls:IconRadioButton}">
+
+    <Style x:Key="IconRadioButtonBase" TargetType="{x:Type controls:IconRadioButton}">
         <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
@@ -12,6 +13,15 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+    </Style>
+
+
+    <Style x:Key="{x:Type controls:IconRadioButton}" TargetType="{x:Type controls:IconRadioButton}" BasedOn="{StaticResource IconRadioButtonBase}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
@@ -91,20 +101,14 @@
     </Style>
 
 
-    <Style x:Key="IconRadioButton.Navi" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+    <Style x:Key="IconRadioButton.Navi" TargetType="{x:Type controls:IconRadioButton}" BasedOn="{StaticResource IconRadioButtonBase}">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Padding" Value="10 10 10 10"/>
-        <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
         <Setter Property="CornerRadius" Value="0"/>
-        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
@@ -306,20 +310,10 @@
         </Setter>
     </Style>
 
-    <Style x:Key="IconRadioButton.Navi.AccentEffect" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource IconRadioButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource IconRadioButton.Static.Foreground}"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+    <Style x:Key="IconRadioButton.Navi.AccentEffect" TargetType="{x:Type controls:IconRadioButton}" BasedOn="{StaticResource IconRadioButton.Navi}">
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Padding" Value="20 10"/>
         <Setter Property="IconSize" Value="20"/>
-        <Setter Property="CornerRadius" Value="0"/>
-        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">
@@ -553,20 +547,11 @@
         </Setter>
     </Style>
 
-    <Style x:Key="IconRadioButton.Navi.AccentFore" TargetType="{x:Type controls:IconRadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource IconRadioButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource IconRadioButton.Static.Foreground}"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Cursor" Value="Hand"/>
+    <Style x:Key="IconRadioButton.Navi.AccentFore" TargetType="{x:Type controls:IconRadioButton}" BasedOn="{StaticResource IconRadioButton.Navi}">
+        <Setter Property="ToolTipService.VerticalOffset" Value="11"/>
         <Setter Property="Padding" Value="14"/>
         <Setter Property="IconSize" Value="23"/>
         <Setter Property="CornerRadius" Value="100"/>
-        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:IconRadioButton}">

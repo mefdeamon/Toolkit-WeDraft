@@ -10,6 +10,7 @@
         <ResourceDictionary Source="ValueConverters.xaml"/>
         
         <!-- Styles -->
+        <ResourceDictionary Source="ToolTips.xaml"/>
         <ResourceDictionary Source="Buttons.xaml"/>
         <ResourceDictionary Source="RadioButtons.xaml"/>
         <ResourceDictionary Source="ToggleButtons.xaml"/>

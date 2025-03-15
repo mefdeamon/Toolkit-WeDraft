@@ -17,6 +17,10 @@
         <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}" />
         <Setter Property="Focusable" Value="True"/>
+
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
     </Style>
 
     <Style x:Key="{x:Type controls:IconTextBox}" TargetType="{x:Type controls:IconTextBox}" BasedOn="{StaticResource IconTextBoxBase}">

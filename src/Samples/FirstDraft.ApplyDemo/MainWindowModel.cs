@@ -32,6 +32,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "表格(DataGrid)", Icon = App.Current.Services.GetService<IconSet>().view_compact, Content = new Views.ApplyDataGridView() });
             NaviItems.Add(new NaviItem() { Title = "日期(DatePicker)", Icon = App.Current.Services.GetService<IconSet>().datepicker, Content = new Views.ApplyDatePickerView() });
             NaviItems.Add(new NaviItem() { Title = "滑动条(Slider)", Icon = App.Current.Services.GetService<IconSet>().slider_fill, Content = new Views.ApplySliderView() });
+            NaviItems.Add(new NaviItem() { Title = "提示框(ToolTip)", Icon = App.Current.Services.GetService<IconSet>().rect_line, Content = new Views.ApplyToolTipView() });
             NaviItems.Add(new NaviItem() { Title = "密码框(PasswordBox)", Icon = App.Current.Services.GetService<IconSet>().passwrod_fill, Content = new Views.ApplyPasswordBoxView() });
             NaviItems.Add(new NaviItem() { Title = "加载动画(ContentControl)", Icon = App.Current.Services.GetService<IconSet>().animate, Content = new Views.ApplyLoadingAnimateControlView() });
             NaviItems.Add(new NaviItem() { Title = "图标(IconControl)", Icon = App.Current.Services.GetService<IconSet>().tags_fill, Content = new Views.ApplyIconControlView() });

@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyToolTipView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Margin="5" Content="鼠标放上去可以查看当前默认" ToolTip="默认样式"/>
+                                <Button Margin="5" Content="ToolTip.Default">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Default}" Content="ToolTip.Default"/>
+                                    </Button.ToolTip>
+                                </Button>
+
+                                <Button Margin="5" Content="ToolTip.Effect.Bottom">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Bottom}" Content="ToolTip.Effect.Bottom"/>
+                                    </Button.ToolTip>
+                                </Button>
+
+
+                                <Button Margin="5" Content="ToolTip.Effect.Right">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Right}" Content="ToolTip.Effect.Right"/>
+                                    </Button.ToolTip>
+                                </Button>
+
+
+                                <controls:IconRadioButton  Icon="{Binding home_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentFore}" IconSize="20">
+                                    <controls:IconRadioButton.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Right}" Content="ToolTip.Effect.Right"/>
+                                    </controls:IconRadioButton.ToolTip>
+                                </controls:IconRadioButton>
+
+
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                     <Run Text="默认样式可以根据背景和前景色自动变换"/>
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:IconRadioButton ToolTip="主页" Margin="0 0 50 0" Icon="{Binding home_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" IconSize="20">
+                                </controls:IconRadioButton>
+
+                                <controls:IconRadioButton ToolTip="我的" Icon="{Binding user_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" IconSize="20">
+                                </controls:IconRadioButton>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                             <Run Text="如果用户需要切换样式时，需要在控件位置，手动设置"/>
+                             <Run Text="ToolTip"/>
+                             <Run Text="指定"/>
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                           <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                           <Run Text="为" />
+                           <Run Text="ToolTip.Effect.Bottom" FontWeight="Black"  FontStyle="Oblique"/>
+                           <Run Text="：下方显示，带三角和阴影背景。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
+                                <controls:IconRadioButton  Icon="{Binding home_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi}" IconSize="20">
+                                    <controls:IconRadioButton.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Bottom}" Content="主页"/>
+                                    </controls:IconRadioButton.ToolTip>
+                                </controls:IconRadioButton>
+
+                                <controls:IconRadioButton  Icon="{Binding user_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi}" IconSize="20">
+                                    <controls:IconRadioButton.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Bottom}" Content="用户"/>
+                                    </controls:IconRadioButton.ToolTip>
+                                </controls:IconRadioButton>
+
+                                <Button Margin="5" Content="更多">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Bottom}" Content="更多设置"/>
+                                    </Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+
+
+                  
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                       <Run Text="为" />
+                       <Run Text="ToolTip.Effect.Right" FontWeight="Black"  FontStyle="Oblique"/>
+                       <Run Text="：右边显示，带三角和阴影背景。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Vertical">
+                                <controls:IconRadioButton  Icon="{Binding home_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" IconSize="20">
+                                    <controls:IconRadioButton.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Right}" Content="主页"/>
+                                    </controls:IconRadioButton.ToolTip>
+                                </controls:IconRadioButton>
+
+                                <controls:IconRadioButton  Icon="{Binding user_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" IconSize="20">
+                                    <controls:IconRadioButton.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Right}" Content="用户"/>
+                                    </controls:IconRadioButton.ToolTip>
+                                </controls:IconRadioButton>
+
+                                <Button Margin="5" Content="更多"  Style="{DynamicResource Button.Navi.TextBold }">
+                                    <Button.ToolTip>
+                                        <ToolTip Style="{DynamicResource ToolTip.Effect.Right}" Content="更多设置"/>
+                                    </Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

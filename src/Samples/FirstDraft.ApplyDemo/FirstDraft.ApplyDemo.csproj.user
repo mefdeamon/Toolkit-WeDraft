@@ -53,6 +53,9 @@
     <Compile Update="Views\ApplySliderView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ApplyToolTipView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\IconSetView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -110,6 +113,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ApplySliderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ApplyToolTipView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\IconSetView.xaml">
