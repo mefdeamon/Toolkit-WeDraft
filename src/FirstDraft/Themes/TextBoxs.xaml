@@ -10,7 +10,7 @@
     <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="White"/>-->
 
 
-    <Style TargetType="{x:Type TextBox}" x:Key="BaseTextBox">
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBoxBase">
         <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Padding" Value="5 2" />
         <Setter Property="Margin" Value="0" />
@@ -24,7 +24,7 @@
         <Setter Property="Focusable" Value="True"/>
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="{x:Type TextBox}" BasedOn="{StaticResource BaseTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="{x:Type TextBox}" BasedOn="{StaticResource TextBoxBase}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
@@ -57,7 +57,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="HintTagTextBox" BasedOn="{StaticResource BaseTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBox.HintTag" BasedOn="{StaticResource TextBoxBase}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
@@ -114,7 +114,7 @@
 
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="UpFlyHintTagTextBox" BasedOn="{StaticResource BaseTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBox.HintTag.UpFly" BasedOn="{StaticResource TextBoxBase}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -170,7 +170,7 @@
 
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="IpAddressTextBox" BasedOn="{StaticResource BaseTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBox.IpAddress" BasedOn="{StaticResource TextBoxBase}">
         <Setter Property="Padding" Value="5 0"/>
         <Setter Property="MaxLength" Value="3" />
         <Setter Property="MinWidth" Value="35"/>
@@ -207,7 +207,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="PortTextBox" BasedOn="{StaticResource IpAddressTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="TextBox.Port" BasedOn="{StaticResource TextBox.IpAddress}">
         <Setter Property="MaxLength" Value="5" />
         <Setter Property="MinWidth" Value="50"/>
     </Style>

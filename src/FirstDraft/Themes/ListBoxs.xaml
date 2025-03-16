@@ -106,11 +106,11 @@
     <Style x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxBase}">
     </Style>
 
-    <Style x:Key="NoStyleListBox" TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxBase}">
+    <Style x:Key="ListBox.NoStyle" TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxBase}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource NoStyleListBoxItem}"/>
     </Style>
 
-    <Style x:Key="RadioButtonItemUpDownScrollListBox" TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxBase}">
+    <Style x:Key="ListBox.UpDownScroll" TargetType="{x:Type ListBox}" BasedOn="{StaticResource ListBoxBase}">
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>

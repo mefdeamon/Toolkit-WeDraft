@@ -62,7 +62,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="RoundToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+    <Style x:Key="ToggleButton.Round" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -146,7 +146,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="OFFONToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+    <Style x:Key="ToggleButton.Round.Switch" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -231,7 +231,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="TagCheckToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+    <Style x:Key="ToggleButton.Border" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="Padding" Value="5 2"/>
@@ -287,7 +287,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="LightDarkRoundToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+    <Style x:Key="ToggleButton.Round.LightDark" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -377,7 +377,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="TagContentToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+    <Style x:Key="ToggleButton.TagContent" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Padding" Value="5 2"/>
         <Setter Property="Template">

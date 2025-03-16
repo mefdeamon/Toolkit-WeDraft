@@ -119,13 +119,13 @@
                     <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="RadioButtonItemUpDownScrollListBox" FontWeight="Black" />
+                        <Run Text="ListBox.UpDownScroll" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="RadioButtonItemUpDownScrollListBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="ListBox.UpDownScroll" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 当列表显示区域不足展示全部内容时，显示可上下滚动按钮的列表。" />
                     </TextBlock>
 
@@ -133,7 +133,7 @@
                         <WrapPanel Margin="5" Height="80">
 
                             <ListBox ItemsSource="{Binding Areas}"
-                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                     Style="{DynamicResource ListBox.UpDownScroll}"
                                       Margin="5"
                                       SelectedItem="{Binding CurrentItem}" 
                                       DisplayMemberPath="Name"/>
@@ -150,13 +150,13 @@
 
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="NoStyleListBox" FontWeight="Black" />
+                        <Run Text="ListBox.NoStyle" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
                         <Run Text="更多的时候，我们通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="NoStyleListBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="ListBox.NoStyle" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text=" 然后使用" />
                         <Run Text="DataTemplate"  FontStyle="Oblique"/>
                         <Run Text=" 去重写" />
@@ -185,14 +185,14 @@
                         <WrapPanel Margin="5" >
 
                             <ListBox ItemsSource="{Binding Areas}"
-                                     Style="{DynamicResource NoStyleListBox}"
+                                     Style="{DynamicResource ListBox.NoStyle}"
                                       Margin="5"
                                       SelectedItem="{Binding CurrentItem}" 
                                       DisplayMemberPath="Name"/>
 
                             <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
-                            <ListBox Style="{DynamicResource NoStyleListBox}" 
+                            <ListBox Style="{DynamicResource ListBox.NoStyle}" 
                                      Margin="5"
                                      ItemsSource="{Binding Areas}" SelectedItem="{Binding CurrentItem}">
                                 <ListBox.ItemTemplate>
@@ -214,7 +214,7 @@
 
                             <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
-                            <ListBox Style="{DynamicResource NoStyleListBox}" 
+                            <ListBox Style="{DynamicResource ListBox.NoStyle}" 
                                      Margin="5"
                                      ItemsSource="{Binding Areas}" SelectedItem="{Binding CurrentItem}">
                                 <ListBox.ItemTemplate>
@@ -236,7 +236,7 @@
                             <Border VerticalAlignment="Stretch" Width="1" Margin="10 0" Background="{DynamicResource Button.MouseOver.Background}"/>
 
                             <ListBox ItemsSource="{Binding Areas}"
-                                     Style="{DynamicResource NoStyleListBox}"
+                                     Style="{DynamicResource ListBox.NoStyle}"
                                       Margin="5"
                                       SelectedItem="{Binding CurrentItem}" 
                                       DisplayMemberPath="Name">

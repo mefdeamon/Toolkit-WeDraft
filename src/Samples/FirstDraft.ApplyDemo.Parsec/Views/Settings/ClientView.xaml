@@ -73,7 +73,7 @@
                                    DockPanel.Dock="Top"
                                    Width="400"/>
                     </StackPanel>
-                    <ToggleButton  DockPanel.Dock="Right" Style="{DynamicResource RoundToggleButton}"/>
+                    <ToggleButton  DockPanel.Dock="Right" Style="{DynamicResource ToggleButton.Round}"/>
                 </DockPanel>
 
 

@@ -49,7 +49,7 @@
                         <Run Text="可以结合" />
                         <Run Text="TextBox" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="的" />
-                        <Run Text="PortTextBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="TextBox.Port" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="实现IP地址和端口的结合使用" />
                     </TextBlock>
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
@@ -67,7 +67,7 @@
                                 <DockPanel>
                                     <fdcontrol:IpAddressBox DataContext="{Binding Server}"/>
                                     <TextBlock Text=":" VerticalAlignment="Center" Margin="2 0 2 3"/>
-                                    <TextBox Text="{Binding Port}" Style="{DynamicResource PortTextBox}" WindowChrome.IsHitTestVisibleInChrome="True"/>
+                                    <TextBox Text="{Binding Port}" Style="{DynamicResource TextBox.Port}" WindowChrome.IsHitTestVisibleInChrome="True"/>
                                 </DockPanel>
                             </Border>
                         </StackPanel>

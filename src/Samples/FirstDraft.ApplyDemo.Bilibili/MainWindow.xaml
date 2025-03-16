@@ -574,7 +574,7 @@
                         <Border Width="400" x:Name="PART_SEARCH" DockPanel.Dock="Top" SnapsToDevicePixels="True" BorderThickness="1" BorderBrush="{DynamicResource Accent}"  CornerRadius="5"   VerticalAlignment="Center">
                             <DockPanel Margin="5">
                                 <fdcontrols:IconButton Icon="{Binding 放大镜, Source={StaticResource XiaoJuziIconSet}}" IconSize="16" Style="{DynamicResource IconButton.NoBack}" DockPanel.Dock="Right"/>
-                                <TextBox Focusable="True" Background="Transparent" BorderThickness="0" Style="{DynamicResource HintTagTextBox}" Tag="搜索你感兴趣的视频" FontSize="14" Text=""/>
+                                <TextBox Focusable="True" Background="Transparent" BorderThickness="0" Style="{DynamicResource TextBox.HintTag}" Tag="搜索你感兴趣的视频" FontSize="14" Text=""/>
                             </DockPanel>
                         </Border>
                         <Border Width="400" Height="200" Margin="0 5 0 0" DockPanel.Dock="Top" SnapsToDevicePixels="True" Background="{DynamicResource DefaultBackground}" 

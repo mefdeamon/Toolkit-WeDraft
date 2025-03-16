@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!-- default accent colors and brushes -->
-    <Color x:Key="AccentColor">#FF2577FF</Color>
+    <Color x:Key="AccentColor">#FF26ABFF</Color>
     <SolidColorBrush x:Key="Accent" Color="{DynamicResource AccentColor}" />
 
     <!-- 多用于控件被按下时颜色变化 -->

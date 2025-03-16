@@ -23,7 +23,7 @@
                 </DockPanel>
                 <Rectangle Height="3" Opacity="0.1" Fill="White" DockPanel.Dock="Top"/>
                 <DockPanel DockPanel.Dock="Top">
-                    <ListBox Style="{DynamicResource NoStyleListBox}" Background="Transparent"
+                    <ListBox Style="{DynamicResource ListBox.NoStyle}" Background="Transparent"
                             ItemsSource="{Binding Items}" SelectedItem="{Binding Current}" HorizontalAlignment="Left"
                             ItemContainerStyle="{DynamicResource NoStyleListBoxItem}">
                         <ListBox.ItemTemplate>

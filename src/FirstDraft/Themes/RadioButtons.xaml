@@ -83,7 +83,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="BaseNaviRadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseRadioButton}">
+    <Style x:Key="RadioButton.Navi.Base" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseRadioButton}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -93,7 +93,7 @@
         <Setter Property="Padding" Value="10 5"/>
     </Style>
 
-    <Style x:Key="AccentEffectRadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.AccentEffect" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -156,7 +156,7 @@
     </Style>
 
 
-    <Style x:Key="BackgroundRadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.Background" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -214,7 +214,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Background2RadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.Background2" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -274,7 +274,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="RoundCornerRadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.RoundCorner" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -334,7 +334,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="RoundCorner2RadioButton" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.RoundCorner2" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -397,7 +397,7 @@
 
 
 
-    <Style x:Key="RadioButton.Navi.TextBold" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource BaseNaviRadioButton}">
+    <Style x:Key="RadioButton.Navi.TextBold" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton.Navi.Base}">
         <Setter Property="Opacity" Value="0.8"/>
         <Setter Property="Template">
             <Setter.Value>

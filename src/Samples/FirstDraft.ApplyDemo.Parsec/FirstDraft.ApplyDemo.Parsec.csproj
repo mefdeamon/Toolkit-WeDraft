@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>parsec.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="parsec.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\FirstDraft\FirstDraft.csproj" />

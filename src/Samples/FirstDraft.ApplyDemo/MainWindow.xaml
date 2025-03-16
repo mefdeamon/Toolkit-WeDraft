@@ -64,14 +64,14 @@
                                        Icon="{Binding search, Source={StaticResource IconSet}}"
                                        Command="{Binding SearchCommand}"
                                        VerticalAlignment="Stretch" />
-                <TextBox Style="{DynamicResource HintTagTextBox}"
+                <TextBox Style="{DynamicResource TextBox.HintTag}"
                          Text="{Binding SearchText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                          Padding="10 5" Tag="查找"/>
             </DockPanel>
 
 
             <DockPanel DockPanel.Dock="Bottom" MinWidth="200">
-                <ListBox Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                <ListBox Style="{DynamicResource ListBox.UpDownScroll}"
                          ItemsSource="{Binding Items}" SelectedItem="{Binding Current}"
                          ItemContainerStyle="{DynamicResource NoStyleListBoxItem}">
                     <ListBox.ItemTemplate>
@@ -100,7 +100,7 @@
                     <fdcontrols:IconButton DataContext="{Binding AboutWindowModel, Source={StaticResource Locator}}" Command="{Binding OpenAboutCommand}" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{DynamicResource IconButton.NoBack}" ToolTip="关于" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
                     <fdcontrols:IconButton Command="{Binding OpenRewardCommand}" Icon="{Binding 喜欢, Source={StaticResource XiaoJuziIconSet}}" Style="{DynamicResource IconButton.NoBack}" Foreground="Red" ToolTip="支持我" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
 
-                    <ToggleButton DockPanel.Dock="Right" Margin="5 0" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource LightDarkRoundToggleButton}"/>
+                    <ToggleButton DockPanel.Dock="Right" Margin="5 0" HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" DataContext="{Binding WelcomeViewModel, Source={StaticResource Locator}}" IsChecked="{Binding IsDarkTheme}" Style="{StaticResource ToggleButton.Round.LightDark}"/>
                     <TextBlock DockPanel.Dock="Right" Margin="5 0" Text="{Binding WindowsTitle}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 </DockPanel>
             </Grid>

@@ -24,7 +24,7 @@
                 <WrapPanel DockPanel.Dock="Top" Margin="0 0 0 5">
                     <TextBlock Text="当前版本" DockPanel.Dock="Top"/>
                     <TextBlock Text="{Binding CurrentVersion.tag_name}" DockPanel.Dock="Top" FontWeight="Black" Margin="10 0 0 0"/>
-                    <Button Command="{Binding UpdateCommand}" Visibility="{Binding HasNewVersion,Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="SaddleBrown" Margin="10 0 0 0" Content="有新的版本发布，点击更新" Style="{DynamicResource NoBackgroundButton}"/>
+                    <Button Command="{Binding UpdateCommand}" Visibility="{Binding HasNewVersion,Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="SaddleBrown" Margin="10 0 0 0" Content="有新的版本发布，点击更新" Style="{DynamicResource Button.NoBackground}"/>
                 </WrapPanel>
                 <WrapPanel DockPanel.Dock="Top" Margin="0 0 0 5">
                     <TextBlock Text="更新时间" DockPanel.Dock="Top"/>

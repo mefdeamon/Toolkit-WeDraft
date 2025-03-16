@@ -23,7 +23,7 @@
                  x:Name="part1"
                  PreviewKeyDown="Part1_PreviewKeyDown"
                  attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart1Focused, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
-                 Style="{DynamicResource IpAddressTextBox}">
+                 Style="{DynamicResource TextBox.IpAddress}">
             <TextBox.Text>
                 <Binding Path="Part1" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -43,7 +43,7 @@
                 x:Name="part2"
                 PreviewKeyDown="Part2_KeyDown"
                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart2Focused}"
-                Style="{DynamicResource IpAddressTextBox}">
+                Style="{DynamicResource TextBox.IpAddress}">
             <TextBox.Text>
                 <Binding Path="Part2" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -63,7 +63,7 @@
                 x:Name="part3"
                 PreviewKeyDown="Part3_KeyDown"
                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart3Focused}"
-                Style="{DynamicResource IpAddressTextBox}">
+                Style="{DynamicResource TextBox.IpAddress}">
             <TextBox.Text>
                 <Binding Path="Part3" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -83,7 +83,7 @@
                  x:Name="part4"
                  PreviewKeyDown="Part4_KeyDown"
                  attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart4Focused}"
-                 Style="{DynamicResource IpAddressTextBox}">
+                 Style="{DynamicResource TextBox.IpAddress}">
             <TextBox.Text>
                 <Binding Path="Part4" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>

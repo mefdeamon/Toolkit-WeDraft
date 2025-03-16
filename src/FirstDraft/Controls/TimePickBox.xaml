@@ -72,7 +72,7 @@
 
                             <!--  Hour  -->
                             <ListBox Grid.Column="0" VerticalContentAlignment="Center" x:Name="hourListBox"
-                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                     Style="{DynamicResource ListBox.UpDownScroll}"
                                   ItemsSource="{Binding Hours}" MaxHeight="100"
                                   SelectedItem="{Binding Hour}">
                             </ListBox>
@@ -82,7 +82,7 @@
 
                             <!--  Minute  -->
                             <ListBox Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center"
-                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                     Style="{DynamicResource ListBox.UpDownScroll}"
                                   ItemsSource="{Binding Minutes}" MaxHeight="100"
                                   SelectedItem="{Binding Minute}" />
                             <TextBlock Grid.Column="3"
@@ -90,7 +90,7 @@
 
                             <!--  Second  -->
                             <ListBox Grid.Column="4" VerticalContentAlignment="Center" VerticalAlignment="Center"
-                                     Style="{DynamicResource RadioButtonItemUpDownScrollListBox}"
+                                     Style="{DynamicResource ListBox.UpDownScroll}"
                                   ItemsSource="{Binding Seconds}" MaxHeight="100"
                                   SelectedItem="{Binding Second}" />
                         </Grid>

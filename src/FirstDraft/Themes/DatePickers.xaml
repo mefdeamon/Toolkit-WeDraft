@@ -164,18 +164,18 @@
                                                  Background="Transparent"
                                                  FontWeight="Bold" HorizontalAlignment="Stretch" 
                                                  Focusable="False" 
-                                                 Style="{DynamicResource NoBackgroundButton}"
+                                                 Style="{DynamicResource Button.NoBackground}"
                                                  Grid.Column="1" />
                                         <Button  x:Name="PART_PreviousButton"
                                                  Background="Transparent"
-                                                 Style="{DynamicResource NoBackgroundButton}"
+                                                 Style="{DynamicResource Button.NoBackground}"
                                                  Focusable="False"
                                                  Grid.Column="0"
                                                  Content="◀" />
 
                                         <Button  x:Name="PART_NextButton"
                                                  Background="Transparent"
-                                                 Style="{DynamicResource NoBackgroundButton}"
+                                                 Style="{DynamicResource Button.NoBackground}"
                                                  Focusable="False"
                                                  Grid.Column="2"
                                                  Content="▶" />

@@ -21,8 +21,8 @@
                                 <TextBox Width="100" Text="文本框" Margin="5"/>
                                 <TextBox Width="100" Text="TextBox" Margin="5"/>
                                 <TextBox Width="100" BorderThickness="0 0 0 1" Text="文件名" Margin="5"/>
-                                <TextBox Width="100" Style="{DynamicResource HintTagTextBox}" Tag="搜索" Margin="5"/>
-                                <TextBox Width="100" Style="{DynamicResource UpFlyHintTagTextBox}" Tag="日期" Margin="5"/>
+                                <TextBox Width="100" Style="{DynamicResource TextBox.HintTag}" Tag="搜索" Margin="5"/>
+                                <TextBox Width="100" Style="{DynamicResource TextBox.HintTag.UpFly}" Tag="日期" Margin="5"/>
                             </WrapPanel>
 
                         </StackPanel>
@@ -47,13 +47,13 @@
 
                     <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="HintTagTextBox" FontWeight="Black" />
+                        <Run Text="TextBox.HintTag" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" FontStyle="Oblique" >
                            <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                     <Run Text="为" />
-                        <Run Text="HintTagTextBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="TextBox.HintTag" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="：输入文本后提示内容消失。"/>
                         <Run Text="设置"/>
                         <Run Text="Tag" FontWeight="Black"/>
@@ -63,19 +63,19 @@
 
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel Margin="5" HorizontalAlignment="Left">
-                            <TextBox Width="200" Style="{DynamicResource HintTagTextBox}" Tag="请输入（提示文本）" Margin="5"/>
-                            <TextBox Width="200" Style="{DynamicResource HintTagTextBox}" Tag="搜索"  Margin="5"/>
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag}" Tag="请输入（提示文本）" Margin="5"/>
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag}" Tag="搜索"  Margin="5"/>
                         </StackPanel>
                     </Border>
 
                     <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
-                        <Run Text="UpFlyHintTagTextBox" FontWeight="Black" />
+                        <Run Text="TextBox.HintTag.UpFly" FontWeight="Black" />
                     </TextBlock>
                     <TextBlock Padding="10 0 0 0" FontStyle="Oblique" >
                         <Run Text="通过设置" />
                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="为" />
-                        <Run Text="UpFlyHintTagTextBox" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="TextBox.HintTag.UpFly" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="：输入文本后提示内容上移。"/>
                         <Run Text="设置"/>
                         <Run Text="Tag" FontWeight="Black"/>
@@ -85,10 +85,10 @@
                     <Border BorderThickness="1" BorderBrush="Gainsboro">
                         <StackPanel MinHeight="50" Margin="5" HorizontalAlignment="Left">
 
-                            <TextBox Width="200" Style="{DynamicResource UpFlyHintTagTextBox}" Margin="5" Tag="姓名"     Text="张三" />
-                            <TextBox Width="200" Style="{DynamicResource UpFlyHintTagTextBox}" Margin="5" Tag="出生年月" Text="1999.08.14"/>
-                            <TextBox Width="200" Style="{DynamicResource UpFlyHintTagTextBox}" Margin="5" Tag="电话号码" Text="12345678901"/>
-                            <TextBox Width="200" Style="{DynamicResource UpFlyHintTagTextBox}" Margin="5" Tag="电子邮件"/>
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag.UpFly}" Margin="5" Tag="姓名"     Text="张三" />
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag.UpFly}" Margin="5" Tag="出生年月" Text="1999.08.14"/>
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag.UpFly}" Margin="5" Tag="电话号码" Text="12345678901"/>
+                            <TextBox Width="200" Style="{DynamicResource TextBox.HintTag.UpFly}" Margin="5" Tag="电子邮件"/>
 
                         </StackPanel>
                     </Border>

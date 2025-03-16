@@ -577,22 +577,22 @@
 
                                                         <StackPanel Orientation="Horizontal" Margin="5" >
                                                             <TextBlock Margin="10 0"  Text="手机"/>
-                                                            <Button Margin="10 0" Style="{DynamicResource NoBackgroundButton}" Content="18199998888"/>
+                                                            <Button Margin="10 0" Style="{DynamicResource Button.NoBackground}" Content="18199998888"/>
                                                         </StackPanel>
 
                                                         <StackPanel Orientation="Horizontal" Margin="5" >
                                                             <TextBlock Margin="10 0"  Text="座机"/>
-                                                            <Button Margin="10 0" Style="{DynamicResource NoBackgroundButton}" Content="18199998888"/>
+                                                            <Button Margin="10 0" Style="{DynamicResource Button.NoBackground}" Content="18199998888"/>
                                                         </StackPanel>
 
                                                         <StackPanel Orientation="Horizontal" Margin="5" >
                                                             <TextBlock Margin="10 0"  Text="邮箱"/>
-                                                            <Button Margin="10 0" Style="{DynamicResource NoBackgroundButton}" Content="mefdeamon@163.com"/>
+                                                            <Button Margin="10 0" Style="{DynamicResource Button.NoBackground}" Content="mefdeamon@163.com"/>
                                                         </StackPanel>
 
                                                         <StackPanel Orientation="Horizontal" Margin="5" >
                                                             <TextBlock Margin="10 0"  Text="部门"/>
-                                                            <Button Margin="10 0" Style="{DynamicResource NoBackgroundButton}" Content="第一事业部/软件组"/>
+                                                            <Button Margin="10 0" Style="{DynamicResource Button.NoBackground}" Content="第一事业部/软件组"/>
                                                         </StackPanel>
 
                                                     </StackPanel>

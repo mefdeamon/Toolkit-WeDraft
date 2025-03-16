@@ -50,7 +50,7 @@
                                                Command="{Binding ClearTextCommand}"/>
 
                                 <TextBox VerticalAlignment="Center" DockPanel.Dock="Left" Padding="0 0 0 0"
-                                 Style="{DynamicResource HintTagTextBox}" Tag="请输入"
+                                 Style="{DynamicResource TextBox.HintTag}" Tag="请输入"
                                  BorderThickness="0"
                                  Background="Transparent"
                                  Text="{Binding Path=SearchText, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
