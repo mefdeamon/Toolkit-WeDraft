@@ -37,6 +37,12 @@
                                 <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" />
                                 <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" />
                             </WrapPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}" IsChecked="True"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}" IsChecked="True"/>
+                            </StackPanel>
+
                         </WrapPanel>
                     </Border>
 
@@ -118,6 +124,20 @@
                         <Run Text="IconRadioButton.Navi.AccentFore" FontWeight="Black"  FontStyle="Oblique"/>
                         <Run Text="：选中背景变化，前景高亮导航拦按钮。" />
                     </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                          <Run Text="通过设置" />
+                          <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="为" />
+                          <Run Text="IconRadioButton.Navi.AccentFore.Left" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="：左边高亮导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                         <Run Text="通过设置" />
+                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="为" />
+                         <Run Text="IconRadioButton.Navi.AccentBack.Static" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="：最近颜色背景，选中背景变化，前景高亮导航拦按钮。(注意背景需要匹配）" />
+                    </TextBlock>
                     <TextBlock Padding="20 0 0 0" TextWrapping="Wrap">
                          <Run Text="可以通过" />
                          <Run Text="BorderThickness" FontWeight="Black"  FontStyle="Oblique"/>
@@ -170,6 +190,15 @@
                                 <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore}" IsChecked="True"/>
                             </StackPanel>
 
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Background="{DynamicResource Accent}">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}" IsChecked="True"/>
+                            </StackPanel>
 
                         </WrapPanel>
                     </Border>

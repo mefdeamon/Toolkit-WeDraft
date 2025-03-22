@@ -8,6 +8,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/FirstDraft;component/Themes/Ui.xaml"/>
+                <ResourceDictionary Source="Ui.Light.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <data:ServiceLocator x:Key="Locator"/>
         </ResourceDictionary>

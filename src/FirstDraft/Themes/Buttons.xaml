@@ -6,7 +6,6 @@
         <ResourceDictionary Source="ValueConverters.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-
     <ControlTemplate x:Key="ButtonBaseTemplate" TargetType="{x:Type ButtonBase}">
         <Border x:Name="border" Background="{TemplateBinding Background}" 
                                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -41,8 +40,6 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-
-
     <Style x:Key="ButtonBase" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
@@ -64,6 +61,27 @@
 
     <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
     </Style>
+
+    <Style x:Key="RepeatButtonBase" TargetType="{x:Type RepeatButton}">
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Padding" Value="5 2"/>
+
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+        <Setter Property="Template" Value="{StaticResource ButtonBaseTemplate}"/>
+    </Style>
+
+    <Style x:Key="{x:Type RepeatButton}" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource RepeatButtonBase}"/>
+
 
     <Style x:Key="Button.NoBackground" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
         <Setter Property="Background" Value="Transparent"/>
@@ -98,23 +116,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="RepeatButtonBase" TargetType="{x:Type RepeatButton}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
-        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="FontWeight" Value="Regular"/>
-        <Setter Property="Padding" Value="5 2"/>
-        <Setter Property="Template" Value="{StaticResource ButtonBaseTemplate}"/>
-    </Style>
-
-    <Style x:Key="{x:Type RepeatButton}" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource RepeatButtonBase}"/>
-
 
     <Storyboard x:Key="Spin">
         <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
@@ -203,7 +204,6 @@
         </Setter>
     </Style>
 
-
     <Style x:Key="Button.Navi.TextBold" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -288,6 +288,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 
 </ResourceDictionary>
