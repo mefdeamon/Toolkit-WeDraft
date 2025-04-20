@@ -1,4 +1,5 @@
 ﻿using FirstDraft.AttachedProperties;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,6 +42,12 @@ namespace FirstDraft.Controls
         /// </summary>
         public AnimatableUserControl()
         {
+            // 如果处于设计时，跳过动画逻辑
+            if (DesignerProperties.GetIsInDesignMode(this))
+            {
+                return;
+            }
+
             // 如果需要以动画的方式进入，首先将该页影藏
             if (LoadedAnimateDirection != AnimationDirection.None)
             { Visibility = Visibility.Collapsed; }
@@ -80,6 +87,11 @@ namespace FirstDraft.Controls
         /// <returns></returns>
         public async Task AnimateInAsync()
         {
+            // 如果处于设计时，跳过动画逻辑
+            if (DesignerProperties.GetIsInDesignMode(this))
+            {
+                return;
+            }
             // 开始动画
             await this.SlideAndFadeInAsync(LoadedAnimateDirection, false, SlideSeconds, size: (int)Application.Current.MainWindow.Width);
         }
