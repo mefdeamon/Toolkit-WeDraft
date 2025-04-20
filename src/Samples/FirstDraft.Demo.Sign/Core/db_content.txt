@@ -1,0 +1,28 @@
+﻿CREATE TABLE `base_user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` int NOT NULL DEFAULT '0' COMMENT '角色  0 普通用户，只能查看  1 管理员，可以配置，更新程序',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `base_device` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '设备的唯一标识符，主键，自增',
+  `name` varchar(45) NOT NULL COMMENT '设备名称,用户可以修改',
+  `code` varchar(45) NOT NULL COMMENT '注册码，具有唯一性，用于标识设备',
+  `created_at` datetime NOT NULL COMMENT '记录设备的创建时间，也就是第一次设备连入系统时间',
+  `last_online_at` datetime NOT NULL COMMENT '记录设备最后一次上线的时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='设备基本信息表'
+
+
+CREATE TABLE `relation_user_device` (
+  `ur_id` int NOT NULL COMMENT '用户编号',
+  `de_id` int NOT NULL COMMENT '设备编号',
+  `permission` int NOT NULL COMMENT '用户权限 0 只读 1 可控',
+  PRIMARY KEY (`ur_id`,`de_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户/设备权限关系表'

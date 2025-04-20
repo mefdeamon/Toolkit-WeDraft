@@ -1,0 +1,83 @@
+﻿<fd:FdWindow  x:Class="FirstDraft.Demo.Sign.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fd="clr-namespace:FirstDraft;assembly=FirstDraft"
+             xmlns:fdcontrols="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:local="clr-namespace:FirstDraft.Demo.Sign"
+             DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+            mc:Ignorable="d"
+             WindowStartupLocation="CenterScreen"
+            Height="675" Width="1200">
+    <fd:FdWindow.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </fd:FdWindow.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="1" Margin="0 0 0 0">
+
+            <Grid  DockPanel.Dock="Top" Height="36">
+                <DockPanel Margin="0 0 110 0">
+
+                
+
+
+                    <fdcontrols:IconButton Visibility="Hidden" Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{DynamicResource IconButton.NoBack}" ToolTip="关于" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
+
+                    <Grid  DockPanel.Dock="Right" VerticalAlignment="Center">
+                        <fdcontrols:IconButton Visibility="{Binding SignVm.IsSigned ,Converter={StaticResource InvertBooleanToVisibilityConverter}, Source={StaticResource Locator}}" Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="请登录" Style="{DynamicResource IconButton.NoBack}" Command="{Binding GoSignCommand}" ToolTip="请登录" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
+                        <WrapPanel Visibility="{Binding SignVm.IsSigned ,Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}">
+                            <fdcontrols:IconButton Icon="{Binding user_fill, Source={StaticResource IconSet}}" Content="{Binding SignedVm.Username ,Source={StaticResource Locator}}" Style="{DynamicResource IconButton.NoBack}" Command="{Binding GoSignCommand}" WindowChrome.IsHitTestVisibleInChrome="True" DockPanel.Dock="Right"/>
+                        </WrapPanel>
+                    </Grid>
+                    
+                    <TextBlock DockPanel.Dock="Right" Margin="10 0 5 0" Text="{Binding WindowsTitle}" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                </DockPanel>
+            </Grid>
+
+            <Rectangle Height="1" Fill="{DynamicResource ExAccent}" DockPanel.Dock="Top" Opacity="0.3"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width='Auto'/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel DockPanel.Dock="Left" >
+                    <ListBox Style="{DynamicResource ListBox.NoStyle}"
+                             ItemsSource="{Binding Items}" SelectedItem="{Binding Current}"
+                             ItemContainerStyle="{DynamicResource NoStyleListBoxItem}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type local:NaviItem}">
+                                <fdcontrols:IconRadioButton Content="{Binding Title}"
+                                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Style="{DynamicResource IconRadioButton.Navi.AccentEffect.Left}"
+                                    GroupName="Items" 
+                                    Icon="{Binding Icon}">
+                                    <fdcontrols:IconRadioButton.IsChecked>
+                                        <Binding Path="IsSelected"
+                         RelativeSource="{RelativeSource AncestorType=ListBoxItem}"
+                         Mode="TwoWay" />
+                                    </fdcontrols:IconRadioButton.IsChecked>
+                                </fdcontrols:IconRadioButton>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </DockPanel>
+
+
+                <Frame Grid.Column="1" FocusVisualStyle="{x:Null}" NavigationUIVisibility="Hidden" DataContext="{Binding Current}" Content="{Binding Content}"/>
+            </Grid>
+        </DockPanel >
+
+    </Grid>
+</fd:FdWindow>
