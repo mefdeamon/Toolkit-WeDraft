@@ -36,6 +36,7 @@
         <ResourceDictionary Source="CommandControls.xaml"/>
         <ResourceDictionary Source="FdWindows.xaml"/>
         <ResourceDictionary Source="IconTextBoxs.xaml"/>
+        <ResourceDictionary Source="HexBoxs.xaml"/>
         
     </ResourceDictionary.MergedDictionaries>
 

@@ -34,6 +34,9 @@
     <Page Update="Themes\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\HexBoxs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Hyperlinks.xaml">
       <SubType>Designer</SubType>
     </Page>

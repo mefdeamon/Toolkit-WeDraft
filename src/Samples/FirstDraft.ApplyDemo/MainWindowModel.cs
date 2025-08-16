@@ -43,6 +43,7 @@ namespace FirstDraft.ApplyDemo
             NaviItems.Add(new NaviItem() { Title = "图标单选按钮(IconRadioButton)", Icon =iconSet.radiobutton, Content = new Views.ApplyIconRadioButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标重复按钮(IconRepeatButton)", Icon =iconSet.rect_fill, Content = new Views.ApplyIconRepeatButtonView() });
             NaviItems.Add(new NaviItem() { Title = "图标文本框(IconTextBox)", Icon =iconSet.textbox, Content = new Views.ApplyIconTextBoxView() });
+            NaviItems.Add(new NaviItem() { Title = "十六进制文本框(HexBox)", Icon =iconSet.hexbox, Content = new Views.ApplyHexBoxView() });
             NaviItems.Add(new NaviItem() { Title = "IP地址框(IpAddressBox)", Icon =iconSet.ipaddressbox, Content = new Views.ApplyIpAddressBoxView() });
             NaviItems.Add(new NaviItem() { Title = "日期时间选择框(DateTimePickBox)", Icon =iconSet.datetimepickbox, Content = new Views.ApplyDateTimePickBoxView() });
             NaviItems.Add(new NaviItem() { Title = "图标集(IconSet)", Icon =iconSet.tags_fill, Content = new Views.IconSetView() });
