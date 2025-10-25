@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using MiniExcelLibs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,10 +7,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Xml.Serialization;
+using Path = System.IO.Path;
 
 namespace FirstDraft.Demo.Wdl.ViewModels
 {
@@ -51,7 +50,17 @@ namespace FirstDraft.Demo.Wdl.ViewModels
             Filter();
         });
 
-
+        public RelayCommand DelCommand => new RelayCommand(() =>
+        {
+            if (Contests.Count > 0)
+            {
+                Contests.RemoveAt(Contests.Count - 1);
+            }
+        });
+        public RelayCommand AddCommand => new RelayCommand(() =>
+        {
+            Contests.Add(new Contest());
+        });
 
         private List<string> lines = new List<string>();
 
@@ -83,31 +92,20 @@ namespace FirstDraft.Demo.Wdl.ViewModels
 
             try
             {
-                var xs = new XmlSerializer(this.GetType());
-                HomeViewModel hm = null;
-                using (var fs = new FileStream(filePath, FileMode.Open))
+                var rows = MiniExcel.Query<Contest>(filePath);
+
+                if (rows == null) return;
+
+                if (rows.Count() == 0) return;
+
+                Contests.Clear();
+
+                var contests = rows.ToList();
+
+                for (int i = 0; i < contests.Count; i++)
                 {
-                    hm = (HomeViewModel)xs.Deserialize(fs);
+                    Contests.Add(contests[i]);
                 }
-
-                if (hm == null) return;
-
-                InitRandomContests();
-                for (int i = 0; i < hm.Contests.Count; i++)
-                {
-                    Contests[i].Name = hm.Contests[i].Name;
-                    Contests[i].WW = hm.Contests[i].WW;
-                    Contests[i].WD = hm.Contests[i].WD;
-                    Contests[i].WL = hm.Contests[i].WL;
-                    Contests[i].DW = hm.Contests[i].DW;
-                    Contests[i].DD = hm.Contests[i].DD;
-                    Contests[i].DL = hm.Contests[i].DL;
-                    Contests[i].LW = hm.Contests[i].LW;
-                    Contests[i].LD = hm.Contests[i].LD;
-                    Contests[i].LL = hm.Contests[i].LL;
-                }
-
-                ProdMax = hm.ProdMax; ProdMin = hm.ProdMin;
             }
             catch
             {
@@ -121,20 +119,17 @@ namespace FirstDraft.Demo.Wdl.ViewModels
             if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
-            var xs = new XmlSerializer(this.GetType());
-            using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
-                xs.Serialize(fs, this);
+            MiniExcel.SaveAs(filePath, Contests, overwriteFile: true, sheetName: "WDL");
         }
 
         public RelayCommand LoadCommand => new RelayCommand(() =>
         {
             var dlg = new Microsoft.Win32.OpenFileDialog
             {
-                Filter = "wdl 文件|*.wdl",
-                Title = "选择 config.wdl"
+                Filter = "Excel 文件|*.xlsx",
+                Title = "util.xlsx"
             };
             if (dlg.ShowDialog() != true) return;
-
 
             Load(dlg.FileName);
         });
@@ -143,10 +138,10 @@ namespace FirstDraft.Demo.Wdl.ViewModels
         {
             var dlg = new SaveFileDialog
             {
-                Filter = "文本文件|*.wdl|所有文件|*.*",
-                DefaultExt = "wdl",               // 如果用户没写扩展名，自动补 .txt
-                FileName = "未命名",              // 默认文件名
-                RestoreDirectory = true           // 下次打开记住目录
+                Filter = "Excel文件|*.xlsx|所有文件|*.*",
+                DefaultExt = "xlsx",
+                FileName = "未命名",
+                RestoreDirectory = true
             };
 
             // 2. 弹窗

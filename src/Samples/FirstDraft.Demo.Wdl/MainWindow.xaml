@@ -30,7 +30,7 @@
                           Height="20"
                           Stretch="Uniform"/>
 
-                    <TextBlock DockPanel.Dock="Right" Margin="10 0 5 0" Text="Gm Tool" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBlock DockPanel.Dock="Right" Margin="10 0 5 0" Text="竞赛分析" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" />
                 </DockPanel>
             </Grid>
 

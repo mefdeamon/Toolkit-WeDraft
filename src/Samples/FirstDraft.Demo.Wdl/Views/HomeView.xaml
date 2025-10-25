@@ -11,6 +11,8 @@
         <ToolBar DockPanel.Dock="Top">
             <Button Command="{Binding LoadCommand}" Content="加载"/>
             <Button Command="{Binding SaveCommand}" Content="保存"/>
+            <Button Command="{Binding AddCommand}" Content="添加一行"/>
+            <Button Command="{Binding DelCommand}" Content="删除最后一行"/>
         </ToolBar>
         <Border Padding="20" Background="#FFFAFAFA" BorderBrush="#FFCCCCCC" BorderThickness="0" CornerRadius="10">
             <Grid>

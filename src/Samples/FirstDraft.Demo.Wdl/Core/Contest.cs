@@ -74,8 +74,6 @@ namespace FirstDraft.Demo.Wdl
             get { return ll; }
             set { SetProperty(ref ll, value); }
         }
-
-
     }
 
     public static class ContestHelper
@@ -111,10 +109,11 @@ namespace FirstDraft.Demo.Wdl
         /* ---------- 把 idx[] → 3-3-2-1... + 乘积 ---------- */
         public static (string line, double prod) BuildLine(this List<Contest> Contests,int[] idx)
         {
-            var labels = new string[6];
+            int columns = Contests.Count;
+            var labels = new string[columns];
             double prod = 1.0;
 
-            for (int r = 0; r < 6; r++)
+            for (int r = 0; r < columns; r++)
             {
                 int col = idx[r];               // 当前行选的列 0-8
                 labels[r] = Label(col);

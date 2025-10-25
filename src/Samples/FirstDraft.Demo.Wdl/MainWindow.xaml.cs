@@ -31,12 +31,12 @@ namespace FirstDraft.Demo.Wdl
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            SL.Locator.HomeVm.LoadFirst("config.aa");
+            SL.Locator.HomeVm.LoadFirst("config.xlsx");
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
         {
-            SL.Locator.HomeVm.Save("config.aa");
+            SL.Locator.HomeVm.Save("config.xlsx");
         }
     }
 }
