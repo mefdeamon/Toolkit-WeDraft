@@ -16,7 +16,7 @@
     <SolidColorBrush x:Key="DefaultBackground" Color="{DynamicResource DefaultBackgrounColor}" />
 
     <sys:Double x:Key="DefalutFontSize">12</sys:Double>
-    <sys:Double x:Key="DefalutIconSize">14</sys:Double>
+    <sys:Double x:Key="DefalutIconSize">16</sys:Double>
     <sys:Double x:Key="HintTagFontSize">10</sys:Double>
 
     <!--<sys:String x:Key="Opt_OFF">OFF</sys:String>

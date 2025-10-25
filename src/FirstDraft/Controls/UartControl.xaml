@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="FirstDraft.Controls.UartControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.Controls"
+             mc:Ignorable="d" 
+             DataContext="{Binding Path=., Source={x:Static local:UartControl.Default}}"
+             d:DesignHeight="60" d:DesignWidth="400">
+    <Grid >
+        <Border>
+            <UniformGrid Columns="4">
+                <Grid>
+                    <ToggleButton HorizontalAlignment="Left" Content="O" Tag="Q" 
+                                  Command="{Binding Path=UpdatePortNameCommand, Source={x:Static local:UartControl.UartSource}}" 
+                                  Style="{DynamicResource ToggleButton.TagContent}"/>
+                    <TextBlock Text="COM口" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Text="波特率" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <UniformGrid Columns="2" >
+                    <TextBlock Text="数据位" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="停止位" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </UniformGrid>
+                <Grid>
+                    <TextBlock Text="校验方式" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <ToggleButton x:Name="PowerMore" HorizontalAlignment="Right" Content="···"/>
+                    <Popup Placement="Bottom" PlacementTarget="{Binding ElementName=PowerMore}" IsOpen="{Binding IsChecked, ElementName=PowerMore}" StaysOpen="False">
+                        <Border BorderBrush="Black" BorderThickness="1" Padding="10">
+                            <UniformGrid Columns="2" Rows="3">
+                                <TextBlock Text="握手" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ComboBox ItemsSource="{Binding Path=Handshakes, Source={x:Static local:UartControl.UartSource}}" SelectedValue="{Binding Handshake}"  DisplayMemberPath="Value" SelectedValuePath="Key"/>
+                                <TextBlock Text="RTS" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ToggleButton IsChecked="{Binding RtsEnable}" Tag="RTS" Content="禁用" Style="{DynamicResource ToggleButton.TagContent}"/>
+                                <TextBlock Text="DTR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ToggleButton IsChecked="{Binding DtrEnable}" Tag="DTR" Content="禁用" Style="{DynamicResource ToggleButton.TagContent}"/>
+                            </UniformGrid>
+                        </Border>
+                    </Popup>
+                </Grid>
+                <ComboBox ItemsSource="{Binding Path=PortNames, Source={x:Static local:UartControl.UartSource}}" SelectedItem="{Binding PortName}"/>
+                <ComboBox ItemsSource="{Binding Path=BaudRates, Source={x:Static local:UartControl.UartSource}}" SelectedItem="{Binding BaudRate}"/>
+                <UniformGrid Columns="2" >
+                    <ComboBox ItemsSource="{Binding Path=DataBitses, Source={x:Static local:UartControl.UartSource}}" SelectedItem="{Binding DataBits}" />
+                    <ComboBox ItemsSource="{Binding Path=StopBitses, Source={x:Static local:UartControl.UartSource}}" SelectedValue="{Binding StopBits}"  DisplayMemberPath="Value" SelectedValuePath="Key"/>
+                </UniformGrid>
+                <ComboBox ItemsSource="{Binding Path=Parities, Source={x:Static local:UartControl.UartSource}}" SelectedValue="{Binding Parity}" DisplayMemberPath="Value" SelectedValuePath="Key"/>
+            </UniformGrid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -5,5 +5,19 @@
         <Setter Property="TextElement.Foreground" Value="{DynamicResource DefaultForeground}"/>
         <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
     </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="TextBlock.TextBox">
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="Padding" Value="5 2" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextBlock.FontWeight" Value="Regular" />
+        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}" />
+        <Setter Property="Focusable" Value="True"/>
+    </Style>
 
 </ResourceDictionary>

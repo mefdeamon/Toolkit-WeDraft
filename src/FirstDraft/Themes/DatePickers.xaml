@@ -112,7 +112,7 @@
                             <Setter Property="Opacity"   Value="0.8"  TargetName="Grid"></Setter>
                         </Trigger>
                         <Trigger Property="IsEnabled"   Value="False">
-                            <!--<Setter Property="Opacity" Value="{DynamicResource DisableOpacity}" TargetName="Grid"></Setter>-->
+                            <Setter Property="Opacity" Value="0.6" TargetName="Grid"></Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -299,7 +299,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DatePicker}">
-                    <Border Width="{TemplateBinding Width}" 
+                    <Border Width="{TemplateBinding Width}"  x:Name="PART_DisabledVisual"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}"
@@ -357,6 +357,9 @@
                                             <Trigger Property="IsChecked" Value="True">
                                                 <Setter Property="Fill"  TargetName="PATH1"  Value="{DynamicResource SolidBrush.DatePicker.BorderBrush.OnMouseOver}" />
                                             </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Opacity" Value="0.6"/>
+                                            </Trigger>
                                         </ControlTemplate.Triggers>
 
                                     </ControlTemplate>
@@ -385,7 +388,11 @@
 
                         </Grid>
                     </Border>
-
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -401,7 +408,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DatePicker}">
-                    <Border Width="{TemplateBinding Width}"
+                    <Border Width="{TemplateBinding Width}" x:Name="PART_DisabledVisual"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}"

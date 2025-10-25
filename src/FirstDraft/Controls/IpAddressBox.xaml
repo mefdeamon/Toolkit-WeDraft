@@ -4,11 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FirstDraft.Controls"
+             xmlns:fdcontrols="clr-namespace:FirstDraft.Controls"
              xmlns:attachedprop="clr-namespace:FirstDraft.AttachedProperties"
              mc:Ignorable="d" Background="{DynamicResource DefaultBackground}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="20" d:DesignWidth="160">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition MinWidth="30" />
             <ColumnDefinition Width="10" />
             <ColumnDefinition MinWidth="30" />
@@ -17,9 +19,17 @@
             <ColumnDefinition Width="10" />
             <ColumnDefinition MinWidth="30" />
         </Grid.ColumnDefinitions>
+        <!--  Part 0  -->
+        <fdcontrols:IconButton Icon="{Binding ipaddressbox, Source={StaticResource IconSet}}" Padding="2 0" Margin="0" 
+                               Style="{DynamicResource IconButton.NoBack}" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}"
+                               Click="IconButton_Click" Visibility="Collapsed" x:Name="FindButton" VerticalAlignment="Stretch">
+            <fdcontrols:IconButton.ToolTip>
+                <ToolTip Style="{DynamicResource ToolTip.Effect.Bottom}" Content="获取地址"/>
+            </fdcontrols:IconButton.ToolTip>
+        </fdcontrols:IconButton>
 
         <!--  Part 1  -->
-        <TextBox Grid.Column="0"
+        <TextBox Grid.Column="1"
                  x:Name="part1"
                  PreviewKeyDown="Part1_PreviewKeyDown"
                  attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart1Focused, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"
@@ -32,14 +42,14 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBlock Grid.Column="1"
+        <TextBlock Grid.Column="2"
                    HorizontalAlignment="Center"
                    FontSize="15"
                    Text="."
                    VerticalAlignment="Center"/>
 
         <!--  Part 2  -->
-        <TextBox Grid.Column="2"
+        <TextBox Grid.Column="3"
                 x:Name="part2"
                 PreviewKeyDown="Part2_KeyDown"
                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart2Focused}"
@@ -52,14 +62,14 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBlock Grid.Column="3"
+        <TextBlock Grid.Column="4"
                    HorizontalAlignment="Center"
                    FontSize="15"
                    Text="."
                    VerticalAlignment="Center"/>
 
         <!--  Part 3  -->
-        <TextBox Grid.Column="4"
+        <TextBox Grid.Column="5"
                 x:Name="part3"
                 PreviewKeyDown="Part3_KeyDown"
                 attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart3Focused}"
@@ -72,14 +82,14 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBlock Grid.Column="5"
+        <TextBlock Grid.Column="6"
                    HorizontalAlignment="Center"
                    FontSize="15"
                    Text="."
                    VerticalAlignment="Center"/>
 
         <!--  Part 4  -->
-        <TextBox Grid.Column="6"
+        <TextBox Grid.Column="7"
                  x:Name="part4"
                  PreviewKeyDown="Part4_KeyDown"
                  attachedprop:TextBoxAttProp.IsFocused="{Binding IsPart4Focused}"

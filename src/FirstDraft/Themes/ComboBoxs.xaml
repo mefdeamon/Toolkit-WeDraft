@@ -32,6 +32,7 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
                             <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Opacity" Value="0.6"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -131,6 +135,63 @@ namespace FirstDraft.Controls
         }
 
         #endregion
+
+
+        List<IPAddress> locals = new List<IPAddress>();
+        private int index = 0;
+        private void IconButton_Click(object sender, RoutedEventArgs e)
+        {
+            string hostName = Dns.GetHostName();
+            IPAddress[] addresses = Dns.GetHostAddresses(hostName);
+
+            foreach (IPAddress address in addresses)
+            {
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    if (locals.Any(t => t.ToString() == address.ToString()))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        locals.Add(address);
+                    }
+                }
+            }
+
+            // 移除locals中不再使用的地址
+            locals.RemoveAll(local => !addresses.Any(t => t.ToString() == local.ToString()));
+
+            index = (index + 1) % locals.Count;
+
+            IPAddress selectedAddress = locals[index];
+
+            if (this.DataContext is IpAddressDataContext dc)
+            {
+                dc.SetAddress(selectedAddress.GetAddressBytes());
+            }
+        }
+
+
+        public bool IsCollapsedFindButton
+        {
+            get { return (bool)GetValue(IsCollapsedFindButtonProperty); }
+            set { SetValue(IsCollapsedFindButtonProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsCollapsedFindButtonProperty =
+            DependencyProperty.Register("IsCollapsedFindButton", typeof(bool), typeof(IpAddressBox), new PropertyMetadata(true, OnIsCollapsedFindButtonChannged));
+
+        private static void OnIsCollapsedFindButtonChannged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is IpAddressBox box)
+            {
+                if (e.NewValue is bool isCol)
+                {
+                    box.FindButton.Visibility = isCol ? Visibility.Collapsed : Visibility.Visible;
+                }
+            }
+        }
     }
 
     public class NotifyPropertyChanged : INotifyPropertyChanged

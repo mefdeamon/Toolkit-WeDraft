@@ -12,5 +12,7 @@
     <converters:InvertBooleanToVisibilityHiddenConverter x:Key="InvertBooleanToVisibilityHiddenConverter"/>
 
     <converters:BooleanToInt01Converter x:Key="BooleanToInt01Converter"/>
+    <converters:Int012ToBooleaneNullTrueFalsConverter x:Key="Int012ToBooleaneNullTrueFalsConverter"/>
+    
 
 </ResourceDictionary>

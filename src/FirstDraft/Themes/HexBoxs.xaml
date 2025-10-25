@@ -79,6 +79,9 @@
 
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
                         </Trigger>

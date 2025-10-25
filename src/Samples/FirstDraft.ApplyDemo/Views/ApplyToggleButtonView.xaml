@@ -26,6 +26,11 @@
                             <ToggleButton Style="{DynamicResource ToggleButton.Navi.TextBold}" Content="嘿嘿嘿" Margin="5" IsChecked="True"/>
                             <ToggleButton Style="{DynamicResource ToggleButton.Over.Back}" Content="哈哈哈" Margin="5" IsChecked="True"/>
                             <ToggleButton Style="{DynamicResource ToggleButton.Over.Back}" Content="嘿嘿嘿" Margin="5" IsChecked="True"/>
+
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="{x:Null}"/>
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="True"/>
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="False" IsEnabled="True"/>
+                            
                         </WrapPanel>
                     </Border>
 
@@ -176,6 +181,31 @@
                             <ToggleButton Style="{DynamicResource ToggleButton.Over.Back}" Margin="5" Content="搞笑" Tag="平常"/>
                             <ToggleButton Style="{DynamicResource ToggleButton.Over.Back}" Margin="5" Content="生活" Tag="工作" BorderBrush="#FF237493"/>
                             <ToggleButton Style="{DynamicResource ToggleButton.Over.Back}" Margin="5" Content="知识" Tag="活动" BorderBrush="DeepSkyBlue" IsChecked="True"/>
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="ToggleButton.R0G1" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="ToggleButton.R0G1" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：灯色显示样式。可以根据设置" />
+                        <Run Text="IsChecked" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="NULL TRUE FALSE" FontWeight="Black"/>
+                        <Run Text="灰色 绿色 红色。默认不可以鼠标切换，可以恢复" />
+                        <Run Text="IsEnable" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="TRUE 可以点击。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="{x:Null}"/>
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="True"/>
+                            <ToggleButton Style="{DynamicResource ToggleButton.R0G1}" Margin="5" IsChecked="False" IsEnabled="True"/> 
                         </WrapPanel>
                     </Border>
                 </StackPanel>
