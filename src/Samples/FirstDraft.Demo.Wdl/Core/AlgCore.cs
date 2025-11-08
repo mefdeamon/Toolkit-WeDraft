@@ -9,15 +9,14 @@ namespace FirstDraft.Demo.Wdl
         /// 
         /// </summary>
         /// <returns></returns>
-        public static IEnumerable<int[]> EnumAll()
+        public static IEnumerable<int[]> EnumAll(int Choices = 9, int colums = 6)
         {
-            const int Choices = 9;
-            int[] cur = new int[6];
+            int[] cur = new int[colums];
             do
             {
                 yield return (int[])cur.Clone();
 
-                int r = 5;
+                int r = colums - 1;
                 while (r >= 0 && ++cur[r] == Choices)
                 {
                     cur[r] = 0;

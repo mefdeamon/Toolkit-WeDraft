@@ -31,12 +31,22 @@ namespace FirstDraft.Demo.Wdl
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            if(!WdlcoreHelper.IsValid())
+            {
+                MessageBox.Show("联系作者解决问题！", "出错了", MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(0);
+                return;
+            }
+
             SL.Locator.HomeVm.LoadFirst("config.xlsx");
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
         {
             SL.Locator.HomeVm.Save("config.xlsx");
+            SL.Locator.HomeVm.ClearData();
+            
+
         }
     }
 }

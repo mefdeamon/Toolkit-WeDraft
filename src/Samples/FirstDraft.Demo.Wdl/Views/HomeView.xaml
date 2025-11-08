@@ -4,22 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FirstDraft.Demo.Wdl.Views"
+             xmlns:fdc="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
              xmlns:data="clr-namespace:FirstDraft.Demo.Wdl.Data"
              DataContext="{Binding Path=HomeVm, Source={x:Static data:SL.Locator}}"
              >
     <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
-            <Button Command="{Binding LoadCommand}" Content="加载"/>
-            <Button Command="{Binding SaveCommand}" Content="保存"/>
-            <Button Command="{Binding AddCommand}" Content="添加一行"/>
-            <Button Command="{Binding DelCommand}" Content="删除最后一行"/>
-        </ToolBar>
-        <Border Padding="20" Background="#FFFAFAFA" BorderBrush="#FFCCCCCC" BorderThickness="0" CornerRadius="10">
+        <Border Padding="20 0 20 20" Background="#FFFAFAFA" BorderBrush="#FFCCCCCC" BorderThickness="0" CornerRadius="10">
             <Grid>
-                <DockPanel>
-                    <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Contests}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" CanUserResizeColumns="False">
+                <DockPanel IsEnabled="{Binding IsWorking,Converter={StaticResource InvertBooleanConverter}}">
+                    <DockPanel DockPanel.Dock="Top">
+                        <WrapPanel>
+                            <Button Command="{Binding LoadCommand}" Content="加载"/>
+                            <Button Command="{Binding SaveCommand}" Margin="-1 0 0 0" Content="保存"/>
+                            <Button Command="{Binding AddCommand}"  Margin="-1 0 0 0" Content="添加一行"/>
+                            <Button Command="{Binding DelCommand}" Margin="-1 0 0 0" Content="删除最后一行"/>
+                        </WrapPanel>
+                        <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+                            <fdc:IconRadioButton IsChecked="{Binding IsX3}" Style="{DynamicResource IconRadioButton.Selector}" Padding="5 3" IconSize="12" CornerRadius="5 0 0 5" Content="x^3"/>
+                            <fdc:IconRadioButton IsChecked="{Binding IsX9}" Style="{DynamicResource IconRadioButton.Selector}"  IconSize="12" Padding="5 3" BorderThickness="0 1 1 1" Content="x^9"  />
+                            <fdc:IconRadioButton IsChecked="{Binding IsX16}" Style="{DynamicResource IconRadioButton.Selector}" IconSize="12" Padding="5 3" BorderThickness="0 1 1 1" CornerRadius="0 5 5 0" Content="x^16" />
+                        </WrapPanel>
+
+                        <TextBlock Text="{Binding Contests.Count,Mode=OneWay}" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                        <TextBlock Text="行(场)比赛" VerticalAlignment="Center"/>
+
+                    </DockPanel>
+
+
+                    <DataGrid Visibility="{Binding IsX9,Converter={StaticResource BooleanToVisibilityConverter}}" DockPanel.Dock="Top" ItemsSource="{Binding Contests}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" CanUserResizeColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="2*" Header="对阵（6^9）" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="2*" Header="对阵（x^9）" Binding="{Binding Name}"/>
                             <DataGridTextColumn Width="*" Header="胜 | 胜" Binding="{Binding WW}"/>
                             <DataGridTextColumn Width="*" Header="胜 | 平" Binding="{Binding WD}"/>
                             <DataGridTextColumn Width="*" Header="胜 | 负" Binding="{Binding WL}"/>
@@ -31,24 +45,56 @@
                             <DataGridTextColumn Width="*" Header="负 | 负" Binding="{Binding LL}"/>
                         </DataGrid.Columns>
                     </DataGrid>
+
+                    <DataGrid Visibility="{Binding IsX3,Converter={StaticResource BooleanToVisibilityConverter}}" DockPanel.Dock="Top" ItemsSource="{Binding Contests}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" CanUserResizeColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="2*" Header="对阵（x^3）" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="*" Header="胜" Binding="{Binding WW}"/>
+                            <DataGridTextColumn Width="*" Header="平" Binding="{Binding DD}"/>
+                            <DataGridTextColumn Width="*" Header="负" Binding="{Binding LL}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <DataGrid Visibility="{Binding IsX16,Converter={StaticResource BooleanToVisibilityConverter}}" DockPanel.Dock="Top" ItemsSource="{Binding Contests}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" CanUserResizeColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="2*" Header="对阵（x^16）" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="*" Header="10" Binding="{Binding WW}"/>
+                            <DataGridTextColumn Width="*" Header="20" Binding="{Binding WD}"/>
+                            <DataGridTextColumn Width="*" Header="30" Binding="{Binding WL}"/>
+                            <DataGridTextColumn Width="*" Header="21" Binding="{Binding DW}"/>
+                            <DataGridTextColumn Width="*" Header="31" Binding="{Binding DD}"/>
+                            <DataGridTextColumn Width="*" Header="32" Binding="{Binding DL}"/>
+                            <DataGridTextColumn Width="*" Header="00" Binding="{Binding LW}"/>
+                            <DataGridTextColumn Width="*" Header="11" Binding="{Binding LD}"/>
+                            <DataGridTextColumn Width="*" Header="22" Binding="{Binding LL}"/>
+                            <DataGridTextColumn Width="*" Header="33" Binding="{Binding R33}"/>
+                            <DataGridTextColumn Width="*" Header="01" Binding="{Binding R01}"/>
+                            <DataGridTextColumn Width="*" Header="02" Binding="{Binding R02}"/>
+                            <DataGridTextColumn Width="*" Header="03" Binding="{Binding R03}"/>
+                            <DataGridTextColumn Width="*" Header="12" Binding="{Binding R12}"/>
+                            <DataGridTextColumn Width="*" Header="13" Binding="{Binding R13}"/>
+                            <DataGridTextColumn Width="*" Header="23" Binding="{Binding R23}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
                     <DockPanel LastChildFill="False" DockPanel.Dock="Top">
                         <Button Content="(从赛事)生成" Command="{Binding GenCommand}"/>
                         <Button Command="{Binding ImportCommand}" Content="导入(历史数据）" Margin="5 0 0 0"/>
 
 
-                        <ToolBar DockPanel.Dock="Right" IsEnabled="{Binding CanExport}">
-                            <TextBox Text="{Binding FileName}" Margin="10 0 0 0" MinWidth="60" Style="{DynamicResource TextBox.HintTag}" Tag="导出名称"/>
+                        <WrapPanel DockPanel.Dock="Right" IsEnabled="{Binding CanExport}">
+                            <TextBox Text="{Binding FileName}" Margin="10 0 0 0" BorderThickness="0 0 0 1" MinWidth="60" Style="{DynamicResource TextBox.HintTag}" Tag="导出名称"/>
                             <Button Command="{Binding ExportCommand}" Content="导出"/>
-                        </ToolBar>
+                        </WrapPanel>
 
-                        <ToolBar DockPanel.Dock="Right" >
+                        <WrapPanel DockPanel.Dock="Right" >
                             <TextBox Text="{Binding ProdMin}" BorderThickness="0 0 0 1" MinWidth="50"/>
                             <TextBlock Text="≤ 值 ≤" VerticalAlignment="Center"/>
                             <TextBox Text="{Binding ProdMax}" BorderThickness="0 0 0 1" MinWidth="50"/>
                             <Button Content="过滤" Command="{Binding FilterCommand}" Margin="10 0 0 0"/>
                             <TextBlock Text="匹配项=" Margin="10 0 0 0" VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding Results.Count,Mode=OneWay}" VerticalAlignment="Center" MinWidth="30"/>
-                        </ToolBar>
+                        </WrapPanel>
                     </DockPanel>
                     <DataGrid ItemsSource="{Binding Results}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False">
                         <DataGrid.Columns>
