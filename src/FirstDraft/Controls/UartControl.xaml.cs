@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstDraft.Mvvms;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -196,82 +197,5 @@ namespace FirstDraft.Controls
             }
         }
 
-    }
-
-    //
-    // 摘要:
-    //     A command whose sole purpose is to relay its functionality to other objects by
-    //     invoking delegates. The default return value for the CommunityToolkit.Mvvm.Input.RelayCommand.CanExecute(System.Object)
-    //     method is true. This type does not allow you to accept command parameters in
-    //     the CommunityToolkit.Mvvm.Input.RelayCommand.Execute(System.Object) and CommunityToolkit.Mvvm.Input.RelayCommand.CanExecute(System.Object)
-    //     callback methods.
-    public sealed class RelayCommand : ICommand
-    {
-        //
-        // 摘要:
-        //     The System.Action to invoke when CommunityToolkit.Mvvm.Input.RelayCommand.Execute(System.Object)
-        //     is used.
-        private readonly Action execute;
-
-        //
-        // 摘要:
-        //     The optional action to invoke when CommunityToolkit.Mvvm.Input.RelayCommand.CanExecute(System.Object)
-        //     is used.
-        private readonly Func<bool> canExecute;
-
-        public event EventHandler CanExecuteChanged;
-
-        //
-        // 摘要:
-        //     Initializes a new instance of the CommunityToolkit.Mvvm.Input.RelayCommand class
-        //     that can always execute.
-        //
-        // 参数:
-        //   execute:
-        //     The execution logic.
-        public RelayCommand(Action execute)
-        {
-            this.execute = execute;
-        }
-
-        //
-        // 摘要:
-        //     Initializes a new instance of the CommunityToolkit.Mvvm.Input.RelayCommand class.
-        //
-        //
-        // 参数:
-        //   execute:
-        //     The execution logic.
-        //
-        //   canExecute:
-        //     The execution status logic.
-        public RelayCommand(Action execute, Func<bool> canExecute)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-        }
-
-        //
-        // 摘要:
-        //     Notifies that the System.Windows.Input.ICommand.CanExecute(System.Object) property
-        //     has changed.
-        public void NotifyCanExecuteChanged()
-        {
-            this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool CanExecute(object parameter)
-        {
-            return canExecute?.Invoke() ?? true;
-        }
-
-        public void Execute(object parameter)
-        {
-            if (CanExecute(parameter))
-            {
-                execute();
-            }
-        }
     }
 }

@@ -1,0 +1,476 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:FirstDraft.Controls"
+                    xmlns:converters="clr-namespace:FirstDraft.Converters"
+                >
+    <converters:InvertBooleanConverter x:Key="InvertBooleanConverter"/>
+
+
+
+    <Style x:Key="NumericRepeatButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="controls:IconBlock.Icon" Value="M 0 3 L 4 0 L 8 3 Z"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border x:Name="templateRoot" 
+                                Background="{DynamicResource DefaultBackground}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                BorderBrush="{DynamicResource Button.Static.Border}" SnapsToDevicePixels="true">
+                        <Border x:Name="splitBorder" BorderThickness="0" 
+                                    BorderBrush="Transparent"  
+                            Padding="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="0"
+                                VerticalAlignment="Stretch"
+                                    SnapsToDevicePixels="true"  
+                                    Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                            <Viewbox>
+                                <Path x:Name="arrow" Data="{TemplateBinding controls:IconBlock.Icon}" 
+                                          Stretch="Uniform"
+                                      Fill="{DynamicResource Button.Static.Glyph}"
+                                      HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                            </Viewbox>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Accent}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource DefaultForeground}"/>
+                            <!--<Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource Button.Disabled.Background}"/>-->
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="NumericBoxBase" TargetType="{x:Type controls:NumericBox}">
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="IconSize" Value="{DynamicResource DefalutIconSize}"/>
+        <Setter Property="FontSize" Value="{DynamicResource DefalutFontSize}"/>
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="TextBlock.FontWeight" Value="Regular" />
+        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}" />
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+
+        <Setter Property="ToolTipService.ShowDuration" Value="5000"/>
+        <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:NumericBox}">
+                    <Border Name="border" Focusable="False"
+                    Padding="{TemplateBinding Padding}"
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    SnapsToDevicePixels="True">
+
+                        <DockPanel VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Path x:Name="icon" DockPanel.Dock="Left" Margin="5 0 0 0"
+                                  Width="{TemplateBinding IconSize}" 
+                                  Height="{TemplateBinding IconSize}"
+                                  Data="{TemplateBinding Icon}" 
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Uniform"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="PART_TextBox"
+                                         FocusVisualStyle="{x:Null}"
+                                         InputMethod.IsInputMethodEnabled="False"
+                                    Grid.Column="0"
+                                           BorderThickness="0"
+                                           Background="Transparent"
+                                           TextAlignment="Right"
+                                           VerticalAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                             IsReadOnly="{TemplateBinding AllowTextInput, Converter={StaticResource InvertBooleanConverter}}"/>
+
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <RepeatButton x:Name="PART_IncreaseButton" 
+                                                  Grid.Row="0"
+                                                   Style="{DynamicResource NumericRepeatButton}"
+                                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                                   controls:IconBlock.Icon="M 0 3 L 4 0 L 8 3 Z"
+                                                   Padding="2 2"/>
+
+                                    <RepeatButton x:Name="PART_DecreaseButton"
+                                                  Grid.Row="1"
+                                                   Style="{DynamicResource NumericRepeatButton}"
+                                                   controls:IconBlock.Icon="M 0 0 L 4 3 L 8 0 Z"
+                                                   Padding="3 2"/>
+                                </Grid>
+                            </Grid>
+
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="{x:Type controls:NumericBox}" TargetType="{x:Type controls:NumericBox}" BasedOn="{StaticResource NumericBoxBase}"/>
+    <Style x:Key="NumericBox.Vertical" TargetType="{x:Type controls:NumericBox}" BasedOn="{StaticResource NumericBoxBase}"/>
+
+
+    <Style x:Key="NumericBox.Horizontal" TargetType="{x:Type controls:NumericBox}" BasedOn="{StaticResource NumericBoxBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:NumericBox}">
+                    <Border Name="border" 
+                      Padding="{TemplateBinding Padding}"
+                      BorderBrush="{TemplateBinding BorderBrush}" 
+                      BorderThickness="{TemplateBinding BorderThickness}"
+                      Background="{TemplateBinding Background}"
+                      SnapsToDevicePixels="True">
+
+                        <DockPanel VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                   Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Path x:Name="icon" DockPanel.Dock="Left" Margin="5 0 0 0"
+                                    Width="{TemplateBinding IconSize}" 
+                                    Height="{TemplateBinding IconSize}"
+                                    Data="{TemplateBinding Icon}" 
+                                    Fill="{TemplateBinding Foreground}"
+                                    Stretch="Uniform" Focusable="False"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            <Grid KeyboardNavigation.TabNavigation="Once"
+                                  KeyboardNavigation.DirectionalNavigation="None">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="PART_TextBox"
+                                     Grid.Column="0"
+                                         FocusVisualStyle="{x:Null}"
+                                         InputMethod.IsInputMethodEnabled="False"
+                                         VerticalContentAlignment="Center"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     TextAlignment="Right"
+                                     VerticalAlignment="Center"
+                                         TabIndex="0"
+                                     IsReadOnly="{TemplateBinding AllowTextInput, Converter={StaticResource InvertBooleanConverter}}"/>
+
+                                <StackPanel Grid.Column="1" 
+                                            Orientation="Horizontal" >
+
+                                    <RepeatButton x:Name="PART_IncreaseButton" 
+                                                  Style="{DynamicResource NumericRepeatButton}"
+                                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                                  controls:IconBlock.Icon="M 0 3 L 4 0 L 8 3 Z"
+                                                  Padding="2 2"/>
+
+                                    <RepeatButton x:Name="PART_DecreaseButton"
+                                                  Style="{DynamicResource NumericRepeatButton}"
+                                                  controls:IconBlock.Icon="M 0 0 L 4 3 L 8 0 Z"
+                                                  Padding="3 2"/>
+                                </StackPanel>
+                            </Grid>
+
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="NumericBox.Vertical.Full" TargetType="{x:Type controls:NumericBox}" BasedOn="{StaticResource NumericBoxBase}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:NumericBox}">
+                    <Border Name="border" 
+           Padding="{TemplateBinding Padding}"
+           BorderBrush="{TemplateBinding BorderBrush}" 
+           BorderThickness="{TemplateBinding BorderThickness}"
+           Background="{TemplateBinding Background}"
+           SnapsToDevicePixels="True">
+
+                        <DockPanel VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Path x:Name="icon" DockPanel.Dock="Left" Margin="5 0 0 0"
+                 Width="{TemplateBinding IconSize}" 
+                 Height="{TemplateBinding IconSize}"
+                 Data="{TemplateBinding Icon}" 
+                 Fill="{TemplateBinding Foreground}"
+                 Stretch="Uniform"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="PART_TextBox"
+                          Grid.Column="0"
+                                         InputMethod.IsInputMethodEnabled="False"
+                          BorderThickness="0"
+                          Background="Transparent"
+                          TextAlignment="Right"
+                          VerticalAlignment="Center"
+                          IsReadOnly="{TemplateBinding AllowTextInput, Converter={StaticResource InvertBooleanConverter}}"/>
+
+                                <StackPanel Grid.Column="1" 
+                                 Orientation="Vertical" >
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <RepeatButton x:Name="PART_IncreaseButton" 
+                                                    VerticalAlignment="Stretch"
+                                            Width="25"
+                                    BorderThickness="1,0,0,0"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="Transparent"
+                                    Focusable="False"
+                                    Padding="0">
+                                            <Path Data="M 0 3 L 4 0 L 8 3 Z" Stretch="Uniform" Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                            Fill="{TemplateBinding Foreground}" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                        </RepeatButton>
+
+                                        <Border Grid.Row="1" Height="1"   Background="{TemplateBinding BorderBrush}"    SnapsToDevicePixels="True"/>
+
+                                        <RepeatButton Grid.Row="2" x:Name="PART_DecreaseButton"
+                                            Width="25"
+                                            VerticalAlignment="Stretch"
+                                            BorderThickness="1,0,0,0"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            Background="Transparent"
+                                            Focusable="False"
+                                            Padding="0">
+                                            <Path Data="M 0 0 L 4 3 L 8 0 Z"  Stretch="Uniform" Width="{TemplateBinding IconSize}" Height="{TemplateBinding IconSize}"
+                                            Fill="{TemplateBinding Foreground}" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                        </RepeatButton>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <StreamGeometry x:Key="plus4px">M30,8 L34,8 34,30 56,30 56,34 34,34 34,56 30,56 30,34 8,34 8,30 30,30 Z</StreamGeometry>
+    <StreamGeometry x:Key="sub4px">M8,30 L8,32 56,32 56,30 8,30 Z</StreamGeometry>
+
+    <Style x:Key="NumericBox.Horizontal.Plus" TargetType="{x:Type controls:NumericBox}" BasedOn="{StaticResource NumericBoxBase}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:NumericBox}">
+                    <Border Name="border" 
+                      Padding="{TemplateBinding Padding}"
+                      BorderBrush="{TemplateBinding BorderBrush}" 
+                      BorderThickness="{TemplateBinding BorderThickness}"
+                      Background="{TemplateBinding Background}"
+                      SnapsToDevicePixels="True">
+
+                        <DockPanel VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+                                   Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                            <Path x:Name="icon" DockPanel.Dock="Left" Margin="5 0 0 0"
+                                    Width="{TemplateBinding IconSize}" 
+                                    Height="{TemplateBinding IconSize}"
+                                    Data="{TemplateBinding Icon}" 
+                                    Fill="{TemplateBinding Foreground}"
+                                    Stretch="Uniform" Focusable="False"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            <Grid KeyboardNavigation.TabNavigation="Once"
+                                  KeyboardNavigation.DirectionalNavigation="None">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="PART_TextBox"
+                                     Grid.Column="0"
+                                         FocusVisualStyle="{x:Null}"
+                                         InputMethod.IsInputMethodEnabled="False"
+                                         VerticalContentAlignment="Center"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     TextAlignment="Right"
+                                     VerticalAlignment="Center"
+                                         TabIndex="0"
+                                     IsReadOnly="{TemplateBinding AllowTextInput, Converter={StaticResource InvertBooleanConverter}}"/>
+
+                                <StackPanel Grid.Column="1" 
+                                            Orientation="Horizontal" >
+
+                                    <RepeatButton x:Name="PART_IncreaseButton" 
+                                                  Style="{DynamicResource NumericRepeatButton}"
+                                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                                  controls:IconBlock.Icon="M30,8 L34,8 34,30 56,30 56,34 34,34 34,56 30,56 30,34 8,34 8,30 30,30 Z"
+                                                  Padding="2 2"/>
+
+                                    <RepeatButton x:Name="PART_DecreaseButton"
+                                                  Style="{DynamicResource NumericRepeatButton}"
+                                                  controls:IconBlock.Icon="M8,30 L8,32 56,32 56,30 8,30 Z"
+                                                  Padding="3 2"/>
+                                </StackPanel>
+                            </Grid>
+
+                        </DockPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource Accent}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
+                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="icon"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

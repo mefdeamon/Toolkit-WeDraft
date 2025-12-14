@@ -38,6 +38,7 @@
         <ResourceDictionary Source="IconTextBoxs.xaml"/>
         <ResourceDictionary Source="HexBoxs.xaml"/>
         <ResourceDictionary Source="FdDataGrid.xaml"/>
+        <ResourceDictionary Source="NumericBoxs.xaml"/>
         
     </ResourceDictionary.MergedDictionaries>
 

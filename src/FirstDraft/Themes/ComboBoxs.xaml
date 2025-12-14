@@ -40,6 +40,8 @@
         </Setter>
     </Style>
 
+    <StreamGeometry x:Key="org">M512 682.666667l298.666667-298.666667H213.333333z</StreamGeometry>
+    
     <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -52,13 +54,13 @@
                                 Background="{DynamicResource DefaultBackground}"
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 BorderBrush="{DynamicResource Button.Static.Border}" SnapsToDevicePixels="true">
-                        <Border x:Name="splitBorder" BorderThickness="1" 
+                        <Border x:Name="splitBorder" BorderThickness="0" 
                                     BorderBrush="Transparent" 
                                     HorizontalAlignment="Right" Margin="0"
                                     SnapsToDevicePixels="true"  Padding="2"
                                     Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                             <Viewbox>
-                                <Path x:Name="arrow" Data="M512 682.666667l298.666667-298.666667H213.333333z" 
+                                <Path x:Name="arrow" Data="{DynamicResource down}" 
                                           Stretch="Uniform"
                                       Fill="{DynamicResource Button.Static.Glyph}"
                                       HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
@@ -73,12 +75,12 @@
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource DefaultForeground}"/>
-                            <Setter Property="Background" TargetName="splitBorder" Value="{DynamicResource Button.Disabled.Background}"/>
+                            <Setter Property="Data" TargetName="arrow" Value="{DynamicResource up}"/>
                             <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Button.Disabled.Glyph}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{DynamicResource Button.Disabled.Border}"/>
                             <Setter Property="Fill" TargetName="arrow" Value="{DynamicResource Button.Disabled.Glyph}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -119,9 +121,10 @@
                 <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="BorderBrush" TargetName="dropDownBorder" Value="#FFF4F4F4"/>
-                <Setter Property="Background" TargetName="dropDownBorder" Value="#FFF4F4F4"/>
-                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                <Setter Property="BorderBrush" TargetName="dropDownBorder" Value="{DynamicResource Button.Disabled.Border}"/>
+                <Setter Property="Background" TargetName="dropDownBorder" Value="{DynamicResource Button.Disabled.Background}"/>
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                <Setter Property="Opacity" TargetName="templateRoot" Value="0.56"/>
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>

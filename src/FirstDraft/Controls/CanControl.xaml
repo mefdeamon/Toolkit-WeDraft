@@ -6,34 +6,42 @@
              xmlns:local="clr-namespace:FirstDraft.Controls"
              mc:Ignorable="d" 
              DataContext="{Binding Path=., Source={x:Static local:CanControl.Default}}"
-             d:DesignHeight="60" d:DesignWidth="400">
-    <Grid>
-        <Border>
-            <UniformGrid Columns="4">
-                <TextBlock Text="设备类型" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <UniformGrid Columns="2">
-                    <TextBlock Text="索引" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Text="通道" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            >
+    <Grid Margin="10">
+        <Border >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox IsEnabled="False" BorderThickness="1 1 0 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="0" Text="设备类型" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                <TextBox IsEnabled="False" BorderThickness="1 1 0 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Text="索引" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                <TextBox IsEnabled="False" BorderThickness="1 1 0 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="2" Text="通道" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                <TextBox IsEnabled="False" BorderThickness="1 1 0 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="3" Text="波特率" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                <TextBox IsEnabled="False" BorderThickness="1 1 0 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="4" Text="CAN/FD" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                <TextBox IsEnabled="False" BorderThickness="1 1 1 0" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="5" Text="终端电阻" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+
+
+
+                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" ItemsSource="{Binding CanCategories,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding CCategroy}"/>
+                <ComboBox Grid.Row="1" Grid.Column="1"  HorizontalContentAlignment="Center" ItemsSource="{Binding Path=CanIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding CanIndex}"/>
+                <ComboBox Grid.Row="1" Grid.Column="2"  HorizontalContentAlignment="Center" ItemsSource="{Binding Path=ChannelIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding ChannelIndex}"/>
+                <UniformGrid Grid.Row="1" Grid.Column="3" Columns="2">
+                    <ComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Path=BaudRates,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding BaudRate}"/>
+                    <ComboBox HorizontalContentAlignment="Center" IsEnabled="{Binding EnableCANFD}" ItemsSource="{Binding Path=DataBaudRates ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding DataBaudRate}"/>
                 </UniformGrid>
-                <TextBlock Text="波特率" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <UniformGrid Columns="2">
-                    <TextBlock Text="CAN/FD" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Text="终端电阻" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </UniformGrid>
-                <ComboBox ItemsSource="{Binding CanCategories,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding CCategroy}"/>
-                <UniformGrid Columns="2">
-                    <ComboBox ItemsSource="{Binding Path=CanIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding CanIndex}"/>
-                    <ComboBox ItemsSource="{Binding Path=ChannelIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding ChannelIndex}"/>
-                </UniformGrid>
-                <UniformGrid Columns="2">
-                    <ComboBox ItemsSource="{Binding Path=BaudRates,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding BaudRate}"/>
-                    <ComboBox IsEnabled="{Binding EnableCANFD}" ItemsSource="{Binding Path=DataBaudRates ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding DataBaudRate}"/>
-                </UniformGrid>
-                <UniformGrid Columns="2">
-                    <ToggleButton IsChecked="{Binding EnableCANFD}" Tag="CANFD" Content="CAN" Style="{DynamicResource ToggleButton.TagContent}"/>
-                    <ToggleButton IsChecked="{Binding EnableInternalResistance}" Tag="使能" Content="不使能" Style="{DynamicResource ToggleButton.TagContent}"/>
-                </UniformGrid>
-            </UniformGrid>
+                <ToggleButton Grid.Row="1" Grid.Column="4" IsChecked="{Binding EnableCANFD}" Tag="CANFD" Content="CAN" Style="{DynamicResource ToggleButton.TagContent}"/>
+                <ToggleButton Grid.Row="1" Grid.Column="5" IsChecked="{Binding EnableInternalResistance}" Tag="使能" Content="不使能" Style="{DynamicResource ToggleButton.TagContent}"/>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

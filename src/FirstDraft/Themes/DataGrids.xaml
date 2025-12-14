@@ -85,6 +85,9 @@
                         <Thumb x:Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="CanUserSort" Value="False">
+                            <Setter TargetName="sortPath" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
                         <Trigger Property="SortDirection" Value="Ascending">
                             <Setter TargetName="sortPath" Property="Visibility" Value="Visible" />
                             <Setter TargetName="sortPath" Property="RenderTransform">
@@ -214,12 +217,13 @@
         <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.Foreground}"/>
         <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource SolidBrush.DataGrid.Cell.BorderBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
-                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -293,6 +297,61 @@
                 </MultiTrigger.Conditions>
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
             </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DataGridCell.TextLeft" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.Foreground}"/>
+        <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SolidBrush.DataGrid.Cell.BorderBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.MouseOver.Background}" />
+                <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.MouseOver.Foreground}" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.Selected.Background}" />
+                <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.Selected.Foreground}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="DataGridCell.TextStretch" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.Foreground}"/>
+        <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SolidBrush.DataGrid.Cell.BorderBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.MouseOver.Background}" />
+                <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.MouseOver.Foreground}" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SolidBrush.DataGrid.Cell.Selected.Background}" />
+                <Setter Property="Foreground" Value="{DynamicResource SolidBrush.DataGrid.Cell.Selected.Foreground}" />
+            </Trigger>
         </Style.Triggers>
     </Style>
 

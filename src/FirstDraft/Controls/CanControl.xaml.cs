@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FirstDraft.Converters;
+using FirstDraft.Mvvms;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -28,14 +31,14 @@ namespace FirstDraft.Controls
         }
 
         public static CanSource CanSource { get; set; } = new CanSource();
-        public static CanConfig Default { get; set; } = new CanConfig();
+        public static ChannelConfig Default { get; set; } = new ChannelConfig();
     }
 
 
     /// <summary>
     /// CAN 设备通道配置信息
     /// </summary>
-    public class CanConfig
+    public class ChannelConfig
     {
         /// <summary>
         /// CAN 设备通道唯一 ID
@@ -45,7 +48,8 @@ namespace FirstDraft.Controls
         /// <summary>
         /// CAN 设备类型，具体见 CanCategory 枚举
         /// </summary>
-        public CanCategory CCategroy { get; set; } = CanCategory.USBCAN_2;
+        public CanCategory Categroy { get; set; } = CanCategory.USBCAN_2;
+
 
         /// <summary>
         /// CAN 设备索引 0 1 2 3 4 ...
@@ -77,9 +81,9 @@ namespace FirstDraft.Controls
         /// </summary>
         public Boolean EnableInternalResistance { get; set; } = false;
 
-        public bool Equals(CanConfig cc)
+        public bool Equals(ChannelConfig cc)
         {
-            return this.CCategroy == cc.CCategroy && this.CanIndex == cc.CanIndex && this.ChannelIndex == cc.ChannelIndex;
+            return this.Categroy == cc.Categroy && this.CanIndex == cc.CanIndex && this.ChannelIndex == cc.ChannelIndex;
         }
 
     }
@@ -89,7 +93,7 @@ namespace FirstDraft.Controls
         public List<CanCategory> CanCategories { get; } = new List<CanCategory>();
         public List<ChannelBaudRate> BaudRates { get; } = new List<ChannelBaudRate>();
         public List<byte> ChannelIndexes { get; } = new List<byte>();
-        public List<byte> CanIndexes { get; } = new List<byte>();
+        public ObservableCollection<byte> CanIndexes { get; } = new ObservableCollection<byte>();
         public List<ChannelDataBaudRate> DataBaudRates { get; } = new List<ChannelDataBaudRate>();
         public CanSource()
         {
@@ -104,8 +108,13 @@ namespace FirstDraft.Controls
             for (byte i = 0; i < 16; i++)
             {
                 CanIndexes.Add(i);
+            }
+
+            for (byte i = 0; i < 4; i++)
+            {
                 ChannelIndexes.Add(i);
             }
+
             foreach (ChannelDataBaudRate item in Enum.GetValues(typeof(ChannelDataBaudRate)))
             {
                 DataBaudRates.Add(item);
@@ -124,6 +133,7 @@ namespace FirstDraft.Controls
         /// </summary>
         USBCAN_2 = 100,
         USBCANFD_200U = 101,
+        USBCANFD_400U = 102,
 
         //ZLG_USBCAN_2 = 100,
         //ZLG_USBCANFD_200U = 101,
@@ -161,33 +171,6 @@ namespace FirstDraft.Controls
         _4000Kbps = 4000,
         [Description("5M")]
         _5000Kbps = 5000,
-    }
-
-    public class EnumDescriptionTypeConverter : EnumConverter
-    {
-        public EnumDescriptionTypeConverter(Type type)
-            : base(type)
-        {
-        }
-        public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
-        {
-            if (destinationType == typeof(string))
-            {
-                if (value != null)
-                {
-                    FieldInfo fi = value.GetType().GetField(value.ToString());
-                    if (fi != null)
-                    {
-                        var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-                        return ((attributes.Length > 0) && (!String.IsNullOrEmpty(attributes[0].Description))) ? attributes[0].Description : value.ToString();
-                    }
-                }
-
-                return string.Empty;
-            }
-
-            return base.ConvertTo(context, culture, value, destinationType);
-        }
     }
 
     #endregion

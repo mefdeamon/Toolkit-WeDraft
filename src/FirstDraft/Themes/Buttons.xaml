@@ -251,9 +251,12 @@
                             <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>
-                            <Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>
-                            <Setter Property="Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <!--<Setter Property="Background"  Value="{DynamicResource Button.Disabled.Background}"/>-->
+                            <!--<Setter Property="BorderBrush"  TargetName="border" Value="{DynamicResource Button.Disabled.Border}"/>-->
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Setter Property="Foreground" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource Button.Disabled.Foreground}"/>
+                            <Setter Property="TextBlock.Foreground"  Value="{DynamicResource Button.Disabled.Foreground}"/>
                             <Setter Property="Fill" TargetName="icon" Value="{DynamicResource Button.Disabled.Foreground}"/>
                         </Trigger>
                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(controls:IconBlock.Icon)}" Value="{x:Null}">

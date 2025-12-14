@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="FirstDraft.Controls.ChannelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FirstDraft.Controls"
+             mc:Ignorable="d" 
+             DataContext="{Binding Path=., Source={x:Static local:ChannelControl.Default}}"
+             >
+    <Grid>
+        <Border >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="序号"></TextBlock>
+                </Border>
+                <Border Grid.Column="1" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="设备类型"></TextBlock>
+                </Border>
+                <Border Grid.Column="2" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="索引"></TextBlock>
+                </Border>
+                <Border Grid.Column="3" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="通道"></TextBlock>
+                </Border>
+                <Border Grid.Column="4" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="波特率"></TextBlock>
+                </Border>
+                <Border Grid.Column="5" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="CAN/FD"></TextBlock>
+                </Border>
+                <Border Grid.Column="6" Padding="5 2" BorderThickness="1" BorderBrush="{DynamicResource Button.Static.Border}">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Stretch" Text="终端电阻"></TextBlock>
+                </Border>
+
+                <Button Grid.Column="7" Content="+" Click="Add_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0"/>
+
+                <ItemsControl ItemsSource="{Binding Channels}" Grid.Row="1" Grid.ColumnSpan="8">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0 -1 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="130"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox IsEnabled="False" BorderThickness="1 1 1 1" HorizontalContentAlignment="Center" Grid.Row="0" Grid.Column="0" Text="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                                <ComboBox Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" ItemsSource="{Binding CanCategories,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding Categroy,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <ComboBox Grid.Row="1" Grid.Column="2"  HorizontalContentAlignment="Center" ItemsSource="{Binding Path=CanIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding CanIndex,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <ComboBox Grid.Row="1" Grid.Column="3"  HorizontalContentAlignment="Center" ItemsSource="{Binding Path=ChannelIndexes ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding ChannelIndex,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <UniformGrid Grid.Row="1" Grid.Column="4" Columns="2">
+                                    <ComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Path=BaudRates,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding BaudRate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                    <ComboBox HorizontalContentAlignment="Center" IsEnabled="{Binding EnableCANFD}" ItemsSource="{Binding Path=DataBaudRates ,Source={x:Static local:CanControl.CanSource}}" SelectedItem="{Binding DataBaudRate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                </UniformGrid>
+                                <ToggleButton Grid.Row="1" Grid.Column="5" Background="Transparent" BorderThickness="1" IsChecked="{Binding EnableCANFD,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Tag="CANFD" Content="CAN" Style="{DynamicResource ToggleButton.TagContent}"/>
+                                <ToggleButton Grid.Row="1" Grid.Column="6" Background="Transparent" BorderThickness="1" IsChecked="{Binding EnableInternalResistance,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Tag="使能" Content="不使能" Style="{DynamicResource ToggleButton.TagContent}"/>
+                                <Button Grid.Column="7" Content="x" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0" Click="Delete_Click" Tag="{Binding Id}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                </Grid>
+        </Border>
+    </Grid>
+</UserControl>
